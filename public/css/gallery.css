@@ -1,6 +1,11 @@
 /* ========================= G A L L E R Y =================================== */
 
 /* ========================= photoLERY HEADER =============================== */
+body{
+  background-color: #fff !important;
+}
+
+
 #photolery-header{
   background: linear-gradient(rgba(0,0,0, .4), rgba(0,0,0, .4)),
                        url('../img/sliders/slider-6.jpg');

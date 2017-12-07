@@ -1,32 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('includes.header')
 
-<head>
+   @section('title')
+    <title>Flyboy Inc :: Gallery </title>
+   @endsection
+   @section('pagelink')
+      <link href="{{ URL::to('css/gallery.css') }}" rel="stylesheet" />
+    @endsection
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+@section('pageContent')
 
-    <title>photolery | Flyboy</title>
-
-    <link href="css/gallery.css" rel="stylesheet" />
-    <link href='css/bootstrap.css' rel="stylesheet" />
-    <link href="css/font-awesome.css" rel="stylesheet" />
-
-</head>
-
-<body>
   <header id="photolery-header">
     <div class="container-fluid">
       <div class="row">
-        <h1 class="btn btn-lg">photoLERY</h1>
+        <h1 class="btn btn-lg">GALLERY</h1>
         <p>See photos</p>
         <p><i class="fa fa-angle-double-down"></i></p>
       </div>
     </div>
   </header>
+
+    <nav class="main-nav-outer" id="test">
+    <!--main-nav-start-->
+    <div class="container">
+      <ul class="main-nav">
+        <li><a href="">Bio</a></li>
+        <li><a href="{{ route('user.music') }}">Music</a></li>
+        <li><a href="{{ route('user.photos') }}">Photos</a></li>
+        <li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
+        <li><a href="{{ route('user.videos') }}">Videos</a></li>
+        <li><a href="{{ route('user.news') }}">News</a></li>
+        <li><a href="{{ route('user.events') }}">Events</a></li>
+        <li><a href="{{ route('user.contact') }}">Contact</a></li>
+      </ul>
+      <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
+    </div>
+  </nav>
+  <!--main-nav-end-->
 
   <section class="photo-album">
     <div class="container">
@@ -105,7 +114,4 @@
       </div>
     </div>
   </section>
-
-</body>
-
-</html>
+@endsection

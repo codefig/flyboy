@@ -1,0 +1,101 @@
+/* ================================== VIDEO PLAYER ================================== */
+#video-player{
+  background-color: #F2C053;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  height: 450px;
+
+}
+
+#video-player h1{
+    color: #000000;
+    margin-top: 15vw;
+    font-family: 'Segoe UI';
+}
+
+/* ============================== LIST OF VIDEOS ====================== */
+#videos h2{
+  color: #000;
+  text-align:center;
+}
+
+#songs .row{
+  margin-bottom: 1.5vw;
+}
+
+@media(max-width: 767px){
+  #songs .row{
+    margin-bottom: 6vw;
+  }
+}
+
+.video{
+  margin-bottom: 5%;
+  background-color: #fff;
+}
+
+.grid-item .video{
+  padding:10px;
+}
+
+.video img{
+  margin-bottom: 10px;
+}
+
+.video-details h3{
+   font-family: 'Segoe UI';
+   font-weight: bold;
+   text-align: center;
+}
+
+.video-details p{
+  color: #95989A;
+  text-align: center;
+  font-style: italic;
+}
+
+.play-video a i{
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+.video-details hr{
+  margin: 10px;
+}
+
+.play-video{
+  text-align: center;
+}
+
+.video .btn{
+  background-color: #F2C053;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Segoe UI';
+  margin-top: 10px;
+}
+
+.video .btn:hover{
+  background-color:#000000;
+}
+
+.load-more-videos{
+  text-align: center;
+  margin: 30px auto;
+}
+
+.load-more-videos .btn{
+  background-color: #000;
+  color: #f2c053;
+  border: none;
+  border-radius: 50px;
+}
+
+.load-more-videos .btn:hover{
+  background-color: #F2C053;
+  color: #000;
+}

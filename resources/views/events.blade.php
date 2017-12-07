@@ -1,22 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('includes.header')
 
-<head>
+    @section('title')
+      <title>Flyboy Inc :: Events</title>
+    @endsection
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    @section('pagelink')
+        <link href="css/event.css" rel="stylesheet" />
+    @endsection
 
-    <title>Events | Flyboy</title>
 
-    <link href="css/event.css" rel="stylesheet" />
-    <link href='css/bootstrap.css' rel="stylesheet" />
-    <link href="css/font-awesome.css" rel="stylesheet" />
-</head>
+@section('pageContent')
 
-<body>
+  <nav class="main-nav-outer" id="test">
+    <!--main-nav-start-->
+    <div class="container">
+      <ul class="main-nav">
+        <li><a href="">Bio</a></li>
+        <li><a href="{{ route('user.music') }}">Music</a></li>
+        <li><a href="{{ route('user.photos') }}">Photos</a></li>
+        <li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
+        <li><a href="{{ route('user.videos') }}">Videos</a></li>
+        <li><a href="{{ route('user.news') }}">News</a></li>
+        <li><a href="{{ route('user.events') }}">Events</a></li>
+        <li><a href="{{ route('user.contact') }}">Contact</a></li>
+      </ul>
+      <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
+    </div>
+  </nav>
+  <!--main-nav-end-->
+
     <header id="event-header">
       <div class="container-fluid">
         <div class="row">
@@ -27,6 +39,7 @@
         </div>
       </div>
     </header>
+
 
     <section class="concert-details">
       <div class="container">
@@ -152,7 +165,4 @@
           </div>
         </div>
     </section>
-
-</body>
-
-</html>
+@endsection

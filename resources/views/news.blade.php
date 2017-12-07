@@ -1,10 +1,16 @@
+@extends('includes.header')
+
+
+@section('title')
+	<title>Flyboy Inc :: News </title>
+@endsection
 <section id="newsContainer">
 	<div class="container">
 
 		<div class="row" >
 			<article class="news-element">
 					<div class="col-md-5">
-						<img class="img-responsive" width="390" height="237" src="<?=base_url()?>public/img/bio2.jpg" alt="">
+						<img class="img-responsive" width="390" height="237" src="public/img/bio2.jpg" alt="">
 					</div>
 
 					<div class="col-md-7">
@@ -27,7 +33,7 @@
 						  		</blockquote>
 
 						<footer class="news-link">
-							<a href="<?=site_url('/news/view')?>">READ MORE </a>
+							<a href="">READ MORE </a>
 						</footer>
 					</div>
 			</article>
@@ -38,7 +44,7 @@
 		<div class="row" >
 			<article class="news-element">
 					<div class="col-md-5">
-						<img class="img-responsive" width="390" height="237" src="<?=base_url()?>public/img/Portfolio-pic5.jpg" alt="">
+						<img class="img-responsive" width="390" height="237" src="public/img/Portfolio-pic5.jpg" alt="">
 					</div>
 
 					<div class="col-md-7">
@@ -71,7 +77,7 @@
 			<div class="row" >
 			<article class="news-element">
 					<div class="col-md-5">
-						<img class="img-responsive" width="390" height="237" src="<?=base_url()?>public/img/Portfolio-pic5.jpg" alt="">
+						<img class="img-responsive" width="390" height="237" src="public/img/Portfolio-pic5.jpg" alt="">
 					</div>
 
 					<div class="col-md-7">
@@ -104,7 +110,7 @@
 			<div class="row" >
 			<article class="news-element">
 					<div class="col-md-5">
-						<img class="img-responsive" width="390" height="237" src="<?=base_url()?>public/img/Portfolio-pic5.jpg" alt="">
+						<img class="img-responsive" width="390" height="237" src="public/img/Portfolio-pic5.jpg" alt="">
 					</div>
 
 					<div class="col-md-7">
@@ -137,7 +143,7 @@
 			<div class="row" >
 			<article class="news-element">
 					<div class="col-md-5">
-						<img class="img-responsive" width="390" height="237" src="<?=base_url()?>public/img/Portfolio-pic5.jpg" alt="">
+						<img class="img-responsive" width="390" height="237" src="public/img/Portfolio-pic5.jpg" alt="">
 					</div>
 
 					<div class="col-md-7">
@@ -172,7 +178,5 @@
 			<p class="pagination"><a href="">NEXT</a></p>
 		</footer>
 	</div>
-
-
 </section>
 

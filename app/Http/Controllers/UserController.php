@@ -32,27 +32,27 @@ class UserController extends Controller {
 		 *  The music link
 		 */
 
-		return "this is the music pag";
+		return view('music');
 	}
 
 	public function photos() {
 		/**
 		 *  The photos url
 		 */
-
-		return view('album');
+		return view('gallery');
 	}
 
 	public function videos() {
-		return "this is the link for videso ";
+		return view('videos');
 	}
 
 	public function news() {
-		return "this si the function for the news";
+		return view('news');
 	}
 
 	public function events() {
-		return "the events page";
+		// return "the events page";
+		return view('events');
 	}
 
 	public function contact() {

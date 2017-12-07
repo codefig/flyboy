@@ -7,7 +7,7 @@
 
 
      @section('pagelink')
-        <link href="{{URL::to('css/album.css')}}" rel="stylesheet" />
+        <link href="{{ URL::to('css/album.css')}}" rel="stylesheet" />
       @endsection
 
 @section('pageContent')

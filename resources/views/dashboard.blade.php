@@ -38,13 +38,13 @@
 		<!--header-start-->
 		<div class="container">
 			<figure class="logo animated fadeInDown delay-07s">
-				<a href="#"><img src="{{ URL::to("img/logo.png")}}" alt=""></a>
+				<a href="#"><img src="{{ URL::to("img/flyboy_home_logo.png")}}" alt=""></a>
 			</figure>
 			<h1 class="animated fadeInDown delay-07s">Welcome To Flyboy Records </h1>
 			<ul class="we-create animated fadeInUp delay-1s">
 				<li>We are a digital agency that loves crafting beautiful websites.</li>
 			</ul>
-			<a class="link animated fadeInUp delay-1s servicelink" href="#service">Get Started</a>
+			<a class="link animated fadeInUp delay-1s servicelink" href="#bio">Get Started</a>
 		</div>
 	</header>
 	<!--header-end-->
@@ -54,12 +54,12 @@
 		<div class="container">
 			<ul class="main-nav">
 				<li><a href="#bio">Bio</a></li>
-				<li><a href="#music">Music</a></li>
-				<li><a href="#photos">Photos</a></li>
-				<li class="small-logo"><a href="#header"><img src="{{ URL::to("img/small-logo.png")}}" alt=""></a></li>
+				<li><a href="{{ route('user.music') }}">Music</a></li>
+				<li><a href=" {{ route('user.photos') }}">Photos</a></li>
+				<li class="small-logo"><a href="#header"><img src="{{ URL::to("img/flyboy_navbar.png")}}" alt=""></a></li>
 				<li><a href="{{ route('user.videos') }}">Videos</a></li>
 				<li><a href="{{ route('user.news') }}">News</a></li>
-				<li><a href="#events">Events</a></li>
+				<li><a href="{{ route('user.events') }}">Events</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
 			<a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
@@ -373,14 +373,14 @@
 	</footer>
 
    <script>
-   	var image1 = "{{ URL::to('img/bio.jpg')}}";
-   	var image2 = "{{ URL::to('img/bio2.jpg')}}";
-   	var image3 = "{{ URL::to('img/bridge.jpg')}}";
+   	var image1 = "{{ URL::to('img/slider1.jpg')}}";
+   	var image2 = "{{ URL::to('img/slider2.jpg')}}";
+   	var image5 = "{{ URL::to('img/slider7.jpg')}}";
 	 $(function() {
             $("#header").backstretch([
               image1,
               image2,
-              image3,
+              image5,
 
               ], {
                  fade: 800,

@@ -1,6 +1,10 @@
 /* ======================= EVENT PAGE ============================== */
 
 /* ======================= NEW IMMEDIATE EVENT ======================= */
+body{
+  background-color:#fff !important;
+  }
+
 #event-header{
   background: linear-gradient(rgba(0,0,0, .5), rgba(0,0,0, .5)),
                        url('../img/event-header.jpg');

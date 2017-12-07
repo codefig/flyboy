@@ -98,7 +98,8 @@ p{
 .header{
 	text-align:center;
 	background:url(../img/pw_maze_black_2X.png) left top repeat;
-	padding:280px 0;
+	padding:100px 0;
+	height:100vh;
 }
 .logo{
 	width:130px;
@@ -885,16 +886,16 @@ border: 2px solid #fff;
 
 /* my custom css added 
 ------------------ */
-.flyboy-gallery .lightbox img:hover {
+.flyboy-photolery .lightbox img:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 15px rgba(0,0,0,0.3);
 }
 
-.flyboy-gallery {
+.flyboy-photolery {
     padding: 40px;
 }
 
-.flyboy-gallery .lightbox img {
+.flyboy-photolery .lightbox img {
     width: 100%;
     margin-bottom: 30px;
     transition: 0.2s ease-in-out;
@@ -902,7 +903,7 @@ border: 2px solid #fff;
 }
 
 
-.flyboy-gallery img {
+.flyboy-photolery img {
     border-radius: 4px;
 }
 
@@ -971,61 +972,3 @@ border: 2px solid #fff;
 	letter-spacing: 2px;
 	margin-top:10px !important;
 }
-
-
-/** news read page */
-
-.news-section {
-	background-color:#fff !important;
-	padding:50px;
-}
-
-.news-banner{
-	max-width: 100%;
-	max-height: 100%;
-}
-
-#news-head{
-	padding:20px;
-	height:70vh;
-	color:red;
-	/*border:1px solid red;*/
-	padding:15px;
-}
-#news-head-container{
-	box-shadow: 0px 1px #222;
-	margin-bottom: 10px;
-}
-#news-timestamp{
-	margin-top:20vh;
-	background-color: #000;
-	padding:10px;
-	height: 40px;
-}
-
-.news-header {
-	color:#222 !important;
-}
-
-.news-tabs{
-	/*display: inline-block;*/
-	color:#f2c053;
-}
-
-#news-intro{
-	margin-top:20px;
-	background-color:#f2c053;
-	padding:10px;
-	letter-spacing: 1px;
-	text-transform: italic;
-	color:#222;
-	font-style: italic;
-}
-
-/*@media (max-width: 767px;){
-	#news-timestamp{
-		margin-top:10px;
-	}
-
-}*/
-
