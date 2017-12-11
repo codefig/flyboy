@@ -167,7 +167,7 @@ color: #fff;
 }
 
 .link:active, .link:focus {
-	background: #7cc576;
+	background: #f2c053;
 	text-decoration:none;
 	color:#fff !important;
 }
@@ -177,7 +177,6 @@ color: #fff;
 .main-nav-outer{
 	padding:0px;
 	border-bottom:1px solid #dddddd;
-	box-shadow:0 4px 5px -3px #ececec;
 	position:relative;
 	background:#fff;
 }
@@ -206,11 +205,11 @@ color: #fff;
 
 .main-nav li a:hover{ 
 	text-decoration:none;
-	color: #7cc576;
+	color: #f2c053;
 }
 
 .small-logo{ 
-	padding:0 32px;
+	/*padding:0 32px;*/
 }
 
 .main-section{
@@ -584,7 +583,7 @@ border: 2px solid #fff;
 .team-leader ul li a.fa-facebook:hover{
 	color:#3b5998;
 }
-.team-leader ul li a.fa-pinterest:hover{
+.team-leader ul li a.fa-youtube:hover{
 	color:#cb2026;
 }
 .team-leader ul li a.fa-google-plus:hover{
@@ -678,13 +677,13 @@ border: 2px solid #fff;
 .facebook a:hover {
 	background: #3b5998;
 }
-.pinterest a:hover {
+.youtube a:hover {
 	background: #cb2026;
 }
 .gplus a:hover {
 	background: #dd4b39;
 }
-.dribbble a:hover {
+.instagram a:hover {
 	background: #ea4c89;
 }
 
@@ -886,6 +885,14 @@ border: 2px solid #fff;
 
 /* my custom css added 
 ------------------ */
+
+.main-divider{
+	width:50px;
+	background-color: #fff;
+	height: 2px;
+	margin:0 auto;
+	margin-bottom: 20px;
+}
 .flyboy-photolery .lightbox img:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 15px rgba(0,0,0,0.3);
@@ -928,6 +935,9 @@ border: 2px solid #fff;
 	width:100%;
 	height: auto;
 	margin-bottom: 65px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 

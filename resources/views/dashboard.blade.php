@@ -5,8 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, maximum-scale=1">
 
-	<title>Homepage</title>
-	<link rel="icon" href="public/img/favicon.png" type="image/png">
+	<title>Flyboy Incorporated</title>
+	<link rel="icon" href="{{ URL::to('img/flyboy_favicon.png') }}" type="image/png">
 	<link rel="shortcut icon" href="public/img/favicon.ico" type="img/x-icon">
 
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -40,9 +40,9 @@
 			<figure class="logo animated fadeInDown delay-07s">
 				<a href="#"><img src="{{ URL::to("img/flyboy_home_logo.png")}}" alt=""></a>
 			</figure>
-			<h1 class="animated fadeInDown delay-07s">Welcome To Flyboy Records </h1>
+			<h1 class="animated fadeInDown delay-07s">Welcome To Flyboy Incorporated. </h1>
 			<ul class="we-create animated fadeInUp delay-1s">
-				<li>We are a digital agency that loves crafting beautiful websites.</li>
+				<li>Something awesome about flyboy needs to be here </li>
 			</ul>
 			<a class="link animated fadeInUp delay-1s servicelink" href="#bio">Get Started</a>
 		</div>
@@ -53,14 +53,14 @@
 		<!--main-nav-start-->
 		<div class="container">
 			<ul class="main-nav">
-				<li><a href="#bio">Bio</a></li>
+				<li><a href="{{ route('user.bio') }}">Bio</a></li>
 				<li><a href="{{ route('user.music') }}">Music</a></li>
 				<li><a href=" {{ route('user.photos') }}">Photos</a></li>
-				<li class="small-logo"><a href="#header"><img src="{{ URL::to("img/flyboy_navbar.png")}}" alt=""></a></li>
 				<li><a href="{{ route('user.videos') }}">Videos</a></li>
+				<li class="small-logo"><a href="#header"><img src="{{ URL::to("img/flyboy_navbar.png")}}" alt=""></a></li>
 				<li><a href="{{ route('user.news') }}">News</a></li>
 				<li><a href="{{ route('user.events') }}">Events</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li><a href="{{ route('user.contact') }}">Contact</a></li>
 			</ul>
 			<a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
 		</div>
@@ -80,7 +80,19 @@
 				</figure>
 				<div class="col-lg-7 col-sm-8 featured-work">
 					<h2>Bio</h2>
-					<P class="padding-b animate easeIn">Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt. Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit.
+					<P class="padding-b animate easeIn" style="color:#fff">Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt. Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -113,10 +125,7 @@
 		<!--main-section-start-->
 		<div class="container">
 			<h2>Music</h2>
-			<h6>Fresh Music from the stables of Flyboy Records..</h6>
-			<hr>
-
-
+			<div class="main-divider"></div>
 		</div>
 		<div class="portfolioContainer wow fadeInUp delay-04s">
 			<div class=" Portfolio-box printdesign">
@@ -179,111 +188,71 @@
 		<!--main-section team-start-->
 		<div class="container">
 			<!-- <h1 class="animated slideInLeft">Example</h1> -->
-			<h2 class="animated shake">PHOTOS</h2>
-			  <hr>
+			<h2 class="animated">PHOTOS</h2>
+			<div class="main-divider"></div>
+			    {{-- <div class="main-divider"> --}}
 			<div class="flyboy-gallery wow fadeInLeft delay-06s">
 
 			        <div class="row">
-			            <div class="col-sm-6 col-md-4">
+
+			            <div class="col-sm-6 col-md-4" style="margin-top:10px;">
+			                <a class="lightbox" href="img/kiss-1.jpg">
+			                    <img src="img/bio.jpg" alt="Park">
+			                </a>
+			            </div>
+
+			            <div class="col-sm-6 col-md-4" style="margin-top:10px;">
 			                <a class="lightbox" href="img/kiss-1.jpg">
 			                    <img src="img/bio.jpg" alt="Park">
 			                </a>
 			            </div>
 
 
-			            <div class="col-sm-12 col-md-4">
-			                <a class="lightbox" href="img/kiss-3.jpg">
-			                    <img src="img/kiss-3.jpg" alt="Tunnel">
+			            <div class="col-sm-6 col-md-4" style="margin-top:10px;">
+			                <a class="lightbox" href="img/kiss-1.jpg">
+			                    <img src="img/bio.jpg" alt="Park">
 			                </a>
 			            </div>
 
-			            <!-- <div class="col-sm-6 col-md-4">
-			                <a class="lightbox" href="public/img/kiss-5.jpg">
-			                    <img src="public/img/kiss-5.jpg" alt="Rails">
+			            <div class="col-sm-6 col-md-4" style="margin-top:10px;">
+			                <a class="lightbox" href="img/kiss-1.jpg">
+			                    <img src="img/bio.jpg" alt="Park">
 			                </a>
-			            </div> -->
-			           <!--  <div class="col-sm-6 col-md-4">
-			                <a class="lightbox" href="public/img/kiss-2.jpg">
-			                    <img src="public/img/kiss-2.jpg" alt="Bridge">
-			                </a>
-			            </div> -->
+			            </div>
 
 
+			            <div class="col-sm-6 col-md-4" style="margin-top:10px;">
+			                <a class="lightbox" href="img/kiss-1.jpg">
+			                    <img src="img/bio.jpg" alt="Park">
+			                </a>
+			            </div>
+
+			            <div class="col-sm-6 col-md-4" style="margin-top:10px;">
+			                <a class="lightbox" href="img/kiss-1.jpg">
+			                    <img src="img/bio.jpg" alt="Park">
+			                </a>
+			            </div>
+
+
+			          {{--   <div class="col-sm-6 col-md-4">
+			                <a class="lightbox" href="img/kiss-1.jpg">
+			                    <img src="img/bio2.jpg" alt="Park">
+			                </a>
+			            </div>
 
 			            <div class="col-sm-6 col-md-4">
 			                <a class="lightbox" href="img/kiss-4.jpg">
 			                    <img src="img/kiss-4.jpg" alt="Coast">
 			                </a>
 			            </div>
-			            <div class="col-sm-6 col-md-4">
-			                <a class="lightbox" href="img/kiss-6.jpg">
-			                    <img src="img/bio2.jpg" alt="Traffic">
-			                </a>
-			            </div>
-
-			            <div class="col-sm-6 col-md-4">
-			                <a class="lightbox" href="img/kiss-7.jpg">
-			                    <img src="img/kiss-7.jpg" alt="Rocks">
-			                </a>
-			            </div>
-
-			            <div class="col-sm-6 col-md-4">
-			                <a class="lightbox" href="img/kiss-7.jpg">
-			                    <img src="img/kiss-8.jpg" alt="Rocks">
-			                </a>
-			            </div>
-
-			            <div class="col-sm-6 col-md-4">
-			                <a class="lightbox" href="img/benches.jpg">
-			                    <img src="img/benches.jpg" alt="Benches">
-			                </a>
-			            </div>
-
-			            <div class="col-sm-6 col-md-4">
-			                <a class="lightbox" href="img/sky.jpg">
-			                    <img src="img/sky.jpg" alt="Sky">
-			                </a>
-			            </div>
-
-			              <div class="col-sm-6 col-md-4">
-			                <a class="lightbox" href="img/sky.jpg">
-			                    <img src="img/sky.jpg" alt="Sky">
-			                </a>
-			            </div>
+ --}}
 
 
-
-			              <div class="col-sm-6 col-md-4">
-			                <a class="lightbox" href="img/sky.jpg">
-			                    <img src="img/sky.jpg" alt="Sky">
-			                </a>
-			            </div>
-
-			            <div class="col-sm-6 col-md-4">
-			                <a class="lightbox" href="img/kiss-6.jpg">
-			                    <img src="img/kiss-6.jpg" alt="Traffic">
-			                </a>
-			            </div>
-
-
-
-			              <div class="col-sm-6 col-md-4">
-			                <a class="lightbox" href="img/sky.jpg">
-			                    <img src="img/sky.jpg" alt="Sky">
-			                </a>
-			            </div>
-
-
-			            <div class="col-sm-6 col-md-4">
-			                <a class="lightbox" href="img/kiss-6.jpg">
-			                    <img src="img/kiss-6.jpg" alt="Traffic">
-			                </a>
-			            </div>
 
 			        </div>
     		</div>
 
-				  <center><a href="#" class="link">See more </a></center>
+				  <center><a href="{{ route('user.photos') }}" class="link" style="margin-top:30px">See more </a></center>
 		</div>
 	</section>
 	<!--main-section team-end-->
@@ -311,8 +280,8 @@
 						<span>1-800-BOO-YAHH</span>
 					</div>
 					<div class="contact-info-box email clearfix">
-						<h3><i class="fa-pencil"></i>email:</h3>
-						<span>hello@knightstudios.com</span>
+						<h3><i class="fa-envelope"></i>email:</h3>
+						<span>bookings@flyboyinc.net</span>
 					</div>
 					<div class="contact-info-box hours clearfix">
 						<h3><i class="fa-clock-o"></i>Hours:</h3>
@@ -321,9 +290,9 @@
 					<ul class="social-link">
 						<li class="twitter"><a href="#"><i class="fa-twitter"></i></a></li>
 						<li class="facebook"><a href="#"><i class="fa-facebook"></i></a></li>
-						<li class="pinterest"><a href="#"><i class="fa-pinterest"></i></a></li>
+						<li class="youtube"><a href="#"><i class="fa-youtube"></i></a></li>
 						<li class="gplus"><a href="#"><i class="fa-google-plus"></i></a></li>
-						<li class="dribbble"><a href="#"><i class="fa-dribbble"></i></a></li>
+						<li class="instagram"><a href="#"><i class="fa-instagram"></i></a></li>
 					</ul>
 				</div>
 				<div class="col-lg-6 col-sm-5 wow fadeInUp delay-05s">
@@ -363,11 +332,11 @@
 
 	<footer class="footer">
 		<div class="container">
-			<div class="footer-logo"><a href="#"><img src="public/img/footer-logo.png" alt=""></a></div>
+			<div class="footer-logo"><a href="#"><img src="{{ URL::to('img/flyboy_footer.png') }}" alt=""></a></div>
 			<span class="copyright">&copy; 2017 Flyboy Incorporated. All Rights Reserved</span>
 			<div class="credits">
 
-				<a href="https://bootstrapmade.com/bootstrap-agency-templates/">Flyboy Incorporated</a> by <a href="https://bootstrapmade.com/">GeeksLab</a>
+				<a href="" style="color:#f2c053;">Flyboy Incorporated</a> by <a href="">GeeksLab</a>
 			</div>
 		</div>
 	</footer>

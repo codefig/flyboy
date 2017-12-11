@@ -33,6 +33,7 @@ class UserController extends Controller {
 		 */
 
 		return view('music');
+		// return view('music-backup');
 	}
 
 	public function photos() {
@@ -40,6 +41,10 @@ class UserController extends Controller {
 		 *  The photos url
 		 */
 		return view('gallery');
+	}
+
+	public function showphotos() {
+		return view('album');
 	}
 
 	public function videos() {
@@ -57,5 +62,10 @@ class UserController extends Controller {
 
 	public function contact() {
 		return "this is the contact page";
+	}
+
+	public function playmusic() {
+		// return "this is the play music function ";
+		return view('playmusic');
 	}
 }

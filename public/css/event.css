@@ -1,9 +1,17 @@
 /* ======================= EVENT PAGE ============================== */
 
 /* ======================= NEW IMMEDIATE EVENT ======================= */
+  @font-face{
+   font-family: 'Segoe UI';
+   src : url('../fonts/segoeui.ttf');
+}
+
 body{
   background-color:#fff !important;
+  font-family: 'Segoe UI';
   }
+
+
 
 #event-header{
   background: linear-gradient(rgba(0,0,0, .5), rgba(0,0,0, .5)),

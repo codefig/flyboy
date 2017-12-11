@@ -1,0 +1,56 @@
+@font-face{
+   font-family: 'Segoe UI';
+   src : url('../fonts/segoeui.ttf');
+}
+
+
+body{
+  font-family: 'Segoe UI';
+}
+
+
+#error500{
+  background-image: url('../img/500.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  height: 600px;
+}
+
+#error500 h2{
+  font-family: 'Segoe UI';
+  margin-top: 12vw;
+}
+
+#error500 span{
+  text-decoration-line: line-through;
+}
+
+#error500 a{
+  margin-top: 27vw;
+}
+
+@media(max-width: 767px){
+  #error500 a{
+    margin-top: 60vw;
+  }
+}
+
+#error500 .btn{
+  background-color: #F2C053;
+  border-radius: 50px;
+  border: none;
+  color: #000;
+  font-family: 'Segoe UI';
+  padding: auto 10px;
+}
+
+#error500 .btn:hover{
+  background-color: #000;
+  color: #fff;
+}

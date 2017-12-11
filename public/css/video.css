@@ -1,4 +1,15 @@
 /* ================================== VIDEO PLAYER ================================== */
+  @font-face{
+   font-family: 'Segoe UI';
+   src : url('../fonts/segoeui.ttf');
+}
+
+body{
+  background-color:#fff !important;
+  font-family: 'Segoe UI';
+  }
+
+
 #video-player{
   background-color: #F2C053;
   background-position: center center;

@@ -5,6 +5,9 @@
 	<title>Flyboy Inc :: Bio </title>
 @endsection
 
+@section('pagelink')
+	<link rel="stylesheet" href="{{ URL::to('css/bio.css') }}">
+@endsection
 
 @section('pageContent')
 
@@ -15,11 +18,12 @@
 				<li><a href="">Bio</a></li>
 				<li><a href="{{ route('user.music') }}">Music</a></li>
 				<li><a href="{{ route('user.photos') }}">Photos</a></li>
-				<li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
 				<li><a href="{{ route('user.videos') }}">Videos</a></li>
+				<li class="small-logo"><a href="{{ route('user.index') }}"><img src="{{ URL::to('img/flyboy70.png') }}" alt="logo"></a></li>
 				<li><a href="{{ route('user.news') }}">News</a></li>
 				<li><a href="{{ route('user.events') }}">Events</a></li>
 				<li><a href="{{ route('user.contact') }}">Contact</a></li>
+				<li><a href="#"></a></li>
 			</ul>
 			<a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
 		</div>
@@ -29,7 +33,7 @@
 
 	<section id="bioContainer">
 
-		<img id="bio-img" src="img/sliders/slider-3.jpg" class="img-responsive" alt="">
+		<center><img id="bio-img" src="img/sliders/slider-5.jpg" class="img-responsive" alt=""></center>
 		<div class="container container-fluid">
 
 				<div class="row">

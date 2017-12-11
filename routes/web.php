@@ -23,3 +23,5 @@ Route::get('/videos', 'UserController@videos')->name('user.videos');
 Route::get('/news', 'UserController@news')->name('user.news');
 Route::get('/events', 'UserController@events')->name('user.events');
 Route::get('/contact', 'UserController@contact')->name('user.contact');
+Route::get('/playmusic', 'UserController@playmusic')->name('user.playmusic');
+Route::get('/showphotos', 'UserController@showphotos')->name('user.showphotos');

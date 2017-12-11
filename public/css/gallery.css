@@ -1,10 +1,14 @@
 /* ========================= G A L L E R Y =================================== */
 
 /* ========================= photoLERY HEADER =============================== */
+
+@font-face{
+   font-family: 'Segoe UI';
+   src : url('../fonts/segoeui.ttf');
+}
 body{
   background-color: #fff !important;
 }
-
 
 #photolery-header{
   background: linear-gradient(rgba(0,0,0, .4), rgba(0,0,0, .4)),

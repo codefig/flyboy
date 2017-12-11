@@ -7,8 +7,7 @@
 
      @yield('title')
 
-	<link rel="icon" href="img/favicon.png" type="image/png">
-	<link rel="shortcut icon" href="img/favicon.ico" type="img/x-icon">
+	<link rel="icon" href="{{ URL::to('img/flyboy_favicon.png') }}" type="image/png">
 
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
@@ -39,22 +38,22 @@
 
 <body>
 
+@yield('afterbodyContent')
+
 @yield('pageContent')
 
 
 	<footer class="footer">
 		<div class="container">
-			<div class="footer-logo"><a href="#"><img src="public/img/footer-logo.png" alt=""></a></div>
+			<div class="footer-logo"><a href="#"><img src="{{ 'img/flyboy_footer.png' }}" alt=""></a></div>
 			<span class="copyright">&copy; 2017 Flyboy Incorporated. All Rights Reserved</span>
 			<div class="credits">
 
-				<a href="https://bootstrapmade.com/bootstrap-agency-templates/">Flyboy Incorporated</a> by <a href="https://bootstrapmade.com/">GeeksLab</a>
+				<a href="https://bootstrapmade.com/bootstrap-agency-templates/" style="color:#f2c053">Flyboy Incorporated</a> by <a href="https://bootstrapmade.com/">GeeksLab</a>
 			</div>
 		</div>
 	</footer>
 
-
-</script>
 
 
 	<script type="text/javascript">
@@ -68,6 +67,8 @@
 
 		});
 	</script>
+
+@yield('baseScript')
 
 	<script>
 		wow = new WOW({
@@ -91,12 +92,7 @@
 				$('html, body').stop().animate({
 					scrollTop: $($anchor.attr('href')).offset().top - 102
 				}, 1500, 'easeInOutExpo');
-				/*
-				if you don't want to use the easing effects:
-				$('html, body').stop().animate({
-					scrollTop: $($anchor.attr('href')).offset().top
-				}, 1000);
-				*/
+
 				if ($(window).width() < 768) {
 					$('.main-nav').hide();
 				}

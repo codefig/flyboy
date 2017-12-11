@@ -1,0 +1,80 @@
+
+@font-face{
+   font-family: 'Segoe UI';
+   src : url('../fonts/segoeui.ttf');
+}
+
+
+body{
+	font-family: 'Segoe UI';
+}
+.divider{
+	background-color:#ccc;
+	height:2px;
+	width:150px;
+}
+
+#ratingContainer {
+	padding:5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#albumArt{
+	/*background-color:green;*/
+	height:250px;
+	width:250px;
+	border-radius:5px;
+	border: 1px solid #ccc;
+}
+
+.albumImage{
+	height: 250px;
+	width: 250px;
+	max-width: 250px;
+	max-height: 250px;
+}
+
+
+#musicInfoContainer {
+	height:100%; 
+	margin-top:50px;
+	padding:10px;
+}
+
+.checked{
+	color:#f2c053;
+}
+
+
+.socialContainers {
+	padding: 10px;
+}
+#playerContainer {
+	/*background-color: red;*/
+	margin-top:10px;
+}
+
+#instagramContainer {
+	height:250px;
+	/*background-color:yellow;*/
+	padding:5px;
+	margin-bottom: 3px;
+}
+
+#facebookContainer{
+	height:200px;
+	/*background-color: green;*/
+}
+
+.socialHeaders{
+	font-weight: bold;
+	letter-spacing: 2px;
+	color:#000 !important;
+}
+
+.social-divider{
+	height:2px;
+	width:35px;
+	background-color:#f2c053;
+}

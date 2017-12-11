@@ -5,29 +5,13 @@
     @endsection
 
     @section('pagelink')
-        <link href="css/event.css" rel="stylesheet" />
+        <link href="{{ URL::to('css/event.css') }}" rel="stylesheet" />
     @endsection
 
 
 @section('pageContent')
 
-  <nav class="main-nav-outer" id="test">
-    <!--main-nav-start-->
-    <div class="container">
-      <ul class="main-nav">
-        <li><a href="">Bio</a></li>
-        <li><a href="{{ route('user.music') }}">Music</a></li>
-        <li><a href="{{ route('user.photos') }}">Photos</a></li>
-        <li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
-        <li><a href="{{ route('user.videos') }}">Videos</a></li>
-        <li><a href="{{ route('user.news') }}">News</a></li>
-        <li><a href="{{ route('user.events') }}">Events</a></li>
-        <li><a href="{{ route('user.contact') }}">Contact</a></li>
-      </ul>
-      <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
-    </div>
-  </nav>
-  <!--main-nav-end-->
+
 
     <header id="event-header">
       <div class="container-fluid">
@@ -60,10 +44,33 @@
       </div>
     </section>
 
+
+     <nav class="main-nav-outer" id="test">
+    <!--main-nav-start-->
+    <div class="container">
+      <ul class="main-nav">
+        <li><a href="{{ route('user.bio') }}">Bio</a></li>
+        <li><a href="{{ route('user.music') }}">Music</a></li>
+        <li><a href="{{ route('user.photos') }}">Photos</a></li>
+        <li><a href="{{ route('user.videos') }}">Videos</a></li>
+        <li class="small-logo"><a href="{{ route('user.index') }}"><img src="{{ URL::to('img/flyboy70.png') }}" alt="logo"></a></li>
+        <li><a href="{{ route('user.news') }}">News</a></li>
+        <li><a href="{{ route('user.events') }}">Events</a></li>
+        <li><a href="{{ route('user.contact') }}">Contact</a></li>
+        <li><a href=""></a></li>
+      </ul>
+      <a class="res-nav_click" href="#"><i class="fa-bars" style="color:#f2c053;"></i></a>
+    </div>
+  </nav>
+  <!--main-nav-end-->
+
+
     <section class="upcoming-events">
       <div class="container">
-        <div class="row">
           <h2>UPCOMING EVENTS</h2>
+        <div class="row">
+          <center><div id='dividr' style="background-color:#000;width:50px;height:2px;margin-top: -15px;"></div></center>
+
         </div>
         <div class="event">
           <div class="row">
