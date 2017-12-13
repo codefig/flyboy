@@ -21,6 +21,7 @@ Route::get('/music', 'UserController@music')->name('user.music');
 Route::get('/photos', 'UserController@photos')->name('user.photos');
 Route::get('/videos', 'UserController@videos')->name('user.videos');
 Route::get('/news', 'UserController@news')->name('user.news');
+Route::get('/news/view', 'UserController@fullnews')->name('user.news.fullnews');
 Route::get('/events', 'UserController@events')->name('user.events');
 Route::get('/contact', 'UserController@contact')->name('user.contact');
 Route::get('/playmusic', 'UserController@playmusic')->name('user.playmusic');

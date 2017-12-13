@@ -22,9 +22,31 @@
         </div>
       </header>
 
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <nav class="main-nav-outer" id="test">
+    <!--main-nav-start-->
+    <div class="container">
+      <ul class="main-nav">
+        <li><a href="{{ route('user.bio') }}">Bio</a></li>
+        <li><a href="{{ route('user.music') }}">Music</a></li>
+        <li><a href="{{ route('user.photos') }}">Photos</a></li>
+        <li><a href="{{ route('user.videos') }}">Videos</a></li>
+        <li class="small-logo"><a href="{{ route('user.index') }}"><img src="{{ URL::to('img/flyboy70.png') }}" alt="logo" style="display: inline;"></a></li>
+        <li><a href="{{ route('user.news') }}">News</a></li>
+        <li><a href="{{ route('user.events') }}">Events</a></li>
+        <li><a href="{{ route('user.contact') }}">Contact</a></li>
+        <li><a href="#"></a></li>
+      </ul>
+      <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
+    </div>
+  </nav>
+  <!--main-nav-end-->
+
     <section>
       <div class="container photo-container">
+         <div style="margin-top:50px;">
+            <h2> Gallery </h2>
+            <center><div style="background-color:#000;height:2px;width:25px;margin-top: -15px;margin-bottom: 20px;"></div></center>
+         </div>
         <div class="row">
         <!-- <div class="col-md-8  photo-item">
           <div class="box">

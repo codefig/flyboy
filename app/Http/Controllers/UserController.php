@@ -55,6 +55,10 @@ class UserController extends Controller {
 		return view('news');
 	}
 
+	public function fullnews() {
+		return view('fullnews');
+	}
+
 	public function events() {
 		// return "the events page";
 		return view('events');

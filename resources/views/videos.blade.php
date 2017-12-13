@@ -56,13 +56,15 @@
         <div class="grid-item col-md-4">
           <div class="video">
             <a href="#">
-              <img class="img-responsive" src="http://img.youtube.com/vi/qtQgbdmIO30/0.jpg" alt=""></a>
+              <img class="img-responsive" src="https://img.youtube.com/vi/hyWK_dLxPUc/0.jpg" alt=""></a>
+
+              {{-- https://www.youtube.com/watch?v=hyWK_dLxPUc --}}
             <div class="video-details">
               <h3>Song Title</h3>
               <p>ALBUM CATEGORY</p>
             </div>
             <div class="row play-video">
-              <a href="https://www.youtube.com/embed/qtQgbdmIO30?autoplay=true" class="btn btn-primary videolightbox"><i class="fa fa-play-circle-o"></i>Watch Video</a>
+              <a href="https://www.youtube.com/embed/hyWK_dLxPUc?autoplay=true" class="btn btn-primary videolightbox"><i class="fa fa-play-circle-o"></i>Watch Video</a>
             </div>
           </div>
         </div>
