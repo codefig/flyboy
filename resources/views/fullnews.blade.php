@@ -37,7 +37,7 @@
       <div class="full-story">
         <div class="col-lg-12 col-lg-8">
           <div class="row">
-            <a href=""><img class="img-responsive" src="img/sliders/slider-3.jpg" alt=""></a>
+            <a href=""><img class="img-responsive" src="{{ URL::to('img/sliders/slider-3.jpg') }}" alt="News Image"></a>
           </div>
           <div class="row">
             <h2 class='black-headline'>News Headline</h2>
