@@ -16,7 +16,8 @@ class UserController extends Controller {
 		/**
 		 *   The index route link
 		 */
-		return view('dashboard');
+		// return view('dashboard');
+		return view('index');
 	}
 
 	public function bio() {
