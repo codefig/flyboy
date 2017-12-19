@@ -111,13 +111,13 @@
     <!--FEATURED GALLERY IMAGES-->
     <section id="gallery-images">
       <div id="grey">
-        <div class="container-fluid">
+        <div class="container">
         <div class="row">
           <div class="section-title">Featured <span class="title-other-words">Gallery Images</span></div>
           <center><div class="divider-grey"></div></center>
         </div>
       	<div class="row no-gutters">
-          <div class="col-md-4">
+          <div class="col-sm-12 col-md-4">
             <div class="image">
               <img class="img-responsive" src="img/image-1.jpg" />
             </div>
@@ -211,11 +211,14 @@
                 <div class="col-xs-3"><i class="fa fa-apple"></i></div>
               </div>
           </div>
+          <a href="#"><button class="btn btn-primary">More music</button></a>
         </div>
       </div>
     </section>
+
+
     <!--MUSIC-->
-    <section id="music">
+{{--     <section id="music">
       <div id="white">
         <div class="container">
         <div class="row">
@@ -232,7 +235,7 @@
         </div>
       </div>
       </div>
-    </section>
+    </section> --}}
 
     <!--VIDEO-->
     <section id="video">
