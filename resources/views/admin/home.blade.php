@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="{{ route('admin.home') }}">SB Admin v2.0</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -282,23 +282,80 @@
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Events<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
+                                    <a href="flot.html"> Add Event</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Morris.js Charts</a>
+                                    <a href="morris.html"> View Events</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html"> Edit Events</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="tables.html"><i class="fa  fa-headphones"></i> Music<span class="fa arrow"></span></a>
+                             <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="flot.html"> Add New Song</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html"> View and Edit Songs</a>
+                                </li>
+                            </ul>
                         </li>
+
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="forms.html"><i class="fa fa-file-image-o fa-fw"></i> Gallery <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="flot.html"> Add Event</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html"> View Events</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html"> Edit Events</a>
+                                </li>
+                            </ul>
+
                         </li>
+
+                          <li>
+                            <a href="forms.html"><i class="fa fa-file-video-o fa-fw"></i> Video <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="flot.html"> Add Video</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html"> Edit Video</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html">View All videos</a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+                          <li>
+                            <a href="forms.html"><i class="fa fa-newspaper-o fa-fw"></i> News <span class="fa arrow"></span> </a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="flot.html"> Add News</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html"> View and Edit News </a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+
+
+
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">

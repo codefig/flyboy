@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller {
@@ -15,9 +16,9 @@ class AdminController extends Controller {
 	}
 
 	public function logout() {
-		return "this is the logout function";
-		// Auth::logout();
-		// // return redirect()->route('admin.login');
+		// return "this is the logout function";
+		Auth::logout();
+		return redirect()->route('admin.login');
 
 	}
 }
