@@ -72,13 +72,19 @@
                                     </div>
                                 </fieldset>
 
-                                <div class="alert alert-danger">
                                     @if(count($errors) > 0)
-                                        @foreach($errors->all() as $error)
-                                            <li>{{  $error }}</li>
-                                        @endforeach
+                                        <div class="alert alert-danger">
+                                            @foreach($errors->all() as $error)
+                                                <li>{{  $error }}</li>
+                                            @endforeach
+                                        </div>
                                     @endif
-                                </div>
+
+                                    @if (Session::has('error_message'))
+                                        <div class='alert alert-danger'>
+                                            <p>{!!Session::get('error_message') !!}</p>
+                                        </div>
+                                    @endif
                         </div>
                     </form>
 

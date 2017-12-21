@@ -11,6 +11,13 @@ class AdminController extends Controller {
 	}
 
 	public function showHome(Request $request) {
-		return "this is the home page";
+		return view('admin.home');
+	}
+
+	public function logout() {
+		return "this is the logout function";
+		// Auth::logout();
+		// // return redirect()->route('admin.login');
+
 	}
 }

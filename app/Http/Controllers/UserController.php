@@ -101,7 +101,7 @@ class UserController extends Controller {
 		if (Auth::attempt(['email' => $email, 'password' => $password, 'security_key' => $security_key])) {
 			return "correct Login";
 		} else {
-			return redirect()->back();
+			return redirect()->back()->with('error_message', 'Invalid login credentials :) ');
 		}
 	}
 }

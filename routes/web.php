@@ -34,3 +34,4 @@ Route::get('/showphotos', 'UserController@showphotos')->name('user.showphotos');
 Route::get('/admin', 'UserController@showAdminLogin')->name('admin.login');
 Route::post('/admin/login', 'UserController@checkAdminLogin')->name('admin.login.post');
 Route::get('/admin/home', 'AdminController@showHome')->name('admin.home');
+Route::get('/admin/logout', 'AdminController@logout')->name('admin.logout');
