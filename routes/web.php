@@ -26,3 +26,9 @@ Route::get('/events', 'UserController@events')->name('user.events');
 Route::get('/contact', 'UserController@contact')->name('user.contact');
 Route::get('/playmusic', 'UserController@playmusic')->name('user.playmusic');
 Route::get('/showphotos', 'UserController@showphotos')->name('user.showphotos');
+
+/**
+ *  Route for the administrative links
+ */
+
+Route::get('/admin', 'UserController@showAdmin')->name('admin.index');

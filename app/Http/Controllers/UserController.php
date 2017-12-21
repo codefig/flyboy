@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class UserController extends Controller {
 
 	/**
@@ -72,5 +74,10 @@ class UserController extends Controller {
 	public function playmusic() {
 		// return "this is the play music function ";
 		return view('playmusic');
+	}
+
+	public function showAdmin(Request $request) {
+		// return "this is the admin index page";
+		return view('admin.login');
 	}
 }
