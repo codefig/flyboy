@@ -18,17 +18,14 @@
       <div class="row">
         <div class="col-md-1">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-lg-4">
           <p>NEW RELEASE!!!</p>
           <h1>LATEST SONG TITLE</h1>
           <a href="#" class="btn btn-primary btn-lg"><i class="fa fa-play-circle-o"></i>PLAY NOW</a>
-
-          {{-- <p>Available on iTunes, Cloudshot, <em>OptionTwo</em></p> --}}
           <p>
               <a href="#" title="Soundcloud" class="music-link"><i class="fa fa-2x fa-soundcloud"></i></a> &nbsp;
-              <a href="#" title="Spotify" class="music-link"><i class="fa fa-2x fa-spotify"></i></a>&nbsp;
-              <a href="#" title="Youtube" class="music-link"><i class="fa fa-2x fa-youtube"></i></a>&nbsp;
-              <a href="#" title="iTunes" class="music-link"><i class="fa fa-2x fa-apple"></i>iTunes</a>&nbsp;
+              <a href="#" title="Spotify" class="music-link"><i class="fa fa-2x fa-spotify" style="width:50px; height: 50px;"></i></a>&nbsp;
+              <a href="#" title="iTunes" class="music-link"><img src="{{ URL::to('img/itunes.svg') }}"  style="width:50px;height:50px;;margin-top:-20px;; border-radius: 5px 5px " class="image-responsive svg"/></a>&nbsp;
           </p>
         </div>
         <div class="col-md-1">
@@ -59,6 +56,7 @@
       <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
     </div>
   </nav>
+
   <!--main-nav-end-->
 
   <section id="music-search">

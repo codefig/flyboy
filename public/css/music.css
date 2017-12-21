@@ -15,7 +15,7 @@
   background-size: cover;
   -o-background-size: cover;
   text-align: center;
-  height: 400px;
+  height: 33vw;
 }
 
 #music-player h1{
@@ -58,6 +58,9 @@
   color: #ffffff;
 }
 
+#music-player img.svg {
+  fill: red;
+}
 
 
 /* ============================== SERACH BAR ============================== */

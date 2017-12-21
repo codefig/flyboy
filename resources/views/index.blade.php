@@ -117,47 +117,47 @@
           <center><div class="divider-grey"></div></center>
         </div>
       	<div class="row no-gutters">
-          <div class="col-sm-12 col-md-4">
+          <div class="col-sm-4 col-md-4">
             <div class="image">
               <img class="img-responsive" src="img/image-1.jpg" />
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4">
             <div class="image">
               <img class="img-responsive" src="img/image-2.jpg" />
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4">
             <div class="image">
               <img class="img-responsive" src="img/image-3.jpg" />
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4">
             <div class="image">
               <img class="img-responsive" src="img/image-4.jpg" />
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4">
             <div class="image">
               <img class="img-responsive" src="img/image-5.jpg" />
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4">
             <div class="image">
               <img class="img-responsive" src="img/image-6.jpg" />
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4">
             <div class="image">
               <img class="img-responsive" src="img/image-7.jpg" />
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4">
             <div class="image">
               <img class="img-responsive" src="img/image-8.jpg" />
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4">
             <div class="image">
               <img class="img-responsive" src="img/image-9.jpg" />
             </div>
@@ -268,7 +268,7 @@
           <center><div class="divider-grey"></div></center>
         </div>
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4">
             <div class="image">
               <img class="img-responsive" src="img/image-1.jpg" />
               <div class="news">
@@ -279,7 +279,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4">
             <div class="image">
               <img class="img-responsive" src="img/image-4.jpg" />
               <div class="news">
@@ -290,7 +290,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-sm-4 col-md-4">
             <div class="image">
               <img class="img-responsive" src="img/image-7.jpg" />
               <div class="news">
@@ -361,11 +361,11 @@
             <p class="enquiry"><i class="fa fa-envelope"></i>bookings@flyboyinc.net</p>
             <p class="enquiry"><i class="fa fa-phone"></i>+234 906 0001 078</p>
             <p class="enquiry"><i class="fa fa-map-marker"></i>Address goes here</p>
-            <p>Follow us on Facebook, Instagram and Twitter.</p>
-            <p class="social-media" style="margin-top:7px;">
+            <p style="margin-top: 15px;">Follow us on Facebook, Instagram and Twitter.</p>
+            <p class="social-media">
               <a href="#"><i class="fa fa-facebook"></i></a>
-              <a><i class="fa fa-instagram"></i></a>
-              <a><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
             </p>
           </div>
         </div>

@@ -110,9 +110,10 @@ html{
 }
 
 #gallery-images {
-  text-align: center;
-  align-content: center;
+  /*text-align: center;*/
+  /*align-content: center;*/
 }
+
 
 #gallery-images img {
   filter: gray; /* IE6-9 */
@@ -128,7 +129,7 @@ html{
 
 }
 
-/*#gallery-images .row.no-gutters {
+#gallery-images .row.no-gutters {
    margin-right: 0;
    margin-left: 0;
 }
@@ -137,7 +138,7 @@ html{
 #gallery-images .row.no-gutters > [class*=" col-"] {
    padding-right: 0;
    padding-left: 0;
-}*/
+}
 
 #gallery-images .btn{
   background-color: #F2C053;
@@ -151,6 +152,12 @@ html{
 @media(max-width: 767px){
     #gallery-images .btn{
       margin-left: 32vw;
+    }
+}
+
+@media(max-width: 290px){
+  #gallery-images .btn{
+      margin-left: 15vw;
     }
 }
 
@@ -318,13 +325,26 @@ html{
   text-align: center;
   color: #fff;
   font-family: 'Segoe UI';
-  margin: 7vw 2vw;
+  margin:7vw 2vw;
 }
 
-@media(max-width: 767px){
+@media(max-width: 990px){
     .news{
-      margin: 25vw 2vw;
+      margin: 3vw 2vw;
     }
+}
+
+
+@media(max-width: 769px){
+  .news{
+    margin:  30vw 10vw;
+  }
+}
+
+@media(max-width: 290px){
+  .news{
+    margin:  20vw 10vw;
+  }
 }
 
 .news .news-headline{
@@ -339,6 +359,10 @@ html{
 
 .news .news-date i{
   margin-right: 10px;
+}
+
+.news-text{
+  margin-bottom: 10px;
 }
 
 .news .btn{
@@ -399,6 +423,11 @@ html{
     margin-top: 20px;
 }
 
+#contact .social-media{
+    color: #95989a;
+    margin-top: 20px;
+}
+
 #contact i{
   margin-right: 10px;
 }
@@ -407,6 +436,7 @@ html{
   color: #95989a;
   font-size: 30px;
   margin-right: 15px;
+  margin-top: 15px;
 }
 
 #contact .social-media a:hover{

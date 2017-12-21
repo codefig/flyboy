@@ -175,15 +175,17 @@
                        <h3 class="socialHeaders">Facebook</h3>
                        <div class="social-divider"></div>
                        <!--facebook timeline -->
-                         <div class="fb-like" data-href="https://web.facebook.com/Olamide-454199608093514/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+                        <div class="fb-like" data-href="https://web.facebook.com/iamkissdaniel/?ref=br_rs" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
                        <!--facebook timeline ends -->
                     </div>
 
                     <div class="socialContainers" id="twitterContainer">
                       <h3 class="socialHeaders"> Twitter</h3>
                        <div class='social-divider'></div>
+
                        <!-- twitter widget -->
-                       <a class="twitter-timeline" data-height="500" data-link-color="#f2c053" href="https://twitter.com/codefig?ref_src=twsrc%5Etfw">Tweets by codefig</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                       <a class="twitter-timeline" href="https://twitter.com/iamkissdaniel?ref_src=twsrc%5Etfw">Tweets by iamkissdaniel</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
                        <!--end of twitter widget -->
                     </div>
                   </div>
