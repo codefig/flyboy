@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 
 class UserController extends Controller {
@@ -76,8 +77,31 @@ class UserController extends Controller {
 		return view('playmusic');
 	}
 
-	public function showAdmin(Request $request) {
+	public function showAdminLogin(Request $request) {
 		// return "this is the admin index page";
 		return view('admin.login');
+	}
+
+	public function checkAdminLogin(Request $request) {
+		// return $request->all();
+
+		//get the datas
+		// Auth::attempt($request->all)
+		$email = $request->email;
+		$password = $request->password;
+		$security_key = $request->security_key;
+
+		//do some validation
+		$this->validate($request, [
+			'email' => 'required|email',
+			'password' => 'required',
+			'security_key' => 'required',
+		]);
+
+		if (Auth::attempt(['email' => $email, 'password' => $password, 'security_key' => $security_key])) {
+			return "correct Login";
+		} else {
+			return redirect()->back();
+		}
 	}
 }

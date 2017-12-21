@@ -31,4 +31,6 @@ Route::get('/showphotos', 'UserController@showphotos')->name('user.showphotos');
  *  Route for the administrative links
  */
 
-Route::get('/admin', 'UserController@showAdmin')->name('admin.index');
+Route::get('/admin', 'UserController@showAdminLogin')->name('admin.login');
+Route::post('/admin/login', 'UserController@checkAdminLogin')->name('admin.login.post');
+Route::get('/admin/home', 'AdminController@showHome')->name('admin.home');
