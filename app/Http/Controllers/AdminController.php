@@ -144,6 +144,22 @@ class AdminController extends Controller {
         return redirect()->back();
     }
 
+    //videos functions
+
+    public function showAddVideos(Request $request){
+//        return "this is the show add videos function";
+        return view('admin.addvideos');
+    }
+
+
+    public function addVideos(Request $request){
+        return $request->all();
+    }
+
+    public function showAllVideos(Request $request){
+        return "this is the show all videos function";
+    }
+
 
 
 

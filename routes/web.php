@@ -46,5 +46,12 @@ Route::prefix('/admin')->group(function () {
     Route::post('/events/update', 'AdminController@updateEvents')->name('admin.events.update');
     Route::get('/events/{id}/delete', 'AdminController@deleteEvents')->name('admin.events.delete');
     Route::get('/events/showall', 'AdminController@showAllEvents')->name('admin.events.showall');
+
+    //videos route
+    Route::get('/videos/add', 'AdminController@showAddVideos')->name('admin.videos.add');
+    Route::post('/videos/submit', 'AdminController@addVideos')->name('admin.videos.submit');
+    Route::get('/videos/{id}/edit', 'AdminController@editVideos')->name('admin.videos.edit');
+    Route::get('/videos/{id}/delete', 'AdminController@deleteVideos')->name('admin.videos.delete');
+    Route::get('/videos/showall', 'AdminController@showAllVideos')->name('admin.videos.showall');
 });
 

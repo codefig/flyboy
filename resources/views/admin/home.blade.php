@@ -290,9 +290,7 @@
                                 <li>
                                     <a href="{{ route('admin.events.showall') }}"> View Events</a>
                                 </li>
-                                <li>
-                                    <a href="morris.html"> Edit Events</a>
-                                </li>
+
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -328,13 +326,11 @@
                             <a href="forms.html"><i class="fa fa-file-video-o fa-fw"></i> Video <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html"> Add Video</a>
+                                    <a href="{{ route('admin.videos.add') }}"> Add Video</a>
                                 </li>
+
                                 <li>
-                                    <a href="morris.html"> Edit Video</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">View All videos</a>
+                                    <a href="{{ route('admin.videos.showall') }}">View All videos</a>
                                 </li>
                             </ul>
 
@@ -434,7 +430,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Blank</h1>
+                        <h1 class="page-header">Welcome Admin </h1>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
