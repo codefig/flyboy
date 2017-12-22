@@ -104,7 +104,7 @@ class AdminController extends Controller {
         ]);
 
         if ($request->image) {
-//            return $request->all();
+
             $updated_image = $request->file('image');
             $new_image = time() . "-event-" . $updated_image->getClientOriginalName();
             $updated_image->move('events', $new_image);
@@ -123,7 +123,7 @@ class AdminController extends Controller {
         }
 
     else{
-//            return $request->all();
+
         $event->update([
             'title' => $request->title,
             'about' => $request->about,
@@ -135,6 +135,13 @@ class AdminController extends Controller {
         Session::flash('success_message', 'Event Updated Successfully !');
     }
       return redirect()->back();
+    }
+
+    public function deleteEvents(Request $request, $id){
+        $event = Event::find($id);
+        $event->delete();
+        Session::flash('success_message', "Event Deleted Successfully !");
+        return redirect()->back();
     }
 
 

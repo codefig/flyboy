@@ -477,8 +477,8 @@
                                             <td>http://something something something</td>
                                             <td colspan="2"><a href="{{ URL::to($event->image) }}"><img style="height:200px;width:300px;" src="{{ URL::to($event->image) }}" class="img-responsive img-rounded"></a></td>
                                             <td>
-                                                <a href="{{ route('admin.events.edit', $event->id) }}"><span class="fa fa-edit"></span></a>
-                                                <a href="{{ route('admin.events.delete', $event->id) }}"><span class="fa fa-trash-o"></span></a>
+                                                <a href="{{ route('admin.events.edit', $event->id) }}" class="edit-link"><span class="fa fa-edit"></span></a>
+                                                <a href="{{ route('admin.events.delete', $event->id) }}" class="delete-link"><span class="fa fa-trash-o"></span></a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -527,6 +527,28 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="{{ URL::to('js/sb-admin-2.js') }}"></script>
+
+<!-- Custom alert javascipt -->
+<script src="{{ URL::to('js/bootbox.min.js') }}"></script>
+
+<script>
+    $('document').ready(function(e){
+//        alert("page is ready");
+        $('.delete-link').click(function(event){
+            event.preventDefault();
+            var route = this.href;
+            bootbox.confirm("Are you sure you want to delete this event ?", function(result){
+                if(result == false)
+                    event.preventDefault();
+                else{
+                    window.location = route;
+
+                }
+            })
+        })
+    });
+
+</script>
 
 </body>
 
