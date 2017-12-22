@@ -24,22 +24,18 @@ body{
   height: 620px;
 }
 
+#test{
+  position: relative;
+}
 #photolery-header h1{
   color: #F2C053;
   font-family: 'Segoe UI';
-  margin-top: 20vw;
+  margin-top: 40vh;
   margin-bottom: 5vw;
   letter-spacing: 5px;
   border: 2px solid #F2C053;
   font-size: 48px;
   padding: 15px;
-}
-
-@media(max-width: 767px){
-    #photolery-header h1{
-      margin-top: 50vw;
-      margin-bottom: 10vw;
-    }
 }
 
 #photolery-header .btn{
@@ -56,10 +52,11 @@ body{
   font-size: 35px;
 }
 
+
 /* ================================ PHOTO SECTIONS =========================== */
 .photo-album{
   background-color: #ffffff;
-  margin-top: 2vw;
+  margin-top: 8vh;
 }
 
 .photo-album h3{

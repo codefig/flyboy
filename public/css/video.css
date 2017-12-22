@@ -18,7 +18,7 @@ body{
   background-size: cover;
   -o-background-size: cover;
   text-align: center;
-  height: 450px;
+  height: 550px;
 
 }
 
@@ -30,9 +30,13 @@ body{
 
 /* ============================== LIST OF VIDEOS ====================== */
 #videos h2{
-  color: #000;
-  text-align:center;
+  background-color: #ffffff;
+  margin-top: 8vh;
+  color: #000!importantr;
+  text-align: center;
+  font-weight: bold;
 }
+
 
 #songs .row{
   margin-bottom: 1.5vw;

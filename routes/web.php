@@ -31,7 +31,17 @@ Route::get('/showphotos', 'UserController@showphotos')->name('user.showphotos');
  *  Route for the administrative links
  */
 
-Route::get('/admin', 'UserController@showAdminLogin')->name('admin.login');
-Route::post('/admin/login', 'UserController@checkAdminLogin')->name('admin.login.post');
-Route::get('/admin/home', 'AdminController@showHome')->name('admin.home');
-Route::get('/admin/logout', 'AdminController@logout')->name('admin.logout');
+
+//
+Route::get('admin', 'UserController@showAdminLogin')->name('admin.login');
+Route::prefix('/admin')->group(function () {
+    Route::post('/login', 'UserController@checkAdminLogin')->name('admin.login.post');
+    Route::get('/home', 'AdminController@showHome')->name('admin.home');
+    Route::get('/logout', 'AdminController@logout')->name('admin.logout');
+
+    //events route
+    Route::get('/events/add', 'AdminController@addEvents')->name('admin.events.add');
+    Route::get('/events/{id}/edit', 'AdminController@editEvents')->name('admin.events.edit');
+    Route::get('/events/showall', 'AdminController@showAllEvents')->name('admin.events.showall');
+});
+

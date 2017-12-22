@@ -15,6 +15,10 @@ class AdminController extends Controller {
 		return view('admin.home');
 	}
 
+	public function addEvents(Request $request){
+	    return view('admin.addevents');
+    }
+
 	public function logout() {
 		// return "this is the logout function";
 		Auth::logout();

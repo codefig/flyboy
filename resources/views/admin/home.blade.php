@@ -285,10 +285,10 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Events<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html"> Add Event</a>
+                                    <a href="{{route('admin.events.add')}}"> Add Event</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html"> View Events</a>
+                                    <a href="{{ route('admin.events.showall') }}"> View Events</a>
                                 </li>
                                 <li>
                                     <a href="morris.html"> Edit Events</a>

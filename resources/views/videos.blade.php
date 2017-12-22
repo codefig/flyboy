@@ -49,7 +49,10 @@
   <section id="videos">
     <div class="container">
       <div class="row">
+        <div>
           <h2>VIDEOS</h2>
+          <center><div class="album-divider" style="width:50px;height:4px;background-color: #f2c053;margin-bottom: 3vh;"></div></center>
+        </div>
       </div>
       <div class="row">
 
