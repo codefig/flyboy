@@ -434,48 +434,29 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Add New Event</h1>
+                    <h1 class="page-header">All Events</h1>
 
-                    <form method="post" action="{{ route('admin.events.submit') }}" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label> Title </label>
-                            <input type="text" class="form-control" id="title" name="title">
-                        </div>
-
-                        <div class="form-group">
-                            <label>About</label>
-                            <textarea class="form-control" id="about" name="about"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Location</label>
-                            <input type="text" class="form-control" id="location" name="location">
-                        </div>
-
-                        <div class="form-group">
-                            <label> Date </label>
-                            <input type="date" class="form-control" id="date" name="date">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Cover Image</label>
-                            <input type="file" name="image" class="form-control" id="image" accept="image/*">
-                        </div>
-
-                        <div class="form-group" >
-                            <label>Time</label>
-                            <input type="time" class="form-control" id="time" name="time">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Ticket Link </label>
-                            <input type="text" class="form-control" id="ticket-link" name="ticket-link">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="submit" value="Add Event" class="btn btn-primary" name="addeventBtn" id="addeventBtn">
-                            <input type="hidden" name="_token" value="{{ Session::token() }}">
-                        </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>SN</th>
+                                <th>Title</th>
+                                <th>About</th>
+                                <th>Location</th>
+                                <th>Date / Time </th>
+                                <th>Link</th>
+                                <th>Image</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                         @if(count($errors) > 0)
                             <div class="alert alert-danger">

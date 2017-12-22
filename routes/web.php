@@ -40,7 +40,8 @@ Route::prefix('/admin')->group(function () {
     Route::get('/logout', 'AdminController@logout')->name('admin.logout');
 
     //events route
-    Route::get('/events/add', 'AdminController@addEvents')->name('admin.events.add');
+    Route::get('/events/add', 'AdminController@showAddEvents')->name('admin.events.add');
+    Route::post('/events/submit', 'AdminController@addEvents')->name('admin.events.submit');
     Route::get('/events/{id}/edit', 'AdminController@editEvents')->name('admin.events.edit');
     Route::get('/events/showall', 'AdminController@showAllEvents')->name('admin.events.showall');
 });
