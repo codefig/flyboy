@@ -13,6 +13,14 @@ class AdminController extends Controller {
 		$this->middleware('auth');
 	}
 
+
+    public function logout() {
+        // return "this is the logout function";
+        Auth::logout();
+        return redirect()->route('admin.login');
+
+    }
+
 	public function limit_text($text, $limit){
         if (str_word_count($text, 0) > $limit) {
             $words = str_word_count($text, 2);
@@ -63,17 +71,77 @@ class AdminController extends Controller {
     }
 
     public function showAllEvents(Request $request){
-
         $events = Event::paginate(10);
         return view('admin.showevents', compact('events'));
     }
 
+    public function showEditEvents(Request $request){
+        return "this shows the event edit page";
+    }
+
+    public function editEvents(Request $request, $id){
+        $event = Event::where('id', $id)->get()->first();
+
+        return view('admin.editevents', compact('event'));
+    }
+
+    public function updateEvents(Request $request)
+    {
+        /*
+         *  UPDATE EVENT RECORD
+         */
+        $event_id = $request->event_id;
+        $event = Event::where('id', $event_id)->get()->first();
+
+        $this->validate($request, [
+            'title' => 'required',
+            'about' => 'required',
+            'location' => 'required',
+            'date' => 'required',
+            'time' => 'nullable',
+            'image' => 'nullable|mimes:jpeg,png',
+            'ticket_link' => 'nullable',
+        ]);
+
+        if ($request->image) {
+//            return $request->all();
+            $updated_image = $request->file('image');
+            $new_image = time() . "-event-" . $updated_image->getClientOriginalName();
+            $updated_image->move('events', $new_image);
+            $new_image = "events/".$new_image;
+
+            $event->update([
+                'title' => $request->title,
+                'about' => $request->about,
+                'location' => $request->location,
+                'date' => $request->date,
+                'time' => $request->time,
+                'image' => $new_image,
+                'ticket_link' => $request->ticket_link,
+            ]);
+            Session::flash('success_message', 'Event Updated Successfully !');
+        }
+
+    else{
+//            return $request->all();
+        $event->update([
+            'title' => $request->title,
+            'about' => $request->about,
+            'location' => $request->location,
+            'date' => $request->date,
+            'time' => $request->time,
+            'ticket_link' => $request->ticket_link,
+        ]);
+        Session::flash('success_message', 'Event Updated Successfully !');
+    }
+      return redirect()->back();
+    }
 
 
-	public function logout() {
-		// return "this is the logout function";
-		Auth::logout();
-		return redirect()->route('admin.login');
 
-	}
+
+
+
+
+
 }

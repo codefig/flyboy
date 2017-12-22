@@ -27,16 +27,6 @@
     <link href="{{URL::to("css/responsive.css")}}"  rel="stylesheet" type="text/css">
     <link href="{{URL::to("css/animate.css")}}"  rel="stylesheet" type="text/css">
 
-    <style type="text/css">
-        .del-btn {
-            margin-top:5px !important;
-        }
-
-        .edit-btn {
-            margin-bottom:10px !important;
-        }
-    </style>
-
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -444,49 +434,55 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">All Events</h1>
+                    <h1 class="page-header">Edit Event</h1>
 
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                            <tr>
-                                <th>SN</th>
-                                <th>Title</th>
-                                <th>About</th>
-                                <th>Location</th>
-                                <th>Date / Time </th>
-                                <th>Link</th>
-                                <th>Image</th>
-                                <th></th>
-                                <th>Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                    @if(count($event) > 0)
+                        <div class="form-group" style="height:300px;width:300px;border-radius:5px;border:1px solid #ccc;">
+                            <img class="img-responsive" src="{{ URL::to($event->image) }}">
+                        </div>
+                        <form method="post" action="{{ route('admin.events.update') }}" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label> Title </label>
+                                <input type="text" class="form-control" id="title" name="title" value="{{ $event->title }}">
+                            </div>
 
-                                @if(count($events) > 0 )
-                                    {{ $serial_number = 1 }}
-                                    @foreach($events as $event)
-                                        <tr>
-                                            <td>{{ $serial_number  }}</td>
-                                            <td>{{ $event->title }}</td>
-                                            <td>{{ $event->about }}</td>
-                                            <td>{{ $event->location }}</td>
-                                            <td><div>
-                                                    {{ $event->date.":".$event->time }}
-                                                </div></td>
-                                            <td>http://something something something</td>
-                                            <td colspan="2"><a href="{{ URL::to($event->image) }}"><img style="height:200px;width:300px;" src="{{ URL::to($event->image) }}" class="img-responsive img-rounded"></a></td>
-                                            <td>
-                                                <a href="{{ route('admin.events.edit', $event->id) }}"><span class="fa fa-edit"></span></a>
-                                                <a href="{{ route('admin.events.delete', $event->id) }}"><span class="fa fa-trash-o"></span></a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                @endif
+                            <div class="form-group">
+                                <label>About</label>
+                                <textarea class="form-control" id="about" name="about">{{ $event->about }}</textarea>
+                            </div>
 
-                            </tbody>
-                        </table>
-                    </div>
+                            <div class="form-group">
+                                <label>Location</label>
+                                <input type="text" class="form-control" id="location" name="location" value="{{$event->location}}">
+                            </div>
+
+                            <div class="form-group">
+                                <label> Date </label>
+                                <input type="date" class="form-control" id="date" name="date" value="{{$event->date}}">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Cover Image</label>
+                                <input type="file" name="image" class="form-control" id="image" accept="image/*">
+                            </div>
+
+                            <div class="form-group" >
+                                <label>Time</label>
+                                <input type="time" class="form-control" id="time" name="time" value="{{ $event->time }}">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Ticket Link </label>
+                                <input type="text" class="form-control" id="ticket_link" name="ticket_link" value="{{ $event->ticket_link }}">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="hidden" name="event_id" id="event_id" value="{{ $event->id }}">
+                                <input type="submit" value="Update Event" class="btn btn-primary" name="addeventBtn" id="addeventBtn">
+                                <input type="hidden" name="_token" value="{{ Session::token() }}">
+                            </div>
+                            @endif
+
 
                         @if(count($errors) > 0)
                             <div class="alert alert-danger">
@@ -502,8 +498,8 @@
                                 <strong>{{ Session::get('success_message') }}</strong>
                             </div>
                         @endif
+                    </form>
 
-                    {{ $events->links() }}
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

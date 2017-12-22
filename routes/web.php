@@ -43,6 +43,8 @@ Route::prefix('/admin')->group(function () {
     Route::get('/events/add', 'AdminController@showAddEvents')->name('admin.events.add');
     Route::post('/events/submit', 'AdminController@addEvents')->name('admin.events.submit');
     Route::get('/events/{id}/edit', 'AdminController@editEvents')->name('admin.events.edit');
+    Route::post('/events/update', 'AdminController@updateEvents')->name('admin.events.update');
+    Route::get('/events/{id}/delete', 'AdminController@deleteEvents')->name('admin.events.delete');
     Route::get('/events/showall', 'AdminController@showAllEvents')->name('admin.events.showall');
 });
 

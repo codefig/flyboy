@@ -434,7 +434,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Add New Event</h1>
+                    <h1 class="page-header">Edit Event </h1>
 
                     <form method="post" action="{{ route('admin.events.submit') }}" enctype="multipart/form-data">
                         <div class="form-group">
@@ -469,7 +469,7 @@
 
                         <div class="form-group">
                             <label>Ticket Link </label>
-                            <input type="text" class="form-control" id="ticket-link" name="ticket-link">
+                            <input type="text" class="form-control" id="ticket_link" name="ticket_link">
                         </div>
 
                         <div class="form-group">
