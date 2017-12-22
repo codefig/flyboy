@@ -13,6 +13,14 @@ class AdminController extends Controller {
 		$this->middleware('auth');
 	}
 
+	public function limit_text($text, $limit){
+        if (str_word_count($text, 0) > $limit) {
+            $words = str_word_count($text, 2);
+            $pos = array_keys($words);
+            $text = substr($text, 0, $pos[$limit]) . '...';
+        }
+        return $text;
+    }
 	public function showHome(Request $request) {
 		return view('admin.home');
 	}
@@ -52,6 +60,12 @@ class AdminController extends Controller {
         $event->save();
         Session::flash('success_message', 'Event Added Successfully !');
         return redirect()->back();
+    }
+
+    public function showAllEvents(Request $request){
+
+        $events = Event::paginate(10);
+        return view('admin.showevents', compact('events'));
     }
 
 

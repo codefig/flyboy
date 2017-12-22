@@ -27,6 +27,16 @@
     <link href="{{URL::to("css/responsive.css")}}"  rel="stylesheet" type="text/css">
     <link href="{{URL::to("css/animate.css")}}"  rel="stylesheet" type="text/css">
 
+    <style type="text/css">
+        .del-btn {
+            margin-top:5px !important;
+        }
+
+        .edit-btn {
+            margin-bottom:10px !important;
+        }
+    </style>
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -279,7 +289,7 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="{{ route('admin.home') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Events<span class="fa arrow"></span></a>
@@ -447,13 +457,33 @@
                                 <th>Date / Time </th>
                                 <th>Link</th>
                                 <th>Image</th>
+                                <th></th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td></td>
-                            </tr>
+
+                                @if(count($events) > 0 )
+                                    {{ $serial_number = 1 }}
+                                    @foreach($events as $event)
+                                        <tr>
+                                            <td>{{ $serial_number  }}</td>
+                                            <td>{{ $event->title }}</td>
+                                            <td>{{ $event->about }}</td>
+                                            <td>{{ $event->location }}</td>
+                                            <td><div>
+                                                    {{ $event->date.":".$event->time }}
+                                                </div></td>
+                                            <td>http://something something something</td>
+                                            <td colspan="2"><a href="{{ URL::to($event->image) }}"><img style="height:200px;width:300px;" src="{{ URL::to($event->image) }}" class="img-responsive img-rounded"></a></td>
+                                            <td>
+                                                <a href=""><span class="fa fa-edit"></span></a>
+                                                <a href=""><span class="fa fa-trash-o"></span></a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @endif
+
                             </tbody>
                         </table>
                     </div>
@@ -472,8 +502,8 @@
                                 <strong>{{ Session::get('success_message') }}</strong>
                             </div>
                         @endif
-                    </form>
 
+                    {{ $events->links() }}
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
