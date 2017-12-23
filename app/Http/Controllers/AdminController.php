@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Event;
 use App\Video;
 use Auth;
@@ -306,11 +307,27 @@ class AdminController extends Controller {
             'category_name' => 'required',
             'image' => 'required',
         ]);
-        
+
+        $uploaded_image = $request->file('image');
+        $category_image = time(). "-category-". $uploaded_image->getClientOriginalName();
+        $uploaded_image->move('albums/categories', $category_image);
+        $category_image = "albums/categories/".$category_image;
+
+        $category = Category::create([
+            'category_name' => $request->category_name,
+            'image' => $category_image,
+            'is_deleted' => 0,
+        ]);
+
+        $category->save();
+        Session::flash('success_message', 'Category Added Successfully');
+        return redirect()->back();
+
     }
 
     public function showAllCategory(Request $request){
-        return "this shows all category";
+       $categories = Category::where('is_deleted', 0)->get();
+       return $categories;
 
     }
 
