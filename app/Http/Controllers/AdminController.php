@@ -327,8 +327,11 @@ class AdminController extends Controller {
 
     public function showAllCategory(Request $request){
        $categories = Category::where('is_deleted', 0)->get();
-       return $categories;
+       return view('admin.showcategory', compact('categories'));
+    }
 
+    public function editCategory(Request $request, $id){
+        
     }
 
 

@@ -66,6 +66,10 @@ Route::prefix('/admin')->group(function () {
     Route::get('/photos/addcategory', 'AdminController@showAddCategory')->name('admin.photocategory.add');
     Route::get('/photos/showcategory', 'AdminController@showAllCategory')->name('admin.photocategory.showall');
     Route::post('/photos/submitcategory', 'AdminController@addCategory')->name('admin.photocategory.submit');
+    Route::get('/photos/category/{id}/edit', 'AdminController@editCategory')->name('admin.photocategory.edit');
+    Route::post('/photos/category/update', 'AdminController@updateCategory')->name('admin.photocategory.update');
+    Route::get('/photos/category/{id}/delete', 'AdminController@deleteCategory')->name('admin.photocategory.delete');
+
 
     Route::get('/photos/add', 'AdminController@showAddPhotos')->name('admin.photos.add');
     Route::post('/photos/submit', 'AdminController@addPhotos')->name('admin.photos.submit');
