@@ -312,13 +312,10 @@
                         <a href="forms.html"><i class="fa fa-file-image-o fa-fw"></i> Gallery <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="flot.html"> Add Event</a>
+                                <a href=""> Add Images</a>
                             </li>
                             <li>
-                                <a href="morris.html"> View Events</a>
-                            </li>
-                            <li>
-                                <a href="morris.html"> Edit Events</a>
+                                <a href=""> Show images</a>
                             </li>
                         </ul>
 
@@ -328,13 +325,11 @@
                         <a href="forms.html"><i class="fa fa-file-video-o fa-fw"></i> Video <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="flot.html"> Add Video</a>
+                                <a href="{{ route('admin.videos.add') }}"> Add Video</a>
                             </li>
+
                             <li>
-                                <a href="morris.html"> Edit Video</a>
-                            </li>
-                            <li>
-                                <a href="morris.html">View All videos</a>
+                                <a href="{{ route('admin.videos.showall') }}">View All videos</a>
                             </li>
                         </ul>
 
@@ -344,10 +339,10 @@
                         <a href="forms.html"><i class="fa fa-newspaper-o fa-fw"></i> News <span class="fa arrow"></span> </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="flot.html"> Add News</a>
+                                <a href="{{ route('admin.news.add') }}"> Add News</a>
                             </li>
                             <li>
-                                <a href="morris.html"> View and Edit News </a>
+                                <a href="{{ route('admin.news.showall') }}"> View and Edit News </a>
                             </li>
                         </ul>
 

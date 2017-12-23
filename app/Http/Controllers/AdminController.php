@@ -269,7 +269,7 @@ class AdminController extends Controller {
                 'author' => $request->author,
                 'image' => $new_image,
             ]);
-            Session::flash('success_message', 'Event Updated Successfully !');
+            Session::flash('success_message', 'News Updated Successfully !');
 
         } else {
 
@@ -278,19 +278,21 @@ class AdminController extends Controller {
                 'body' => $request->body,
                 'author' => $request->author,
             ]);
-            Session::flash('success_message', 'Event Updated Successfully !');
+            Session::flash('success_message', 'News  Updated Successfully !');
         }
         return redirect()->back();
     }
 
     public function deleteNews(Request $request, $id){
-        return "this sithe delete function";
+        $news = News::find($id);
+        $news->delete();
+        Session::flash('success_message', "News Deleted Successfully !");
+        return redirect()->back();
     }
 
     public function showAllNews(Request $request){
          $all_news = News::paginate(5);
          return view('admin.shownews', compact('all_news'));
-//        return "this is the show all news function";
     }
 
 
