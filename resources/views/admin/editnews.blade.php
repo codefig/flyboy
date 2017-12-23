@@ -290,7 +290,9 @@
                             <li>
                                 <a href="{{ route('admin.events.showall') }}"> View Events</a>
                             </li>
-
+                            <li>
+                                <a href="morris.html"> Edit Events</a>
+                            </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
@@ -326,12 +328,14 @@
                         <a href="forms.html"><i class="fa fa-file-video-o fa-fw"></i> Video <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{route('admin.videos.add')}}"> Add Video</a>
+                                <a href="flot.html"> Add Video</a>
                             </li>
                             <li>
-                                <a href="{{route('admin.videos.showall')}}"> View all videos</a>
+                                <a href="morris.html"> Edit Video</a>
                             </li>
-
+                            <li>
+                                <a href="morris.html">View All videos</a>
+                            </li>
                         </ul>
 
                     </li>
@@ -340,10 +344,10 @@
                         <a href="forms.html"><i class="fa fa-newspaper-o fa-fw"></i> News <span class="fa arrow"></span> </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{route('admin.news.add')}}"> Add News</a>
+                                <a href="flot.html"> Add News</a>
                             </li>
                             <li>
-                                <a href="{{route('admin.news.showall')}}"> View and Edit News </a>
+                                <a href="morris.html"> View and Edit News </a>
                             </li>
                         </ul>
 
@@ -430,51 +434,60 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Add News </h1>
+                    <h1 class="page-header">Edit News</h1>
 
-                    <form method="post" action="{{ route('admin.news.submit') }}" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label> Headline </label>
-                            <input type="text" class="form-control" id="headline" name="headline">
+                    @if(count($news) > 0)
+                        <div class="form-group" style="height:300px;width:300px;border-radius:5px;border:1px solid #ccc;">
+                            <img class="img-responsive" src="{{ URL::to($news->image) }}">
                         </div>
-
-
-
-                        <div class="form-group">
-                            <label> News Body </label>
-                            <textarea class="form-control" name="body" id="body"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Image</label>
-                            <input type="file" name="image" class="form-control" id="image" accept="image/*">
-                        </div>
-
-                        <div class="form-group" >
-                            <label>Author</label>
-                            <input type="text" class="form-control" id="author" name="author">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="submit" value="Add News" class="btn btn-primary" name="addeventBtn" id="addeventBtn">
-                            <input type="hidden" name="_token" value="{{ Session::token() }}">
-                        </div>
-
-                        @if(count($errors) > 0)
-                            <div class="alert alert-danger">
-                                @foreach($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
+                        <form method="post" action="{{ route('admin.news.update') }}" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label> Headline </label>
+                                <input type="text" class="form-control" id="headline" name="headline" value="{{ $news->headline }}">
                             </div>
-                        @endif
 
-                        @if(Session::has('success_message'))
-
-                            <div class="alert alert-success">
-                                <strong>{{ Session::get('success_message') }}</strong>
+                            <div class="form-group">
+                                <label>Body</label>
+                                <textarea class="form-control" id="body" name="body">{{ $news->body }}</textarea>
                             </div>
-                        @endif
-                    </form>
+
+
+
+                            <div class="form-group">
+                                <label>Cover Image</label>
+                                <input type="file" name="image" class="form-control" id="image" accept="image/*">
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label>Author</label>
+                                <input type="text" class="form-control" id="author" name="author" value="{{ $news->author }}">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="hidden" name="news_id" id="news_id" value="{{ $news->id }}">
+                                <input type="submit" value="Update News " class="btn btn-primary" name="addeventBtn" id="addeventBtn">
+                                <input type="hidden" name="_token" value="{{ Session::token() }}">
+                            </div>
+                            @endif
+
+
+                            @if(count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </div>
+                            @endif
+
+                            @if(Session::has('success_message'))
+
+                                <div class="alert alert-success">
+                                    <strong>{{ Session::get('success_message') }}</strong>
+                                </div>
+                            @endif
+                        </form>
 
                 </div>
                 <!-- /.col-lg-12 -->

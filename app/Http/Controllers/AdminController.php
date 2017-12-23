@@ -30,6 +30,8 @@ class AdminController extends Controller {
 		}
 		return $text;
 	}
+
+
 	public function showHome(Request $request) {
 		return view('admin.home');
 	}
@@ -239,11 +241,46 @@ class AdminController extends Controller {
     }
 
     public function editNews(Request $request, $id){
-       return $id;
+       $news = News::find($id);
+       return view('admin.editnews', compact('news'));
     }
 
     public function updateNews(Request $request){
-        return "this si the update news function";
+        $news_id = $request->news_id;
+        $news = News::find($news_id);
+
+        $this->validate($request, [
+            'headline' => 'required',
+            'body' => 'required',
+            'author' => 'nullable',
+            'image' => 'nullable|mimes:jpeg,png',
+        ]);
+
+        if ($request->image) {
+
+            $updated_image = $request->file('image');
+            $new_image = time() . "-news-" . $updated_image->getClientOriginalName();
+            $updated_image->move('news-uploads', $new_image);
+            $new_image = "news-uploads/" . $new_image;
+
+            $news->update([
+                'headline' => $request->headline,
+                'body' => $request->body,
+                'author' => $request->author,
+                'image' => $new_image,
+            ]);
+            Session::flash('success_message', 'Event Updated Successfully !');
+
+        } else {
+
+            $news->update([
+                'headline' => $request->headline,
+                'body' => $request->body,
+                'author' => $request->author,
+            ]);
+            Session::flash('success_message', 'Event Updated Successfully !');
+        }
+        return redirect()->back();
     }
 
     public function deleteNews(Request $request, $id){

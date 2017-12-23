@@ -443,7 +443,7 @@
                     <h1 class="page-header">All News</h1>
 
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-hover table-bordered">
                             <thead>
                             <tr>
                                 <th>SN</th>
@@ -451,6 +451,7 @@
                                 <th>Body</th>
                                 <th>Image</th>
                                 <th>Creation Date</th>
+                                <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -461,7 +462,7 @@
                                     <tr>
                                         <td>{{ $serial_number+=1  }}</td>
                                         <td>{{ $news->headline}}</td>
-                                        <td>{{ $news->body }}</td>
+                                        <td>{{ $news->limit_text(10) }}</td>
                                         <td><a href="{{ URL::to($news->image) }}"><img style="height:200px;width:300px;" src="{{ URL::to($news->image) }}" class="img-responsive img-rounded"></a></td>
                                         <td>{{ $news->created_at->formatLocalized('%A, %d %B %Y.') }}</td>
                                         <td>

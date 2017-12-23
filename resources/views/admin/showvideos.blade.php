@@ -443,7 +443,7 @@
                     <h1 class="page-header">All Videos</h1>
 
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-hover table-bordered">
                             <thead>
                             <tr>
                                 <th>SN</th>
@@ -451,6 +451,7 @@
                                 <th>Album Title</th>
                                 <th>Image Link</th>
                                 <th>Upload Link</th>
+                                <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
