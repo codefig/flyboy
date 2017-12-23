@@ -526,7 +526,7 @@
         $('.delete-link').click(function(event){
             event.preventDefault();
             var route = this.href;
-            bootbox.confirm("Are you sure you want to delete this event ?", function(result){
+            bootbox.confirm("Are you sure you want to delete this Video ?", function(result){
                 if(result == false)
                     event.preventDefault();
                 else{

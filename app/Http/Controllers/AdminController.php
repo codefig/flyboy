@@ -203,8 +203,12 @@ class AdminController extends Controller {
     }
 
 
-    public function deleteVideos(Request $request){
-        return "this is the delete function";
+    public function deleteVideos(Request $request, $id){
+        //delete videos using softDelete
+        $video  = Video::find($id);
+        $video->update(['is_deleted' => 1]);
+        Session::flash('success_message', 'Video deleted Successfully !');
+        return redirect()->back();
     }
 
 

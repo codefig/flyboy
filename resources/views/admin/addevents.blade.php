@@ -290,7 +290,7 @@
                             <li>
                                 <a href="{{ route('admin.events.showall') }}"> View Events</a>
                             </li>
-                            
+
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
