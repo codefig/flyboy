@@ -76,10 +76,6 @@ class AdminController extends Controller {
         return view('admin.showevents', compact('events'));
     }
 
-    public function showEditEvents(Request $request){
-        return "this shows the event edit page";
-    }
-
     public function editEvents(Request $request, $id){
         $event = Event::where('id', $id)->get()->first();
 
@@ -168,7 +164,6 @@ class AdminController extends Controller {
             'upload_link' => $request->upload_link,
             'is_deleted' => 0,
         ]);
-
         $video->save();
         Session::flash('success_message', 'Video added Successully!');
         return redirect()->back();
@@ -178,6 +173,38 @@ class AdminController extends Controller {
     public function showAllVideos(Request $request){
         $videos = Video::where('is_deleted', 0)->paginate(10);
         return view('admin.showvideos', compact('videos'));
+    }
+
+    public function editVideos(Request $request, $id){
+        $video = Video::find($id);
+        return view('admin.editvideos', compact('video'));
+    }
+
+    public function updateVideos(Request $request){
+//        return "this is the update video fucntion ";
+        $video = Video::find($request->video_id);
+
+        $this->validate($request, [
+            'song_title' => 'required',
+            'album_title' => 'nullable',
+            'image_link' => 'required',
+            'upload_link' => 'required',
+        ]);
+
+        $video->update([
+            'song_title'=>$request->song_title,
+            'album_title'=>$request->album_title,
+            'image_link' => $request->image_link,
+            'upload_link' => $request->upload_link,
+        ]);
+
+        Session::flash('success_message', 'Video record updated successfully !');
+        return redirect()->back();
+    }
+
+
+    public function deleteVideos(Request $request){
+        return "this is the delete function";
     }
 
 

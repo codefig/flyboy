@@ -300,9 +300,7 @@
                             <li>
                                 <a href="{{ route('admin.events.showall') }}"> View Events</a>
                             </li>
-                            <li>
-                                <a href="morris.html"> Edit Events</a>
-                            </li>
+
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
@@ -458,10 +456,10 @@
                             <tbody>
 
                             @if(count($videos) > 0 )
-                                {{ $serial_number = 1 }}
+                                <span style="display:none">{{ $serial_number = 0 }}</span>
                                 @foreach($videos as $video)
                                     <tr>
-                                        <td>{{ $serial_number  }}</td>
+                                        <td>{{ $serial_number+=1  }}</td>
                                         <td>{{ $video->song_title }}</td>
                                         <td>{{ $video->album_title }}</td>
                                         <td><a href="{{ URL::to($video->image_link) }}"><img style="height:200px;width:300px;" src="{{ URL::to($video->image_link) }}" class="img-responsive img-rounded"></a></td>
@@ -471,6 +469,7 @@
                                             <a href="{{ route('admin.videos.delete', $video->id) }}" class="delete-link"><span class="fa fa-trash-o"></span></a>
                                         </td>
                                     </tr>
+
                                 @endforeach
                             @endif
 

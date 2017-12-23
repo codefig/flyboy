@@ -290,7 +290,7 @@
                             <li>
                                 <a href="{{ route('admin.events.showall') }}"> View Events</a>
                             </li>
-                            
+
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
@@ -310,14 +310,12 @@
                         <a href="forms.html"><i class="fa fa-file-image-o fa-fw"></i> Gallery <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="flot.html"> Add Event</a>
+                                <a href="{{route('admin.events.add')}}"> Add Event</a>
                             </li>
                             <li>
-                                <a href="morris.html"> View Events</a>
+                                <a href="{{route('admin.events.showall')}}"> View Events</a>
                             </li>
-                            <li>
-                                <a href="morris.html"> Edit Events</a>
-                            </li>
+
                         </ul>
 
                     </li>
@@ -326,12 +324,12 @@
                         <a href="forms.html"><i class="fa fa-file-video-o fa-fw"></i> Video <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{route('admin.videos.add')}}"> Add Video</a>
-                            </li>
-                            <li>
-                                <a href="{{route('admin.videos.showall')}}"> View all videos</a>
+                                <a href="{{ route('admin.videos.add') }}"> Add Video</a>
                             </li>
 
+                            <li>
+                                <a href="{{ route('admin.videos.showall') }}">View All videos</a>
+                            </li>
                         </ul>
 
                     </li>
@@ -430,64 +428,56 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Edit Event </h1>
+                    <h1 class="page-header">Edit Event</h1>
 
-                    <form method="post" action="{{ route('admin.events.submit') }}" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label> Title </label>
-                            <input type="text" class="form-control" id="title" name="title">
+                    @if(count($video) > 0)
+                        <div class="form-group" style="height:300px;width:300px;border-radius:5px;border:1px solid #ccc;">
+                            <img class="img-responsive" src="{{ URL::to($video->image_link) }}">
                         </div>
-
-                        <div class="form-group">
-                            <label>About</label>
-                            <textarea class="form-control" id="about" name="about"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Location</label>
-                            <input type="text" class="form-control" id="location" name="location">
-                        </div>
-
-                        <div class="form-group">
-                            <label> Date </label>
-                            <input type="date" class="form-control" id="date" name="date">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Cover Image</label>
-                            <input type="file" name="image" class="form-control" id="image" accept="image/*">
-                        </div>
-
-                        <div class="form-group" >
-                            <label>Time</label>
-                            <input type="time" class="form-control" id="time" name="time">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Ticket Link </label>
-                            <input type="text" class="form-control" id="ticket_link" name="ticket_link">
-                        </div>
-
-                        <div class="form-group">
-                            <input type="submit" value="Add Event" class="btn btn-primary" name="addeventBtn" id="addeventBtn">
-                            <input type="hidden" name="_token" value="{{ Session::token() }}">
-                        </div>
-
-                        @if(count($errors) > 0)
-                            <div class="alert alert-danger">
-                                @foreach($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
+                        <form method="post" action="{{ route('admin.videos.update') }}" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label>Song Title </label>
+                                <input type="text" class="form-control" id="song_title" name="song_title" value="{{ $video->song_title }}">
                             </div>
-                        @endif
 
-                        @if(Session::has('success_message'))
-
-                            <div class="alert alert-success">
-                                <strong>{{ Session::get('success_message') }}</strong>
+                            <div class="form-group">
+                                <label>Album Title</label>
+                                <textarea class="form-control" id="album_title" name="album_title">{{ $video->album_title }}</textarea>
                             </div>
-                        @endif
-                    </form>
+
+                            <div class="form-group">
+                                <label>Image Link</label>
+                                <input type="text" class="form-control" id="image_link" name="image_link" value="{{$video->image_link}}">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Upload Link</label>
+                                <input type="text" class="form-control" id="upload_link" name="upload_link" value="{{$video->upload_link}}">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="hidden" name="video_id" id="video_id" value="{{ $video->id }}">
+                                <input type="submit" value="Update Video" class="btn btn-primary" name="addeventBtn" id="addeventBtn">
+                                <input type="hidden" name="_token" value="{{ Session::token() }}">
+                            </div>
+                            @endif
+
+
+                            @if(count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </div>
+                            @endif
+
+                            @if(Session::has('success_message'))
+
+                                <div class="alert alert-success">
+                                    <strong>{{ Session::get('success_message') }}</strong>
+                                </div>
+                            @endif
+                        </form>
 
                 </div>
                 <!-- /.col-lg-12 -->

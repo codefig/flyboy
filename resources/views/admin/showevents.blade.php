@@ -464,10 +464,10 @@
                             <tbody>
 
                                 @if(count($events) > 0 )
-                                    {{ $serial_number = 1 }}
+                                   <span style="display:none">{{ $serial_number = 0 }}</span>
                                     @foreach($events as $event)
                                         <tr>
-                                            <td>{{ $serial_number  }}</td>
+                                            <td>{{ $serial_number+=1  }}</td>
                                             <td>{{ $event->title }}</td>
                                             <td>{{ $event->about }}</td>
                                             <td>{{ $event->location }}</td>
@@ -481,6 +481,7 @@
                                                 <a href="{{ route('admin.events.delete', $event->id) }}" class="delete-link"><span class="fa fa-trash-o"></span></a>
                                             </td>
                                         </tr>
+
                                     @endforeach
                                 @endif
 
