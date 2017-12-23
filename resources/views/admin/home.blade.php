@@ -337,13 +337,13 @@
                         </li>
 
                           <li>
-                            <a href="forms.html"><i class="fa fa-newspaper-o fa-fw"></i> News <span class="fa arrow"></span> </a>
+                            <a href="forms.html"><i class="fa fa-book"></i> News <span class="fa arrow"></span> </a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html"> Add News</a>
+                                    <a href="{{route('admin.news.add')}}"> Add News</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html"> View and Edit News </a>
+                                    <a href="{{route('admin.news.showall')}}"> View all News </a>
                                 </li>
                             </ul>
 

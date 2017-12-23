@@ -7,6 +7,7 @@ use App\Video;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use App\News;
 
 class AdminController extends Controller {
 
@@ -15,7 +16,7 @@ class AdminController extends Controller {
 	}
 
 	public function logout() {
-		// return "this is the logout function";
+
 		Auth::logout();
 		return redirect()->route('admin.login');
 
@@ -38,8 +39,6 @@ class AdminController extends Controller {
 	}
 
 	public function addEvents(Request $request) {
-//	    return "this is the addevent submit function ";
-		//        return $request->all();
 		$this->validate($request, [
 			'title' => 'required',
 			'about' => 'required',
@@ -175,7 +174,7 @@ class AdminController extends Controller {
 	}
 
 	public function updateVideos(Request $request) {
-//        return "this is the update video fucntion ";
+
 		$video = Video::find($request->video_id);
 
 		$this->validate($request, [
@@ -203,5 +202,59 @@ class AdminController extends Controller {
 		Session::flash('success_message', 'Video deleted Successfully !');
 		return redirect()->back();
 	}
+
+	//news route functions
+
+    public function showAddNews(Request $request){
+	    return view('admin.addnews');
+    }
+
+    public function addNews(Request $request){
+//        return "this is the add news function ";
+//        return $request->all();
+        $this->validate($request, [
+            'headline' => 'required',
+            'body' => 'required',
+            'image' => 'required',
+            'author' => 'nullable',
+        ]);
+
+        $uploaded_image = $request->file('image');
+        $new_image_name = time() . "-news-" . $uploaded_image->getClientOriginalName();;
+        $uploaded_image->move('news-uploads', $new_image_name);
+        $new_image_name = "news-uploads/".$new_image_name;
+
+
+        $news = News::create([
+            'headline' => $request->headline,
+            'body' => $request->body,
+            'image' => $new_image_name,
+            'author' => $request->author,
+        ]);
+
+        Session::flash('success_message', 'News created Successfully');
+        return redirect()->back();
+
+
+    }
+
+    public function editNews(Request $request, $id){
+       return $id;
+    }
+
+    public function updateNews(Request $request){
+        return "this si the update news function";
+    }
+
+    public function deleteNews(Request $request, $id){
+        return "this sithe delete function";
+    }
+
+    public function showAllNews(Request $request){
+         $all_news = News::paginate(5);
+         return view('admin.shownews', compact('all_news'));
+//        return "this is the show all news function";
+    }
+
 
 }
