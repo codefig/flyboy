@@ -6,6 +6,7 @@ use Auth;
 use Illuminate\Http\Request;
 use App\Event;
 use Illuminate\Support\Facades\Session;
+use App\Video;
 
 class AdminController extends Controller {
 
@@ -147,14 +148,32 @@ class AdminController extends Controller {
     //videos functions
 
     public function showAddVideos(Request $request){
-//        return "this is the show add videos function";
         return view('admin.addvideos');
     }
 
 
     public function addVideos(Request $request){
-        return $request->all();
+//        return $request->all();
+        $this->validate($request, [
+            'song_title' => 'required',
+            'album_title' => 'nullable',
+            'image_link' => 'required',
+            'upload_link' => 'required',
+        ]);
+
+        $video = Video::create([
+            'song_title' => $request->song_title,
+            'album_title' => $request->album_title,
+            'image_link' => $request->image_link,
+            'upload_link' => $request->upload_link,
+            'is_deleted' => 0,
+        ]);
+
+        $video->save();
+        Session::flash('success_message', 'Video added Successully!');
+        return redirect()->back();
     }
+
 
     public function showAllVideos(Request $request){
         return "this is the show all videos function";

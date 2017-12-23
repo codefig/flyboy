@@ -445,12 +445,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Image Link</label>
+                        <label>Image Link e.g (https://img.youtube.com/vi/hyWK_dLxPUc/0.jpg)</label>
                         <input type="text" class="form-control" id="image_link" name="image_link">
                     </div>
 
                     <div class="form-group">
-                        <label> Upload Link e.g (Youtube, Vimeo)</label>
+                        <label> Upload Link e.g (https://www.youtube.com/embed/hyWK_dLxPUc?autoplay=true) </label>
                         <input type="text" class="form-control" id="upload_link" name="upload_link">
                     </div>
 
