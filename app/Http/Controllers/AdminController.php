@@ -176,7 +176,8 @@ class AdminController extends Controller {
 
 
     public function showAllVideos(Request $request){
-        return "this is the show all videos function";
+        $videos = Video::where('is_deleted', 0)->paginate(10);
+        return view('admin.showvideos', compact('videos'));
     }
 
 

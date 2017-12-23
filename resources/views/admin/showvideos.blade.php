@@ -27,6 +27,16 @@
     <link href="{{URL::to("css/responsive.css")}}"  rel="stylesheet" type="text/css">
     <link href="{{URL::to("css/animate.css")}}"  rel="stylesheet" type="text/css">
 
+    <style type="text/css">
+        .del-btn {
+            margin-top:5px !important;
+        }
+
+        .edit-btn {
+            margin-bottom:10px !important;
+        }
+    </style>
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -290,7 +300,9 @@
                             <li>
                                 <a href="{{ route('admin.events.showall') }}"> View Events</a>
                             </li>
-
+                            <li>
+                                <a href="morris.html"> Edit Events</a>
+                            </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
@@ -430,31 +442,40 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Welcome Admin </h1>
-                <form method="post" action="{{ route('admin.videos.submit')}}">
-                    <div class="form-group">
-                        <label>Song Title</label>
-                        <input type="text" class="form-control" id="song_title" name="song_title" />
-                    </div>
+                    <h1 class="page-header">All Videos</h1>
 
-                    <div class="form-group">
-                        <label>Album Title</label>
-                        <input type="text" class="form-control" id="album_title" name="album_title">
-                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>SN</th>
+                                <th>Song Title</th>
+                                <th>Album Title</th>
+                                <th>Image Link</th>
+                                <th>Upload Link</th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
-                    <div class="form-group">
-                        <label>Image Link e.g (https://img.youtube.com/vi/hyWK_dLxPUc/0.jpg)</label>
-                        <input type="text" class="form-control" id="image_link" name="image_link">
-                    </div>
+                            @if(count($videos) > 0 )
+                                {{ $serial_number = 1 }}
+                                @foreach($videos as $video)
+                                    <tr>
+                                        <td>{{ $serial_number  }}</td>
+                                        <td>{{ $video->song_title }}</td>
+                                        <td>{{ $video->album_title }}</td>
+                                        <td><a href="{{ URL::to($video->image_link) }}"><img style="height:200px;width:300px;" src="{{ URL::to($video->image_link) }}" class="img-responsive img-rounded"></a></td>
+                                        <td>{{ $video->upload_link }}</td>
+                                        <td>
+                                            <a href="{{ route('admin.videos.edit', $video->id) }}" class="edit-link"><span class="fa fa-edit"></span></a>
+                                            <a href="{{ route('admin.videos.delete', $video->id) }}" class="delete-link"><span class="fa fa-trash-o"></span></a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
 
-                    <div class="form-group">
-                        <label> Upload Link e.g (https://www.youtube.com/embed/hyWK_dLxPUc?autoplay=true) </label>
-                        <input type="text" class="form-control" id="upload_link" name="upload_link">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="hidden" name="_token" value="{{ Session::token() }}">
-                        <input class="btn btn-primary" type="submit" name="submitBtn" value="Add video">
+                            </tbody>
+                        </table>
                     </div>
 
                     @if(count($errors) > 0)
@@ -471,8 +492,8 @@
                             <strong>{{ Session::get('success_message') }}</strong>
                         </div>
                     @endif
-                </form>
 
+                    {{ $videos->links() }}
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -496,6 +517,28 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="{{ URL::to('js/sb-admin-2.js') }}"></script>
+
+<!-- Custom alert javascipt -->
+<script src="{{ URL::to('js/bootbox.min.js') }}"></script>
+
+<script>
+    $('document').ready(function(e){
+//        alert("page is ready");
+        $('.delete-link').click(function(event){
+            event.preventDefault();
+            var route = this.href;
+            bootbox.confirm("Are you sure you want to delete this event ?", function(result){
+                if(result == false)
+                    event.preventDefault();
+                else{
+                    window.location = route;
+
+                }
+            })
+        })
+    });
+
+</script>
 
 </body>
 
