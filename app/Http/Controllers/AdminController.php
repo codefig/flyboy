@@ -295,5 +295,46 @@ class AdminController extends Controller {
          return view('admin.shownews', compact('all_news'));
     }
 
+    //photos category
+
+    public function showAddCategory(Request $request){
+        return view('admin.addcategory');
+    }
+
+    public function addCategory(Request $request){
+        $this->validate($request, [
+            'category_name' => 'required',
+            'image' => 'required',
+        ]);
+        
+    }
+
+    public function showAllCategory(Request $request){
+        return "this shows all category";
+
+    }
+
+
+    //photos
+    public function showAddPhotos(Request $request){
+        return "this is show Add photos";
+    }
+
+    public function addPhotos(Request $request){
+        return "this is the add photos ";
+    }
+
+    public function editPhotos(Request $request){
+        return "this si the edit Photo function";
+    }
+
+    public function updatePhotos(Request $request){
+        return "this is the updatePhotos function";
+    }
+
+
+    public function showAllPhotos(Request $request){
+        return "this is the showAllPhotos function";
+    }
 
 }

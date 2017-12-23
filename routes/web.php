@@ -61,4 +61,15 @@ Route::prefix('/admin')->group(function () {
     Route::post('/news/update', 'AdminController@updateNews')->name('admin.news.update');
     Route::get('/news/{id}/delete', 'AdminController@deleteNews')->name('admin.news.delete');
     Route::get('/news/showall', 'AdminController@showAllNews')->name('admin.news.showall');
+
+    //photos route
+    Route::get('/photos/addcategory', 'AdminController@showAddCategory')->name('admin.photocategory.add');
+    Route::get('/photos/showcategory', 'AdminController@showAllCategory')->name('admin.photocategory.showall');
+    Route::post('/photos/submitcategory', 'AdminController@addCategory')->name('admin.photocategory.submit');
+
+    Route::get('/photos/add', 'AdminController@showAddPhotos')->name('admin.photos.add');
+    Route::post('/photos/submit', 'AdminController@addPhotos')->name('admin.photos.submit');
+    Route::get('/photos/{id}/edit', 'AdminController@editPhotos')->name('admin.photos.edit');
+    Route::post('/photos/update', 'AdminController@updatePhotos')->name('admin.photos.update');
+    Route::get('/photos/showall', 'AdminController@showAllPhotos')->name('admin.photos.showall');
 });

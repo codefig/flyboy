@@ -310,13 +310,17 @@
                             <a href="forms.html"><i class="fa fa-file-image-o fa-fw"></i> Gallery <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html"> Add Event</a>
+                                    <a href="{{route('admin.photocategory.add')}}"> Add Category</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html"> View Events</a>
+                                    <a href="{{ route('admin.photocategory.showall') }}"> View Categories</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html"> Edit Events</a>
+                                    <a href="{{ route('admin.photos.add') }}"> Add Photo</a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('admin.photos.showall') }}">View All Photos</a>
                                 </li>
                             </ul>
 
