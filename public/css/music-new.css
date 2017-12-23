@@ -1,0 +1,323 @@
+/* ================================== MUSIC ================================== */
+#music-player{
+  background: linear-gradient(rgba(0,0,0, .4), rgba(0,0,0, .4)),
+                       url('../img/sliders/slider-6.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  height: 600px;
+}
+
+#music-player .rule{
+  height: 2px;
+  background-color: #fff;
+  width: 70%
+}
+
+#music-player h1{
+  color: #F2C053;
+  font-family: 'Segoe UI';
+  margin-bottom: 20px;
+}
+
+#music-player p{
+  color: #fff;
+  margin-top: 7vw;
+  font-size: 18px;
+  font-family: 'Segoe UI';
+}
+
+@media(max-width: 767px){
+  #music-player p{
+    margin-top: 15vw;
+  }
+}
+
+#music-player a{
+  color: #000000;
+}
+
+#music-player a i{
+     margin-right: 10px;
+}
+
+#music-player .btn{
+  background-color: #F2C053;
+  color: #000000;
+  font-family: 'Segoe UI';
+  border: none;
+  border-radius: 50px;
+}
+
+#music-player .btn:hover{
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+
+/* ============================== SERACH BAR ============================== */
+#music-search{
+  background-color: #F2C053;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Segoe UI';
+}
+
+#music-search input[type="text"]{
+  border: none;
+  border-radius: 50px;
+  height: 35px;
+  width: 90%;
+  text-align: center;
+}
+
+#music-search input[type="text"]:focus{
+  border: none;
+  border-radius: 50px;
+}
+
+#music-search a {
+  position: absolute;
+  font-size: 20px;
+  color: #000;
+  margin-left: -40px;
+  margin-top: 7px;
+  text-decoration: none;
+}
+
+
+/* ============================== LIST OF SONGS ====================== */\
+#songs{
+  background-color: #fff;
+  text-align: center;
+}
+
+#songs h2{
+  font-family: 'Segoe UI';
+  color: #000000;
+  text-align: center;
+  margin: 2vw auto;
+}
+
+@media(max-width: 767px){
+    #songs h2{
+      margin: 4vw auto;
+    }
+}
+
+#songs .row{
+  margin-bottom: 1.5vw;
+}
+
+@media(max-width: 767px){
+  #songs .row{
+    margin-bottom: 6vw;
+  }
+}
+
+#songs .song{
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding: 30px;
+  margin-bottom: 1vw;
+}
+
+@media(max-width: 767px){
+  #songs .song{
+    margin-bottom: 8vw;
+  }
+}
+
+#songs hr{
+  height: 4px;
+  width: 100%;
+  background-color: #F2C053;
+}
+
+.song img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+.content{
+  text-align: center;
+}
+
+.content .btn{
+  border: none;
+  border-radius: 50px;
+  padding: auto 10px;
+  background-color: #F2C053;
+  color:#000;
+  margin-top: 15px;
+}
+
+.content .btn:hover{
+  background-color: #F2C053;
+  color: #000;
+}
+
+.content i{
+  margin-right: 7px;
+  font-size: 18px;
+}
+
+.content img{
+  margin-right: 7px;
+}
+
+.content img:hover{
+  width: 18px;
+  height: 18px;
+  background-image: url('../img/itunes.png');
+}
+
+.content a{
+  color: #fff;
+}
+
+#songs .song-title{
+  text-align: center;
+  font-family: 'Segoe UI';
+  font-weight: bold;
+  font-size: 18px;
+  color: #F2C053;
+  margin-top: 20px;
+}
+
+#songs .album-name{
+  font-size: 12px;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+  margin-top: -5px;
+}
+
+.song .center-circle-black{
+  background-color: rgba(0,0,0,0.5);
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 40%;
+  border-radius: 50%;
+}
+
+.song .center-circle{
+  background-color: #fff;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  margin: 8vw;
+  border-radius: 50%;
+}
+
+@media(max-width: 767px){
+  .song .center-circle{
+    margin: 34vw;
+  }
+}
+/* ============================= A L B U M ================================== */
+#albums{
+  background-color: #fff;
+}
+
+#albums h2{
+  font-family: 'Segoe UI';
+  color: #000000;
+  text-align: center;
+  margin: 2vw auto;
+}
+
+@media(max-width: 767px){
+    #albums h2{
+      margin: 4vw auto;
+    }
+}
+
+#albums .row{
+  margin-bottom: 1.5vw;
+}
+
+@media(max-width: 767px){
+  #albums .row{
+    margin-bottom: 6vw;
+  }
+}
+
+.album{
+  border-radius: 10px;
+  margin-bottom: 5%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+#albums h5{
+  color: #F2C053;
+  font-family: 'Segoe UI';
+}
+
+#albums p{
+  color: #f5f5f5;
+  font-family: 'Segoe UI';
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+#albums a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.album img{
+  max-width: 100%;
+  max-height: 100%;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.album img:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+.album-songs{
+  height: 250px;
+  overflow-y: scroll;
+}
+
+.album-songs h5{
+  text-align: center;
+}
+
+.album-songs-list .song{
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 1px;
+  height: 45px;
+  padding: 12px;
+  margin-bottom: 4px;
+}
+
+.album-songs-list .song p{
+  font-family: 'Segoe UI';
+  margin-left: 10px;
+}
+
+.album-songs-list a i{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 100;
+}

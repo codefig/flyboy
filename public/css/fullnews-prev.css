@@ -1,3 +1,14 @@
+@font-face{
+   font-family: 'Segoe UI';
+   src : url('../fonts/segoeui.ttf');
+}
+
+
+body{
+  font-family: 'Segoe UI';
+  background-color:#fff !important;
+}
+
 .full-story{
   margin: 5vw auto;
   font-family: 'Segoe UI';
@@ -6,25 +17,21 @@
 .full-story h2{
   color: #F2C053;
   font-family: 'Segoe UI';
-  margin-bottom: 2vw;
 }
 
 .full-story hr{
- margin-top: 3vw;
+ margin-top: 3vw; 
 }
 
 .full-story .full-story-date{
+  font-size: 14px;
   font-family: 'Segoe UI';
+  text-align: right;
   margin-top: 2vw;
-  margin-bottom: 1.5vw;
 }
 
 .full-story i{
   margin-right: 5px;
-}
-
-.author{
-  text-align: right;
 }
 
 .older-news h3{
@@ -41,7 +48,6 @@
   color: #000;
   border: none;
   border-radius: 50px;
-  margin-bottom: 10px;
 }
 
 .older-news .btn:hover{
@@ -62,4 +68,11 @@
   margin-top: 10px;
   margin-bottom: 10px;
 
+}
+
+.news-text{
+  color:#000;
+}
+.black-headline {
+  color:#444 !important;
 }

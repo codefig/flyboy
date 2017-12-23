@@ -68,7 +68,7 @@
 
                                     <div class="form-group">
                                         <input type="hidden" name="_token" value="{{ Session::token() }}">
-                                        <input type="submit" class="btn btn-default" name="submitBtn" id="submitBtn" style="width:100%;"/>
+                                        <input type="submit" class="btn btn-default" name="submitBtn" id="submitBtn" style="width:100%;" value="Login"/>
                                     </div>
                                 </fieldset>
 

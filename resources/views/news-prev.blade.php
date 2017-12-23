@@ -31,8 +31,12 @@
   <!--main-nav-end-->
 
   <div class="container">
+       <div style="margin-top:50px;">
+          <h2 style="color:#000 !important;"> News </h2>
+          <center> <div id="divider" style="height:2px;width:25px;background-color:#f2c053;"> </div> </center>
+       </div>
     <div class="row">
-      <div class="news-page col-lg-8">
+      <div class="news-page col-lg-12 col-lg-8">
           <div class="news-post">
               <div class="row">
                   <div class="col-md-5">
@@ -93,21 +97,10 @@
                   </div>
               </div>
           </div>
-          <div class="page">
-            <div class="row pull-right">
-              <ul class="pagination">
-                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item active"><a class="page-link" href="news.html">1</a></li>
-                <li class="page-item"><a class="page-link" href="news-page-2.html">2</a></li>
-                <li class="page-item"><a class="page-link" href="news-page-3.html">3</a></li>
-                <li class="page-item"><a class="page-link" href="news-page-2.html">Next</a></li>
-              </ul>
-            </div>
-            <div class="clearfix"></div>
-          </div>
+
       </div>
 
-      <div class="news-page col-lg-3 col-lg-offset-1">
+      <div class="news-page col-lg-12 col-lg-3 col-lg-offset-1">
         <div class="older-news">
           <h3>Older News</h3>
           <div>
@@ -134,13 +127,10 @@
                 <a href="blog_readmore.html" class="btn btn-primary">Full story</a>
             </div>
           </div>
+
         </div>
       </div>
-    </div>
-
-
+  </div>
   </div>
 
-</body>
-
-</html>
+@endsection

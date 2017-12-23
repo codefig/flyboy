@@ -31,28 +31,26 @@ Route::get('/showphotos', 'UserController@showphotos')->name('user.showphotos');
  *  Route for the administrative links
  */
 
-
 //
 Route::get('admin', 'UserController@showAdminLogin')->name('admin.login');
 Route::prefix('/admin')->group(function () {
-    Route::post('/login', 'UserController@checkAdminLogin')->name('admin.login.post');
-    Route::get('/home', 'AdminController@showHome')->name('admin.home');
-    Route::get('/logout', 'AdminController@logout')->name('admin.logout');
+	Route::post('/login', 'UserController@checkAdminLogin')->name('admin.login.post');
+	Route::get('/home', 'AdminController@showHome')->name('admin.home');
+	Route::get('/logout', 'AdminController@logout')->name('admin.logout');
 
-    //events route
-    Route::get('/events/add', 'AdminController@showAddEvents')->name('admin.events.add');
-    Route::post('/events/submit', 'AdminController@addEvents')->name('admin.events.submit');
-    Route::get('/events/{id}/edit', 'AdminController@editEvents')->name('admin.events.edit');
-    Route::post('/events/update', 'AdminController@updateEvents')->name('admin.events.update');
-    Route::get('/events/{id}/delete', 'AdminController@deleteEvents')->name('admin.events.delete');
-    Route::get('/events/showall', 'AdminController@showAllEvents')->name('admin.events.showall');
+	//events route
+	Route::get('/events/add', 'AdminController@showAddEvents')->name('admin.events.add');
+	Route::post('/events/submit', 'AdminController@addEvents')->name('admin.events.submit');
+	Route::get('/events/{id}/edit', 'AdminController@editEvents')->name('admin.events.edit');
+	Route::post('/events/update', 'AdminController@updateEvents')->name('admin.events.update');
+	Route::get('/events/{id}/delete', 'AdminController@deleteEvents')->name('admin.events.delete');
+	Route::get('/events/showall', 'AdminController@showAllEvents')->name('admin.events.showall');
 
-    //videos route
-    Route::get('/videos/add', 'AdminController@showAddVideos')->name('admin.videos.add');
-    Route::post('/videos/submit', 'AdminController@addVideos')->name('admin.videos.submit');
-    Route::post('/videos/update', 'AdminController@updateVideos')->name('admin.videos.update');
-    Route::get('/videos/{id}/edit', 'AdminController@editVideos')->name('admin.videos.edit');
-    Route::get('/videos/{id}/delete', 'AdminController@deleteVideos')->name('admin.videos.delete');
-    Route::get('/videos/showall', 'AdminController@showAllVideos')->name('admin.videos.showall');
+	//videos route
+	Route::get('/videos/add', 'AdminController@showAddVideos')->name('admin.videos.add');
+	Route::post('/videos/submit', 'AdminController@addVideos')->name('admin.videos.submit');
+	Route::post('/videos/update', 'AdminController@updateVideos')->name('admin.videos.update');
+	Route::get('/videos/{id}/edit', 'AdminController@editVideos')->name('admin.videos.edit');
+	Route::get('/videos/{id}/delete', 'AdminController@deleteVideos')->name('admin.videos.delete');
+	Route::get('/videos/showall', 'AdminController@showAllVideos')->name('admin.videos.showall');
 });
-

@@ -1,18 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
 
-@extends('includes.header')
+<head>
 
-   @section('title')
-    <title>Flyboy Inc :: Music</title>
-   @endsection
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-   @section('pagelink')
-    <link href="{{ URL::to('css/music-new.css') }}" rel="stylesheet" />
-    <link href='{{ URL::to('css/bootstrap.css') }}' rel="stylesheet" />
-    <link href="{{ URL::to('css/font-awesome.css') }}" rel="stylesheet" />
-   @endsection
+    <title>Music | Flyboy</title>
 
+    <link href='css/bootstrap.css' rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/music-new.css" rel="stylesheet" />
 
-@section('pageContent')
+</head>
+
+<body>
   <section id="music-player">
     <div class="container">
       <div class="row">
@@ -29,26 +34,6 @@
     </div>
   </section>
 
-  <nav class="main-nav-outer" id="test">
-    <!--main-nav-start-->
-    <div class="container">
-      <ul class="main-nav">
-        <li><a href="{{ route('user.bio') }}">Bio</a></li>
-        <li><a href="{{ route('user.music') }}">Music</a></li>
-        <li><a href="{{ route('user.photos') }}">Photos</a></li>
-        <li><a href="{{ route('user.videos') }}">Videos</a></li>
-        <li class="small-logo"><a href="{{ route('user.index') }}"><img src="{{ URL::to('img/flyboy70.png') }}" alt="logo" style="display: inline;"></a></li>
-        <li><a href="{{ route('user.news') }}">News</a></li>
-        <li><a href="{{ route('user.events') }}">Events</a></li>
-        <li><a href="{{ route('user.contact') }}">Contact</a></li>
-        <li><a href="#"></a></li>
-      </ul>
-      <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
-    </div>
-  </nav>
-
-  <!--main-nav-end-->
-
   <section id="music-search">
     <div class="container-fluid">
       <div class="row">
@@ -63,8 +48,6 @@
       </div>
     </div>
   </section>
-
-
 
   <section id="songs">
     <div class="container">
@@ -119,7 +102,7 @@
       </div>
     </div>
   </section>
-
+  
 
   <section id="albums" style="background-color:#2D2D2D;">
     <div class="container">
@@ -411,4 +394,6 @@
     </div>
   </section>
 
-@endsection
+</body>
+
+</html>
