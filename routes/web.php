@@ -76,4 +76,5 @@ Route::prefix('/admin')->group(function () {
     Route::get('/photos/{id}/edit', 'AdminController@editPhotos')->name('admin.photos.edit');
     Route::post('/photos/update', 'AdminController@updatePhotos')->name('admin.photos.update');
     Route::get('/photos/showall', 'AdminController@showAllPhotos')->name('admin.photos.showall');
+    Route::get('/photos/{id}/delete', 'AdminController@deletePhotos')->name('admin.photos.delete');
 });

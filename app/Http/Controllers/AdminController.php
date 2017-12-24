@@ -405,17 +405,30 @@ class AdminController extends Controller {
 
     }
 
-    public function editPhotos(Request $request){
-        return "this si the edit Photo function";
+    public function editPhotos(Request $request, $id){
+        $photo = Photo::find($id);
+        $categories = Category::all();
+        return view('admin.editphotos', compact('photo', 'categories'));
     }
 
     public function updatePhotos(Request $request){
-        return "this is the updatePhotos function";
+       $photo = Photo::find($request->photo_id);
+       $this->validate($request, [
+           'category_id' => 'required',
+       ]);
+
+       $photo->update([
+           'category_id' => $request->category_id,
+       ]);
+       Session::flash('success_message', 'Photo record Updated successfully !');
+       return redirect()->back();
+
     }
 
 
     public function showAllPhotos(Request $request){
-        return "this is the showAllPhotos function";
+       $photos = Photo::paginate(10);
+       return view('admin.showallphotos', compact('photos'));
     }
 
 }
