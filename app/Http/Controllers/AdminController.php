@@ -9,6 +9,7 @@ use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\News;
+use App\Photo;
 
 class AdminController extends Controller {
 
@@ -305,7 +306,7 @@ class AdminController extends Controller {
     public function addCategory(Request $request){
         $this->validate($request, [
             'category_name' => 'required',
-            'image' => 'required',
+            'image' => 'required|mimes:jpeg,png',
         ]);
 
         $uploaded_image = $request->file('image');
@@ -376,11 +377,32 @@ class AdminController extends Controller {
 
     //photos
     public function showAddPhotos(Request $request){
-        return "this is show Add photos";
+        $categories = Category::where('is_deleted',0)->get();
+        return view('admin.showaddphotos', compact('categories'));
+//        return $categories;
     }
 
     public function addPhotos(Request $request){
-        return "this is the add photos ";
+        $this->validate($request, [
+            'category_id' => 'required',
+            'image' => 'required|mimes:jpeg,png',
+        ]);
+
+        $uploaded_image = $request->file('image');
+        $category_image = time(). "-photos-". $uploaded_image->getClientOriginalName();
+        $uploaded_image->move('albums/photos', $category_image);
+        $category_image = "albums/photos/".$category_image;
+
+        $photo = Photo::create([
+            'category_id' => $request->category_id,
+            'image' => $category_image,
+        ]);
+
+        $photo->save();
+        Session::flash('success_message', 'Category Added Successfully');
+        return redirect()->back();
+
+
     }
 
     public function editPhotos(Request $request){
