@@ -464,8 +464,58 @@ class AdminController extends Controller {
         return redirect()->back();
     }
 
-
     public function showAllAlbum(Request $request){
-        return "this is the show all album function";
+        $albums = Album::all();
+        return view('admin.showallalbums', compact('albums'));
+    }
+
+    public function editAlbum(Request $request, $id){
+//        return $request->all();
+        $album = Album::find($id);
+        return view('admin.editalbums', compact('album'));
+    }
+
+    public function updateAlbum(Request $request){
+        $album  = Album::find($request->album_id);
+
+        $this->validate($request, [
+            'title' => 'required',
+            'about' => 'required',
+            'image' => 'nullable',
+            'soundcloud_link' => 'nullable',
+            'itunes_link' => 'nullable',
+            'spotify_link' => 'nullable',
+        ]);
+//
+        if ($request->image) {
+
+            $updated_image = $request->file('image');
+            $new_image = time() . "-albums-" . $updated_image->getClientOriginalName();
+            $updated_image->move('albums/music', $new_image);
+            $new_image = "albums/music/" . $new_image;
+
+            $album->update([
+                'title' => $request->title,
+                'about' => $request->about,
+                'image' => $new_image,
+                'soundcloud_link' => $request->soundcloud_link,
+                'itunes_link' => $request->itunes_link,
+                'spotify_link' => $request->spotify_link,
+            ]);
+            Session::flash('success_message', 'Album Updated Successfully !');
+
+        } else {
+
+            $album->update([
+                'title' => $request->title,
+                'about' => $request->about,
+                'soundcloud_link' => $request->soundcloud_link,
+                'itunes_link' => $request->itunes_link,
+                'spotify_link' => $request->spotify_link,
+            ]);
+
+            Session::flash('success_message', 'Album Updated Successfully !');
+        }
+        return redirect()->back();
     }
 }
