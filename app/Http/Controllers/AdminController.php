@@ -331,7 +331,46 @@ class AdminController extends Controller {
     }
 
     public function editCategory(Request $request, $id){
-        
+        $category  = Category::find($id);
+        return view('admin.editcategory', compact('category'));
+    }
+
+    public function updateCategory(Request $request){
+        $category  = Category::find($request->category_id);
+        $this->validate($request, [
+            'category_name' => 'required',
+            'image' => 'nullable',
+        ]);
+
+        if ($request->image) {
+
+            $updated_image = $request->file('image');
+            $new_image = time() . "-category-" . $updated_image->getClientOriginalName();
+            $updated_image->move('albums/categories', $new_image);
+            $new_image = "albums/categories/" . $new_image;
+
+            $category->update([
+                'category_name' => $request->category_name,
+                'image' => $new_image,
+            ]);
+            Session::flash('success_message', 'Category Updated Successfully !');
+
+        } else {
+
+            $category->update([
+                'category_name' => $request->category_name,
+            ]);
+            Session::flash('success_message', 'Category Updated Successfully !');
+        }
+        return redirect()->back();
+    }
+
+
+    public function deleteCategory(Request $request, $id){
+        $category = Category::find($id);
+        $category->delete();
+        Session::flash('success_message', 'Category deleted Successfully ');
+        return redirect()->back();
     }
 
 
