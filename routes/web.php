@@ -62,7 +62,7 @@ Route::prefix('/admin')->group(function () {
     Route::get('/news/{id}/delete', 'AdminController@deleteNews')->name('admin.news.delete');
     Route::get('/news/showall', 'AdminController@showAllNews')->name('admin.news.showall');
 
-    //photos route
+    //photos category route
     Route::get('/photos/addcategory', 'AdminController@showAddCategory')->name('admin.photocategory.add');
     Route::get('/photos/showcategory', 'AdminController@showAllCategory')->name('admin.photocategory.showall');
     Route::post('/photos/submitcategory', 'AdminController@addCategory')->name('admin.photocategory.submit');
@@ -70,11 +70,18 @@ Route::prefix('/admin')->group(function () {
     Route::post('/photos/category/update', 'AdminController@updateCategory')->name('admin.photocategory.update');
     Route::get('/photos/category/{id}/delete', 'AdminController@deleteCategory')->name('admin.photocategory.delete');
 
-
+    //photos route
     Route::get('/photos/add', 'AdminController@showAddPhotos')->name('admin.photos.add');
     Route::post('/photos/submit', 'AdminController@addPhotos')->name('admin.photos.submit');
     Route::get('/photos/{id}/edit', 'AdminController@editPhotos')->name('admin.photos.edit');
     Route::post('/photos/update', 'AdminController@updatePhotos')->name('admin.photos.update');
     Route::get('/photos/showall', 'AdminController@showAllPhotos')->name('admin.photos.showall');
     Route::get('/photos/{id}/delete', 'AdminController@deletePhotos')->name('admin.photos.delete');
+
+    Route::get('/music/addalbum', 'AdminController@showAddAlbum')->name('admin.musicalbum.add');
+    Route::get('/music/showallalbum', 'AdminController@showAllAlbum')->name('admin.musicalbum.showall');
+    Route::post('/music/submitalbum', 'AdminController@addAlbum')->name('admin.musicalbum.submit');
+    Route::get('/music/album/{id}/edit', 'AdminController@editAlbum')->name('admin.musicalbum.edit');
+    Route::post('/music/album/update', 'AdminController@updateAlbum')->name('admin.musicalbum.update');
+    Route::get('/music/album/{id}/delete', 'AdminController@deleteAlbum')->name('admin.musicalbum.delete');
 });

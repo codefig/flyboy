@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\News;
 use App\Photo;
+use App\Album;
 
 class AdminController extends Controller {
 
@@ -425,10 +426,46 @@ class AdminController extends Controller {
 
     }
 
-
     public function showAllPhotos(Request $request){
-       $photos = Photo::paginate(10);
-       return view('admin.showallphotos', compact('photos'));
+        $photos = Photo::paginate(10);
+        return view('admin.showallphotos', compact('photos'));
     }
 
+    //music album routes
+    public function showAddAlbum(Request $request){
+        return view('admin.addalbum');
+    }
+
+    public function addAlbum(Request $request){
+
+        $this->validate($request, [
+            'title' => 'required',
+            'about' => 'required',
+            'image' => 'required',
+            'soundcloud_link' => 'nullable',
+            'itunes_link' => 'nullable',
+            'spotify_link' => 'nullable',
+        ]);
+
+        $uploaded_image = $request->file('image');
+        $category_image = time(). "-albums-". $uploaded_image->getClientOriginalName();
+        $uploaded_image->move('albums/music', $category_image);
+        $category_image = "albums/music/".$category_image;
+
+        $album = Album::create([
+            'title' => $request->title,
+            'about' => $request->about,
+            'image' => $category_image,
+            'soundcloud_link' => $request->soundcloud_link,
+            'itunes_link' => $request->itunes_link,
+            'spotify_link' => $request->spotify_link,
+        ]);
+        Session::flash('success_message', 'Album Created Successfully');
+        return redirect()->back();
+    }
+
+
+    public function showAllAlbum(Request $request){
+        return "this is the show all album function";
+    }
 }

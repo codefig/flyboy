@@ -298,11 +298,15 @@
                             <a href="tables.html"><i class="fa  fa-headphones"></i> Music<span class="fa arrow"></span></a>
                              <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html"> Add New Song</a>
+                                    <a href="{{route('admin.musicalbum.add')}}"> Add New Album</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html"> View and Edit Songs</a>
+                                    <a href="{{ route('admin.musicalbum.showall') }}"> Show All Albums</a>
                                 </li>
+
+                                 <li>
+                                     <a href="{{ route('admin.musicalbum.showall') }}"> Add New Single </a>
+                                 </li>
                             </ul>
                         </li>
 
