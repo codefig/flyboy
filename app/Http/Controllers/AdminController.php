@@ -149,7 +149,7 @@ class AdminController extends Controller {
 	}
 
 	public function addVideos(Request $request) {
-//        return $request->all();
+
 		$this->validate($request, [
 			'song_title' => 'required',
 			'album_title' => 'nullable',
@@ -216,8 +216,7 @@ class AdminController extends Controller {
     }
 
     public function addNews(Request $request){
-//        return "this is the add news function ";
-//        return $request->all();
+
         $this->validate($request, [
             'headline' => 'required',
             'body' => 'required',
@@ -381,7 +380,6 @@ class AdminController extends Controller {
     public function showAddPhotos(Request $request){
         $categories = Category::where('is_deleted',0)->get();
         return view('admin.showaddphotos', compact('categories'));
-//        return $categories;
     }
 
     public function addPhotos(Request $request){
@@ -471,7 +469,7 @@ class AdminController extends Controller {
     }
 
     public function editAlbum(Request $request, $id){
-//        return $request->all();
+
         $album = Album::find($id);
         return view('admin.editalbums', compact('album'));
     }
@@ -487,7 +485,7 @@ class AdminController extends Controller {
             'itunes_link' => 'nullable',
             'spotify_link' => 'nullable',
         ]);
-//
+
         if ($request->image) {
 
             $updated_image = $request->file('image');
@@ -530,7 +528,7 @@ class AdminController extends Controller {
 
     //single music routes;
     public function showAddMusic(Request $request){
-//        return "this is the show add music function";
+
         $albums = Album::all();
         return view('admin.addmusic', compact('albums'));
     }
@@ -591,7 +589,7 @@ class AdminController extends Controller {
             'itunes_link' => 'nullable',
             'spotify_link' => 'nullable',
         ]);
-//
+
         if ($request->image) {
 
             $updated_image = $request->file('image');
@@ -609,7 +607,6 @@ class AdminController extends Controller {
             Session::flash('success_message', 'Music Updated Successfully !');
 
         } else {
-
             $music->update([
                 'title' => $request->title,
                 'soundcloud_link' => $request->soundcloud_link,
