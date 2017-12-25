@@ -305,7 +305,11 @@
                                 </li>
 
                                  <li>
-                                     <a href="{{ route('admin.musicalbum.showall') }}"> Add New Single </a>
+                                     <a href="{{ route('admin.music.add') }}"> Add New Single </a>
+                                 </li>
+
+                                 <li>
+                                     <a href="{{ route('admin.music.showall') }}"> Show All Singles </a>
                                  </li>
                             </ul>
                         </li>

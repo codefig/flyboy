@@ -84,4 +84,12 @@ Route::prefix('/admin')->group(function () {
     Route::get('/music/album/{id}/edit', 'AdminController@editAlbum')->name('admin.musicalbum.edit');
     Route::post('/music/album/update', 'AdminController@updateAlbum')->name('admin.musicalbum.update');
     Route::get('/music/album/{id}/delete', 'AdminController@deleteAlbum')->name('admin.musicalbum.delete');
+
+    //single music routes
+    Route::get('/song/add', 'AdminController@showAddMusic')->name('admin.music.add');
+    Route::post('/song/submit', 'AdminController@addMusic')->name('admin.music.submit');
+    Route::get('/song/{id}/edit', 'AdminController@editMusic')->name('admin.music.edit');
+    Route::post('/song/update', 'AdminController@updateMusic')->name('admin.music.update');
+    Route::get('/song/showall', 'AdminController@showAllMusic')->name('admin.music.showall');
+    Route::get('/song/{id}/delete', 'AdminController@deleteMusic')->name('admin.music.delete');
 });

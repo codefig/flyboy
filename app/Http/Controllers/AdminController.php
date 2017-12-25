@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Session;
 use App\News;
 use App\Photo;
 use App\Album;
+use App\Music;
 
 class AdminController extends Controller {
 
@@ -517,5 +518,72 @@ class AdminController extends Controller {
             Session::flash('success_message', 'Album Updated Successfully !');
         }
         return redirect()->back();
+    }
+
+    public function deleteAlbum(Request $request, $id){
+        $album = Album::find($id);
+        $album->delete();
+        Session::flash('success_message','Album Deleted Successfully !');
+        return redirect()->back();
+    }
+
+
+    //single music routes;
+    public function showAddMusic(Request $request){
+//        return "this is the show add music function";
+        return view('admin.addmusic');
+    }
+
+    public function addMusic(Request $request){
+        $this->validate($request, [
+            'title' => 'required',
+            'album_id' => 'nullable',
+            'image' => 'required',
+            'audio' => 'required',
+            'spotify_link'=> 'nullable',
+            'soundcloud_link' => 'nullable',
+            'itunes_link' => 'nullable',
+        ]);
+
+        $updated_image = $request->file('image');
+        $new_image = time() . "-albums-" . $updated_image->getClientOriginalName();
+        $updated_image->move('albums/music', $new_image);
+        $new_image = "albums/music/" . $new_image;
+
+        $song_file = $request->file('audio');
+        $new_file = time(). "-music-". $song_file->getClientOriginalName();
+        $song_file->move('music-uploads', $new_file );
+        $new_file = "music-uploads/".$new_file;
+
+        $music = Music::create([
+            'title' => $request->title,
+            'album_id' => $request->album_id,
+            'image' => $request->image,
+            'audio' => $request->audio,
+            'spotify_link' => $request->spotify_link,
+            'soundcloud_link' => $request->soundcloud_link,
+            'itunes_link' => $request->itunes_link
+        ]);
+
+        $music->save();
+        Session::flash('success_message', 'Music Added Successfully !');
+        return redirect()->back();
+    }
+
+    public function showAllMusic(Request $request){
+        $musics = Music::all();
+        return view('admin.showallmusic');
+    }
+
+    public function editMusic(Request $request, $id){
+        return "this isht eedit music function";
+    }
+
+    public function updateMusic(Request $request){
+        return "this si the update Musci function";
+    }
+
+    public function deleteMusic(Request $request){
+        return "this is the delete Music function";
     }
 }
