@@ -531,7 +531,8 @@ class AdminController extends Controller {
     //single music routes;
     public function showAddMusic(Request $request){
 //        return "this is the show add music function";
-        return view('admin.addmusic');
+        $albums = Album::all();
+        return view('admin.addmusic', compact('albums'));
     }
 
     public function addMusic(Request $request){
@@ -558,8 +559,8 @@ class AdminController extends Controller {
         $music = Music::create([
             'title' => $request->title,
             'album_id' => $request->album_id,
-            'image' => $request->image,
-            'audio' => $request->audio,
+            'image' => $new_image,
+            'audio' => $new_file,
             'spotify_link' => $request->spotify_link,
             'soundcloud_link' => $request->soundcloud_link,
             'itunes_link' => $request->itunes_link
@@ -572,7 +573,7 @@ class AdminController extends Controller {
 
     public function showAllMusic(Request $request){
         $musics = Music::all();
-        return view('admin.showallmusic');
+        return view('admin.showallmusic', compact('musics'));
     }
 
     public function editMusic(Request $request, $id){

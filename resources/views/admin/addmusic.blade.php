@@ -442,6 +442,11 @@
                             <label> Album </label>
                             <select class="form-control" name="album_id" id="album_id">
                                 <option value="0">None</option>
+                                @if(count($albums) > 0)
+                                    @foreach($albums as $album)
+                                    <option value="{{$album->id}}">{{$album->title}}</option>
+                                    @endforeach
+                                @endif
                             </select>
                         </div>
 
