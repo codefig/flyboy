@@ -577,14 +577,57 @@ class AdminController extends Controller {
     }
 
     public function editMusic(Request $request, $id){
-        return "this isht eedit music function";
+        $music = Music::find($id);
+        return view('admin.editmusic', compact('music'));
     }
 
     public function updateMusic(Request $request){
-        return "this si the update Musci function";
+        $music = Music::find($request->music_id);
+
+        $this->validate($request, [
+            'title' => 'required',
+            'image' => 'nullable',
+            'soundcloud_link' => 'nullable',
+            'itunes_link' => 'nullable',
+            'spotify_link' => 'nullable',
+        ]);
+//
+        if ($request->image) {
+
+            $updated_image = $request->file('image');
+            $new_image = time() . "-music-" . $updated_image->getClientOriginalName();
+            $updated_image->move('albums/music', $new_image);
+            $new_image = "albums/music/" . $new_image;
+
+            $music->update([
+                'title' => $request->title,
+                'image' => $new_image,
+                'soundcloud_link' => $request->soundcloud_link,
+                'itunes_link' => $request->itunes_link,
+                'spotify_link' => $request->spotify_link,
+            ]);
+            Session::flash('success_message', 'Music Updated Successfully !');
+
+        } else {
+
+            $music->update([
+                'title' => $request->title,
+                'soundcloud_link' => $request->soundcloud_link,
+                'itunes_link' => $request->itunes_link,
+                'spotify_link' => $request->spotify_link,
+            ]);
+
+            Session::flash('success_message', 'Music Updated Successfully !');
+        }
+        return redirect()->back();
+
+
     }
 
-    public function deleteMusic(Request $request){
-        return "this is the delete Music function";
+    public function deleteMusic(Request $request, $id){
+        $music = Music::find($id);
+        $music->delete();
+        Session::flash('success_message', 'Music deleted Successfully !');
+        return redirect()->back();
     }
 }

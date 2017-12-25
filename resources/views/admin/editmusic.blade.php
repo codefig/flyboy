@@ -27,16 +27,6 @@
     <link href="{{URL::to("css/responsive.css")}}"  rel="stylesheet" type="text/css">
     <link href="{{URL::to("css/animate.css")}}"  rel="stylesheet" type="text/css">
 
-    <style type="text/css">
-        .del-btn {
-            margin-top:5px !important;
-        }
-
-        .edit-btn {
-            margin-bottom:10px !important;
-        }
-    </style>
-
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -300,7 +290,9 @@
                             <li>
                                 <a href="{{ route('admin.events.showall') }}"> View Events</a>
                             </li>
-
+                            <li>
+                                <a href="morris.html"> Edit Events</a>
+                            </li>
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
@@ -320,13 +312,10 @@
                         <a href="forms.html"><i class="fa fa-file-image-o fa-fw"></i> Gallery <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="flot.html"> Add Event</a>
+                                <a href=""> Add Images</a>
                             </li>
                             <li>
-                                <a href="morris.html"> View Events</a>
-                            </li>
-                            <li>
-                                <a href="morris.html"> Edit Events</a>
+                                <a href=""> Show images</a>
                             </li>
                         </ul>
 
@@ -336,7 +325,7 @@
                         <a href="forms.html"><i class="fa fa-file-video-o fa-fw"></i> Video <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{route('admin.videos.add')}}"> Add Video</a>
+                                <a href="{{ route('admin.videos.add') }}"> Add Video</a>
                             </li>
 
                             <li>
@@ -440,58 +429,60 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">All Music</h1>
+                    <h1 class="page-header">Edit Music</h1>
 
-                    <div class="table-responsive">
-                        <table class="table table-hover table-bordered">
-                            <thead>
-                            <tr>
-                                <th>SN</th>
-                                <th>Title</th>
-                                <th>Image</th>
-                                <th>Album</th>
-                                <th>Music File </th>
-                                <th>Addition Date</th>
-                                <th>Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                    @if(count($music) > 0)
+                        <div class="form-group" style="height:300px;width:300px;border-radius:5px;border:1px solid #ccc;">
+                            <img class="img-responsive" src="{{ URL::to($music->image) }}">
+                        </div>
+                        <form method="post" action="{{ route('admin.music.update') }}" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label> Title </label>
+                                <input type="text" class="form-control" id="title" name="title" value="{{ $music->title }}">
+                            </div>
 
-                            @if(count($musics) > 0 )
-                                <span style="display:none">{{ $serial_number = 0 }}</span>
-                                @foreach($musics as $music)
-                                    <tr>
-                                        <td>{{ $serial_number+=1  }}</td>
-                                        <td>{{ $music->title}}</td>
-                                        <td><a href="{{ URL::to($music->image) }}"><img style="height:200px;width:300px;" src="{{ URL::to($music->image) }}" class="img-responsive img-rounded"></a></td>
-                                        <td>{{$music->checkAlbum()}}</td>
-                                        <td>{{ $music->audio }}</td>
-                                        <td>{{$music->created_at}}</td>
-                                        <td>
-                                            <a href="{{ route('admin.music.edit', $music->id) }}" class="edit-link"><span class="fa fa-edit"></span></a>
-                                            <a href="{{ route('admin.music.delete', $music->id) }}" class="delete-link"><span class="fa fa-trash-o"></span></a>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                            <div class="form-group">
+                                <label>Album Image</label>
+                                <input type="file" name="image" class="form-control" id="image" accept="image/*">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Spotify Link</label>
+                                <input type="text" class="form-control" id="spotify_link" name="spotify_link" value="{{$music->spotify_link}}">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Itunes Link</label>
+                                <input type="text" class="form-control" id="itunes_link" name="itunes_link" value="{{$music->itunes_link}}">
+                            </div>
+
+                            <div class="form-group">
+                                <label>SoundCloud Link</label>
+                                <input type="text" class="form-control" id="soundcloud_link" name="soundcloud_link" value="{{$music->soundcloud_link}}">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="hidden" name="music_id" id="music_id" value="{{ $music->id }}">
+                                <input type="submit" value="Update Music " class="btn btn-primary" name="addeventBtn" id="addeventBtn">
+                                <input type="hidden" name="_token" value="{{ Session::token() }}">
+                            </div>
                             @endif
-                            </tbody>
-                        </table>
-                    </div>
 
-                    @if(count($errors) > 0)
-                        <div class="alert alert-danger">
-                            @foreach($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </div>
-                    @endif
+                            @if(count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </div>
+                            @endif
 
-                    @if(Session::has('success_message'))
+                            @if(Session::has('success_message'))
 
-                        <div class="alert alert-success">
-                            <strong>{{ Session::get('success_message') }}</strong>
-                        </div>
-                    @endif
+                                <div class="alert alert-success">
+                                    <strong>{{ Session::get('success_message') }}</strong>
+                                </div>
+                            @endif
+                        </form>
 
                 </div>
                 <!-- /.col-lg-12 -->
@@ -516,28 +507,6 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="{{ URL::to('js/sb-admin-2.js') }}"></script>
-
-<!-- Custom alert javascipt -->
-<script src="{{ URL::to('js/bootbox.min.js') }}"></script>
-
-<script>
-    $('document').ready(function(e){
-//        alert("page is ready");
-        $('.delete-link').click(function(event){
-            event.preventDefault();
-            var route = this.href;
-            bootbox.confirm("Are you sure you want to delete this Video ?", function(result){
-                if(result == false)
-                    event.preventDefault();
-                else{
-                    window.location = route;
-
-                }
-            })
-        })
-    });
-
-</script>
 
 </body>
 

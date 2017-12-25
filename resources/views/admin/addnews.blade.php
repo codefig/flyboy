@@ -438,8 +438,6 @@
                             <input type="text" class="form-control" id="headline" name="headline">
                         </div>
 
-
-
                         <div class="form-group">
                             <label> News Body </label>
                             <textarea class="form-control" name="body" id="body"></textarea>
