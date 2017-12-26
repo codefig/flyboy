@@ -22,10 +22,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h1 class="concert-title">NEW IMMEDIATE EVENT</h1>
-            <p class="concert-info">Lines of text like an overview of what the concert is all about goes here.<br/>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            @if(count($latest) > 0)
+
+              <h1 class="concert-title" style="text-transform: uppercase">{{$latest->title}}</h1>
+              <p class="concert-info">{{$latest->limit_text(30)}}
+              </p>
+            @endif
           </div>
         </div>
       </div>
@@ -34,18 +36,20 @@
     <section class="concert-details">
       <div class="container">
         <div class="row">
-          <div class="col-md-5">
-            <p><i class="fa fa-map-marker"></i>The Expo Hall, Eko Hotel and Suites, Victoria Island, Lagos.</p>
-          </div>
-          <div class="col-md-3">
-            <p><i class="fa fa-calendar"></i>Friday 17th, December, 2017.</p>
-          </div>
-          <div class="col-md-2">
-            <p><i class="fa fa-clock-o"></i>7:00pm</p>
-          </div>
-          <div class="col-md-2">
-            <a href="#" class="btn btn-primary btn-lg">GET TICKET</a>
-          </div>
+          @if(count($latest) > 0)
+            <div class="col-md-5">
+              <p><i class="fa fa-map-marker"></i>{{$latest->location}}.</p>
+            </div>
+            <div class="col-md-3">
+              <p><i class="fa fa-calendar"></i>{{$latest->createDate()->formatLocalized('%A, %d %B %Y')}}.</p>
+            </div>
+            <div class="col-md-2">
+              <p><i class="fa fa-clock-o"></i>{{$latest->time}}</p>
+            </div>
+            <div class="col-md-2">
+              <a href="{{$latest->ticket_link}}" class="btn btn-primary btn-lg">GET TICKET</a>
+            </div>
+            @endif
         </div>
       </div>
     </section>
@@ -93,13 +97,13 @@
                 </div>
                 <div class="col-md-6">
                   <h3>{{$event->title}}</h3>
-                  <p> {{ $event->about }}</p>
+                  <p> {{ $event->limit_text(50) }}</p>
                   <div class="row">
                     <div class="col-md-7">
                       <p><i class="fa fa-map-marker"></i>{{$event->location}}</p>
                     </div>
                     <div class="col-md-5">
-                      <p><i class="fa fa-calendar"></i>{{$event->date}}</p>
+                      <p><i class="fa fa-calendar"></i>{{$event->createDate()->formatLocalized('%A, %d %B %Y')}}</p>
                     </div>
                   </div>
                 </div>
