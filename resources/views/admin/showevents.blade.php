@@ -452,6 +452,7 @@
                             <tr>
                                 <th>SN</th>
                                 <th>Title</th>
+                                <th>Slug</th>
                                 <th>About</th>
                                 <th>Location</th>
                                 <th>Date / Time </th>
@@ -469,6 +470,7 @@
                                         <tr>
                                             <td>{{ $serial_number+=1  }}</td>
                                             <td>{{ $event->title }}</td>
+                                            <td><a href="{{$event->slug}}">{{ $event->slug }}</a></td>
                                             <td>{{ $event->about }}</td>
                                             <td>{{ $event->location }}</td>
                                             <td><div>

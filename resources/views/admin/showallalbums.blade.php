@@ -448,6 +448,7 @@
                             <tr>
                                 <th>SN</th>
                                 <th>Title</th>
+                                <th>Slug</th>
                                 <th>Image</th>
                                 <th>Body</th>
                                 <th>Addition Date</th>
@@ -462,6 +463,7 @@
                                     <tr>
                                         <td>{{ $serial_number+=1  }}</td>
                                         <td>{{ $album->title}}</td>
+                                        <td><a href="{{$album->slug}}">{{$album->slug}}</a></td>
                                         <td><a href="{{ URL::to($album->image) }}"><img style="height:200px;width:300px;" src="{{ URL::to($album->image) }}" class="img-responsive img-rounded"></a></td>
                                         <td>{{$album->limit_text(25)}}</td>
                                         <td>{{ $album->created_at->formatLocalized('%A, %d %B %Y.') }}</td>

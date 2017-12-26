@@ -8,5 +8,5 @@ class Event extends Model
 {
     //
 
-    protected $fillable = ['title', 'about', 'location', 'date', 'image', 'time', 'ticket_link'];
+    protected $fillable = ['title', 'slug','about', 'location', 'date', 'image', 'time', 'ticket_link'];
 }

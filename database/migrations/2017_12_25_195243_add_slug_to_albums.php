@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddSlugToNews extends Migration
+class AddSlugToAlbums extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddSlugToNews extends Migration
      */
     public function up()
     {
-        Schema::table('news', function (Blueprint $table) {
+        Schema::table('albums', function (Blueprint $table) {
             //
-            $table->string('slug')->unique()->after('headline');
+            $table->string('slug')->unique()->after('title');
         });
     }
 
@@ -26,7 +26,7 @@ class AddSlugToNews extends Migration
      */
     public function down()
     {
-        Schema::table('news', function (Blueprint $table) {
+        Schema::table('albums', function (Blueprint $table) {
             //
             $table->dropIfExists('slug');
         });

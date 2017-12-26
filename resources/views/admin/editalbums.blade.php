@@ -442,6 +442,11 @@
                             </div>
 
                             <div class="form-group">
+                                <label>Slug</label>
+                                <input type="text" class="form-control" id="slug" name="slug" value="{{$album->slug}}">
+                            </div>
+
+                            <div class="form-group">
                                 <label>Body</label>
                                 <textarea class="form-control" id="about" name="about">{{ $album->about }}</textarea>
                             </div>

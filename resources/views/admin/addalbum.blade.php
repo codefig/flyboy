@@ -439,6 +439,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label> Slug </label>
+                            <input type="text" class="form-control" id="slug" name="slug">
+                        </div>
+
+                        <div class="form-group">
                             <label>About e.g (Added Texts) </label>
                             <textarea class="form-control" id="about" name="about"></textarea>
                         </div>

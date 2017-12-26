@@ -27,6 +27,11 @@ Route::get('/contact', 'UserController@contact')->name('user.contact');
 Route::get('/playmusic', 'UserController@playmusic')->name('user.playmusic');
 Route::get('/showphotos', 'UserController@showphotos')->name('user.showphotos');
 
+
+//other routes for information viewing
+Route::get('/news/{slug}', 'UserController@newsLink')
+    ->name('user.newslink')->where('slug','[\w\d\-\_]+');
+
 /**
  *  Route for the administrative links
  */

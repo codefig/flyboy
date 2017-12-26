@@ -442,6 +442,11 @@
                             </div>
 
                             <div class="form-group">
+                                <label>Slug</label>
+                                <input type="text" class="form-control" id="slug" name="slug" value="{{$music->slug}}">
+                            </div>
+
+                            <div class="form-group">
                                 <label>Album Image</label>
                                 <input type="file" name="image" class="form-control" id="image" accept="image/*">
                             </div>

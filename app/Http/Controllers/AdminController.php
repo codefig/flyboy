@@ -47,6 +47,7 @@ class AdminController extends Controller {
 	public function addEvents(Request $request) {
 		$this->validate($request, [
 			'title' => 'required',
+			'slug' => 'required|min:5|max:255|unique:events,slug',
 			'about' => 'required',
 			'location' => 'required',
 			'date' => 'required',
@@ -64,6 +65,7 @@ class AdminController extends Controller {
 		//create new event record
 		$event = Event::create([
 			'title' => $request->title,
+			'slug' => $request->slug,
 			'about' => $request->about,
 			'location' => $request->location,
 			'date' => $request->date,
@@ -82,7 +84,6 @@ class AdminController extends Controller {
 
 	public function editEvents(Request $request, $id) {
 		$event = Event::where('id', $id)->get()->first();
-
 		return view('admin.editevents', compact('event'));
 	}
 
@@ -92,18 +93,35 @@ class AdminController extends Controller {
 		*/
 		$event_id = $request->event_id;
 		$event = Event::where('id', $event_id)->get()->first();
+		$former_slug = $event->slug;
 
-		$this->validate($request, [
-			'title' => 'required',
-			'about' => 'required',
-			'location' => 'required',
-			'date' => 'required',
-			'time' => 'nullable',
-			'image' => 'nullable|mimes:jpeg,png',
-			'ticket_link' => 'nullable',
-		]);
+		if($request->slug == $former_slug){
+            $this->validate($request, [
+                'title' => 'required',
+                'about' => 'required',
+                'location' => 'required',
+                'date' => 'required',
+                'time' => 'nullable',
+                'image' => 'nullable|mimes:jpeg,png',
+                'ticket_link' => 'nullable',
+            ]);
+        }
+        else{
 
-		if ($request->image) {
+            $this->validate($request, [
+                'title' => 'required',
+                'slug' => 'required|unique:events,slug',
+                'about' => 'required',
+                'location' => 'required',
+                'date' => 'required',
+                'time' => 'nullable',
+                'image' => 'nullable|mimes:jpeg,png',
+                'ticket_link' => 'nullable',
+            ]);
+        }
+
+
+        if ($request->image) {
 
 			$updated_image = $request->file('image');
 			$new_image = time() . "-event-" . $updated_image->getClientOriginalName();
@@ -112,6 +130,7 @@ class AdminController extends Controller {
 
 			$event->update([
 				'title' => $request->title,
+				'slug' => $request->slug,
 				'about' => $request->about,
 				'location' => $request->location,
 				'date' => $request->date,
@@ -124,6 +143,7 @@ class AdminController extends Controller {
 
 			$event->update([
 				'title' => $request->title,
+				'slug' => $request->slug,
 				'about' => $request->about,
 				'location' => $request->location,
 				'date' => $request->date,
@@ -219,6 +239,7 @@ class AdminController extends Controller {
 
         $this->validate($request, [
             'headline' => 'required',
+            'slug' => 'required|alpha_dash|min:5|max:255|unique:news,slug',
             'body' => 'required',
             'image' => 'required',
             'author' => 'nullable',
@@ -232,6 +253,7 @@ class AdminController extends Controller {
 
         $news = News::create([
             'headline' => $request->headline,
+            'slug' => $request->slug,
             'body' => $request->body,
             'image' => $new_image_name,
             'author' => $request->author,
@@ -251,13 +273,26 @@ class AdminController extends Controller {
     public function updateNews(Request $request){
         $news_id = $request->news_id;
         $news = News::find($news_id);
+        $former_slug = $news->slug;
 
-        $this->validate($request, [
-            'headline' => 'required',
-            'body' => 'required',
-            'author' => 'nullable',
-            'image' => 'nullable|mimes:jpeg,png',
-        ]);
+        if($request->slug == $former_slug){
+
+            $this->validate($request, [
+                'headline' => 'required',
+                'body' => 'required',
+                'author' => 'nullable',
+                'image' => 'nullable|mimes:jpeg,png',
+            ]);
+        }
+        else{
+            $this->validate($request, [
+                'headline' => 'required',
+                'slug' => 'required|unique:news,slug',
+                'body' => 'required',
+                'author' => 'nullable',
+                'image' => 'nullable|mimes:jpeg,png',
+            ]);
+        }
 
         if ($request->image) {
 
@@ -268,6 +303,7 @@ class AdminController extends Controller {
 
             $news->update([
                 'headline' => $request->headline,
+                'slug' => $request->slug,
                 'body' => $request->body,
                 'author' => $request->author,
                 'image' => $new_image,
@@ -278,6 +314,7 @@ class AdminController extends Controller {
 
             $news->update([
                 'headline' => $request->headline,
+                'slug' => $request->slug,
                 'body' => $request->body,
                 'author' => $request->author,
             ]);
@@ -439,6 +476,7 @@ class AdminController extends Controller {
 
         $this->validate($request, [
             'title' => 'required',
+            'slug' => 'required|min:5|max:255|unique:albums,slug',
             'about' => 'required',
             'image' => 'required',
             'soundcloud_link' => 'nullable',
@@ -453,6 +491,7 @@ class AdminController extends Controller {
 
         $album = Album::create([
             'title' => $request->title,
+            'slug' => $request->slug,
             'about' => $request->about,
             'image' => $category_image,
             'soundcloud_link' => $request->soundcloud_link,
@@ -476,15 +515,31 @@ class AdminController extends Controller {
 
     public function updateAlbum(Request $request){
         $album  = Album::find($request->album_id);
+        $former_slug = $album->slug;
 
-        $this->validate($request, [
-            'title' => 'required',
-            'about' => 'required',
-            'image' => 'nullable',
-            'soundcloud_link' => 'nullable',
-            'itunes_link' => 'nullable',
-            'spotify_link' => 'nullable',
-        ]);
+        if($request->slug == $former_slug){
+            $this->validate($request, [
+                'title' => 'required',
+                'about' => 'required',
+                'image' => 'nullable',
+                'soundcloud_link' => 'nullable',
+                'itunes_link' => 'nullable',
+                'spotify_link' => 'nullable',
+            ]);
+        }
+        else{
+
+            $this->validate($request, [
+                'title' => 'required',
+                'slug' => 'required|min:5|max:255|unique:albums,slug',
+                'about' => 'required',
+                'image' => 'nullable',
+                'soundcloud_link' => 'nullable',
+                'itunes_link' => 'nullable',
+                'spotify_link' => 'nullable',
+            ]);
+        }
+
 
         if ($request->image) {
 
@@ -495,6 +550,7 @@ class AdminController extends Controller {
 
             $album->update([
                 'title' => $request->title,
+                'slug' => $request->slug,
                 'about' => $request->about,
                 'image' => $new_image,
                 'soundcloud_link' => $request->soundcloud_link,
@@ -507,6 +563,7 @@ class AdminController extends Controller {
 
             $album->update([
                 'title' => $request->title,
+                'slug' => $request->slug,
                 'about' => $request->about,
                 'soundcloud_link' => $request->soundcloud_link,
                 'itunes_link' => $request->itunes_link,
@@ -536,6 +593,7 @@ class AdminController extends Controller {
     public function addMusic(Request $request){
         $this->validate($request, [
             'title' => 'required',
+            'slug' => 'required|min:5|max:255|unique:musics,slug',
             'album_id' => 'nullable',
             'image' => 'required',
             'audio' => 'required',
@@ -556,6 +614,7 @@ class AdminController extends Controller {
 
         $music = Music::create([
             'title' => $request->title,
+            'slug' => $request->slug,
             'album_id' => $request->album_id,
             'image' => $new_image,
             'audio' => $new_file,
@@ -581,14 +640,28 @@ class AdminController extends Controller {
 
     public function updateMusic(Request $request){
         $music = Music::find($request->music_id);
+        $former_slug = $music->slug;
 
-        $this->validate($request, [
-            'title' => 'required',
-            'image' => 'nullable',
-            'soundcloud_link' => 'nullable',
-            'itunes_link' => 'nullable',
-            'spotify_link' => 'nullable',
-        ]);
+        if($request->slug == $former_slug){
+            $this->validate($request, [
+                'title' => 'required',
+                'image' => 'nullable',
+                'soundcloud_link' => 'nullable',
+                'itunes_link' => 'nullable',
+                'spotify_link' => 'nullable',
+            ]);
+        }
+        else{
+
+            $this->validate($request, [
+                'title' => 'required',
+                'slug' => 'required|min:5|max:255|unique:musics,slug',
+                'image' => 'nullable',
+                'soundcloud_link' => 'nullable',
+                'itunes_link' => 'nullable',
+                'spotify_link' => 'nullable',
+            ]);
+        }
 
         if ($request->image) {
 
@@ -599,6 +672,7 @@ class AdminController extends Controller {
 
             $music->update([
                 'title' => $request->title,
+                'slug' => $request->slug,
                 'image' => $new_image,
                 'soundcloud_link' => $request->soundcloud_link,
                 'itunes_link' => $request->itunes_link,
@@ -609,6 +683,7 @@ class AdminController extends Controller {
         } else {
             $music->update([
                 'title' => $request->title,
+                'slug' => $request->slug,
                 'soundcloud_link' => $request->soundcloud_link,
                 'itunes_link' => $request->itunes_link,
                 'spotify_link' => $request->spotify_link,

@@ -447,6 +447,10 @@
                             </div>
 
                             <div class="form-group">
+                                <label>Slug</label>
+                                <input type="text" class="form-control" id="slug" name="slug" value="{{$event->slug}}">
+                            </div>
+                            <div class="form-group">
                                 <label>About</label>
                                 <textarea class="form-control" id="about" name="about">{{ $event->about }}</textarea>
                             </div>

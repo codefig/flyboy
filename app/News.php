@@ -8,7 +8,7 @@ class News extends Model
 {
     //
 
-    protected $fillable = ['headline', 'date', 'body', 'image', 'author'];
+    protected $fillable = ['headline','slug', 'date', 'body', 'image', 'author'];
 
     public function limit_text($limit) {
         $text = $this->body;

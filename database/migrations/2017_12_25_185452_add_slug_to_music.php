@@ -13,8 +13,8 @@ class AddSlugToMusic extends Migration
      */
     public function up()
     {
-        Schema::table('music', function (Blueprint $table) {
-            //
+        Schema::table('musics', function (Blueprint $table) {
+            $table->string('slug')->unique()->after('title');
         });
     }
 
@@ -26,7 +26,7 @@ class AddSlugToMusic extends Migration
     public function down()
     {
         Schema::table('music', function (Blueprint $table) {
-            //
+            $table->dropIfExists('slug');
         });
     }
 }

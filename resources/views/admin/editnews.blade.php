@@ -442,6 +442,11 @@
                             </div>
 
                             <div class="form-group">
+                                <label>Slug</label>
+                                <input type="text" class="form-control" id="slug" name="slug" value="{{$news->slug}}">
+                            </div>
+
+                            <div class="form-group">
                                 <label>Body</label>
                                 <textarea class="form-control" id="body" name="body">{{ $news->body }}</textarea>
                             </div>

@@ -438,6 +438,12 @@
                             <input type="text" class="form-control" id="title" name="title">
                         </div>
 
+
+                        <div class="form-group">
+                            <label>Slug</label>
+                            <input type="text" class="form-control" id="slug" name="slug">
+                        </div>
+
                         <div class="form-group">
                             <label> Album </label>
                             <select class="form-control" name="album_id" id="album_id">

@@ -448,6 +448,7 @@
                             <tr>
                                 <th>SN</th>
                                 <th>Headline</th>
+                                <th>Slug Url </th>
                                 <th>Body</th>
                                 <th>Image</th>
                                 <th>Creation Date</th>
@@ -462,6 +463,7 @@
                                     <tr>
                                         <td>{{ $serial_number+=1  }}</td>
                                         <td>{{ $news->headline}}</td>
+                                        <td><a href="{{url($news->slug)}}">{{ $news->slug }}</a></td>
                                         <td>{{ $news->limit_text(10) }}</td>
                                         <td><a href="{{ URL::to($news->image) }}"><img style="height:200px;width:300px;" src="{{ URL::to($news->image) }}" class="img-responsive img-rounded"></a></td>
                                         <td>{{ $news->created_at->formatLocalized('%A, %d %B %Y.') }}</td>

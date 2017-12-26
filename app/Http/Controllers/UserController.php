@@ -104,4 +104,22 @@ class UserController extends Controller {
 			return redirect()->back()->with('error_message', 'Invalid login credentials :) ');
 		}
 	}
+
+	//information links
+    public function newsLink($slug){
+	    return $slug;
+    }
+
+    public function eventsLink($slug){
+        return $slug;
+    }
+
+    public function musicLink($slug){
+        return $slug;
+    }
+
+    public function albumLink($slug){
+        return $slug;
+    }
+
 }
