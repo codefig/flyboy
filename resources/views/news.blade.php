@@ -67,18 +67,11 @@
           @endif
 
 
-              {{$news->links()}}
 
               <div class="page">
-              <div class="row pull-right">
-                <ul class="pagination">
-                  <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                  <li class="page-item active"><a class="page-link" href="news.html">1</a></li>
-                  <li class="page-item"><a class="page-link" href="news-page-2.html">2</a></li>
-                  <li class="page-item"><a class="page-link" href="news-page-3.html">3</a></li>
-                  <li class="page-item"><a class="page-link" href="news-page-2.html">Next</a></li>
-              </ul>
-            </div>
+                  <div class="row pull-right">
+                      {{$news->links()}}
+                 </div>
               <div class="clearfix"></div>
           </div>
 
@@ -87,20 +80,13 @@
       <div class="news-page col-lg-3 col-lg-offset-1">
         <div class="older-news">
           <h3>FOLLOW US </h3>
-          <div>
-            <h4>INSTAGRAM</h4>
-            <div class="older-post">
-                <img src="img/sliders/slider-6.jpg" class="img-responsive">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non efficitur velit. Duis semper eros id tempor facilisis. Suspendisse molestie nunc at massa iaculis, at iaculis dolor blandit. Pellentesque non pulvinar dolor.</p>
-                <a href="blog_readmore.html" class="btn btn-primary">Full story</a>
-            </div>
-          </div>
+         
           <div>
             <h4>FACEBOOK</h4>
             <div class="older-post">
                 <div class="social-divider"></div>
                 <!--facebook timeline -->
-                <div class="fb-like" data-href="https://web.facebook.com/iamkissdaniel/?ref=br_rs" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                <div class="fb-like" data-href="http://facebook.com/iamkissdaniel" data-layout="box_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
                 <!--facebook timeline ends -->
             </div>
           </div>

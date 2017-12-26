@@ -124,18 +124,11 @@
 
           <div class="page">
             <div class="row text-center">
-              <ul class="pagination text-center">
-                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item active"><a class="page-link" href="events.html">1</a></li>
-                <li class="page-item"><a class="page-link" href="events2.html">2</a></li>
-                <li class="page-item"><a class="page-link" href="events3.html">3</a></li>
-                <li class="page-item"><a class="page-link" href="events2.html">Next</a></li>
-              </ul>
+
+                {{ $events->links() }}
             </div>
           </div>
         @endif
-
-        {{$events->links()}}
       </div>
     </section>
 

@@ -202,3 +202,8 @@ ul.pagination a:last-child {
     border-top-right-radius: 50px!important;
     border-bottom-right-radius: 50px!important;
 }
+
+li.active span {
+  background-color:#f2c053 !important;
+  border:1px solid #f2c053 !important;
+}

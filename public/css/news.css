@@ -86,21 +86,25 @@ body{
 }
 
 ul.pagination a{
-  color: #000;
+  color: #000 !important;
   font-family: 'Segoe UI';
   margin: auto 5px;
 }
 
+li.active span {
+  background-color:#f2c053 !important;
+  border:1px solid #f2c053 !important;
+}
 ul.pagination .active a {
-    background-color: #F2C053;
+    background-color: #F2C053 !important;
     color: #000;
-    border: 1px solid #F2C053;
+    border: 1px solid #F2C053 !important;
 }
 
 ul.pagination li a:hover:not(.active){
-  background-color: #95989a;
-  border: 1px solid #95989a;
-  color: #fff;
+  background-color: #95989a !important;
+  border: 1px solid #95989a !important;
+  color: #fff !important;
 }
 
 ul.pagination a:first-child {

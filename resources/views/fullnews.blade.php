@@ -8,6 +8,16 @@
     <link href="{{ URL::to('css/news.css') }}" rel="stylesheet" />
     @endsection
 
+@section('afterbodyContent')
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+@endsection
 
 @section('pageContent')
 
@@ -67,37 +77,34 @@
           </div>
         @endif
 
+        <!-- other news section-->
+            <div class="news-page col-lg-3 col-lg-offset-1">
+                <div class="older-news">
+                    <h3>FOLLOW US </h3>
 
-      <div class="news-page col-lg-3 col-lg-offset-1">
-        <div class="older-news">
-          <h3>Other News</h3>
-          <div>
-            <h4>News Headline</h4>
-            <div class="older-post">
-                <img src="{{ URL::to('img/sliders/slider-3.jpg') }}"  class="img-responsive">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non efficitur velit. Duis semper eros id tempor facilisis. Suspendisse molestie nunc at massa iaculis, at iaculis dolor blandit. Pellentesque non pulvinar dolor.</p>
-                <a href="blog_readmore.html" class="btn btn-primary">Full story</a>
-            </div>
-          </div>
-          <div>
-            <h4>News Headline</h4>
-            <div class="older-post">
-                <img src="{{ URL::to('img/sliders/slider-3.jpg') }}"  class="img-responsive">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non efficitur velit. Duis semper eros id tempor facilisis. Suspendisse molestie nunc at massa iaculis, at iaculis dolor blandit. Pellentesque non pulvinar dolor.</p>
-                <a href="blog_readmore.html" class="btn btn-primary">Full story</a>
-            </div>
-          </div>
-          <div>
-            <h4>News Headline</h4>
-            <div class="older-post">
-                <img src="{{ URL::to('img/sliders/slider-3.jpg') }}"  class="img-responsive">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non efficitur velit. Duis semper eros id tempor facilisis. Suspendisse molestie nunc at massa iaculis, at iaculis dolor blandit. Pellentesque non pulvinar dolor.</p>
-                <a href="blog_readmore.html" class="btn btn-primary">Full story</a>
-            </div>
-          </div>
+                    <div>
+                        <h4>FACEBOOK</h4>
+                        <div class="older-post">
+                            <div class="social-divider"></div>
+                            <!--facebook timeline -->
+                            <div class="fb-like" data-href="http://facebook.com/iamkissdaniel" data-layout="box_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+                            <!--facebook timeline ends -->
+                        </div>
+                    </div>
+                    <div>
+                        <h4>TWITTER</h4>
+                        <div class="older-post">
+                            <div class='social-divider'></div>
 
-        </div>
-      </div>
+                            <!-- twitter widget -->
+                            <a class="twitter-timeline" href="https://twitter.com/iamkissdaniel?ref_src=twsrc%5Etfw">Tweets by iamkissdaniel</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+                            <!--end of twitter widget -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--end  of the other news section -->
     </div>
   </div>
 @endsection
