@@ -160,17 +160,8 @@
                     <div class="socialContainers" id="instagramContainer">
                       <h3 class="socialHeaders">INSTAGRAM </h3>
                         <div class="social-divider"></div>
-                      this is the instagram container
-                      this is the instagram container
-                      this is the instagram container
-                      this is the instagram container
-                      this is the instagram container
-                      this is the instagram container
-                      this is the instagram container
-                      this is the instagram container
-                      this is the instagram container
-
-                    </div>
+                        this
+                       </div>
                     <div class="socialContainers" id="facebookContainer">
                        <h3 class="socialHeaders">Facebook</h3>
                        <div class="social-divider"></div>

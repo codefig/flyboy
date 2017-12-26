@@ -8,6 +8,17 @@
     <link href="{{ URL::to('css/news.css') }}" rel="stylesheet" />
     @endsection
 
+@section('afterbodyContent')
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+@endsection
+
 
 @section('pageContent')
 
@@ -32,6 +43,8 @@
 
   <div class="container">
     <div class="row">
+        <h2 style="margin-top:20px;">NEWS</h2>
+        <hr>
       <div class="news-page col-lg-8">
           @if(count($news) > 0)
               @foreach($news as $story)
@@ -73,9 +86,9 @@
 
       <div class="news-page col-lg-3 col-lg-offset-1">
         <div class="older-news">
-          <h3>Older News</h3>
+          <h3>FOLLOW US </h3>
           <div>
-            <h4>News Headline</h4>
+            <h4>INSTAGRAM</h4>
             <div class="older-post">
                 <img src="img/sliders/slider-6.jpg" class="img-responsive">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non efficitur velit. Duis semper eros id tempor facilisis. Suspendisse molestie nunc at massa iaculis, at iaculis dolor blandit. Pellentesque non pulvinar dolor.</p>
@@ -83,19 +96,23 @@
             </div>
           </div>
           <div>
-            <h4>News Headline</h4>
+            <h4>FACEBOOK</h4>
             <div class="older-post">
-                <img src="img/sliders/slider-6.jpg" class="img-responsive">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non efficitur velit. Duis semper eros id tempor facilisis. Suspendisse molestie nunc at massa iaculis, at iaculis dolor blandit. Pellentesque non pulvinar dolor.</p>
-                <a href="blog_readmore.html" class="btn btn-primary">Full story</a>
+                <div class="social-divider"></div>
+                <!--facebook timeline -->
+                <div class="fb-like" data-href="https://web.facebook.com/iamkissdaniel/?ref=br_rs" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                <!--facebook timeline ends -->
             </div>
           </div>
           <div>
-            <h4>News Headline</h4>
+            <h4>TWITTER</h4>
             <div class="older-post">
-                <img src="img/sliders/slider-6.jpg" class="img-responsive">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non efficitur velit. Duis semper eros id tempor facilisis. Suspendisse molestie nunc at massa iaculis, at iaculis dolor blandit. Pellentesque non pulvinar dolor.</p>
-                <a href="blog_readmore.html" class="btn btn-primary">Full story</a>
+                <div class='social-divider'></div>
+
+                <!-- twitter widget -->
+                <a class="twitter-timeline" href="https://twitter.com/iamkissdaniel?ref_src=twsrc%5Etfw">Tweets by iamkissdaniel</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+                <!--end of twitter widget -->
             </div>
           </div>
         </div>

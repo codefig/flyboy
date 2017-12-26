@@ -50,14 +50,21 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <p class="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
-          <p class="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
-          <p class="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
-          <p class="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
+          <p class="bio">
+            Anidugbe Oluwatobiloba Daniel, known as Kiss Daniel, is a Nigerian recording artist, performer and entertainer best known for his chart-topping single "Woju". Formally signed to G-Worldwide Entertainment in 2013, he left the company in November 2017 to create his own record label, Fly Boy Inc.
+          </p>
+          <p class="bio">
+            Kiss Daniel was born Oluwatobiloba Daniel Anidugbe in Ogun State, Nigeria. He hails from Abeokuta North, a local government area in Ogun State. He graduated from the Federal University of Agriculture, Abeokuta (FUNAAB), in 2013, with a degree in Water Resources Management and Agrometeorology (Water Engineering). While at FUNAAB, he decided to pursue music as a career alongside his studies.
+          </p>
+
+          <p class="bio">
+            Kiss Daniel showed an interest in music from an early age, and was encouraged by his father. He started his music career professionally 2013 after his tertiary education, when he came across G-Worldwide Entertainment CEO, Emperor Geezy. After being signed to G-Worldwide entertainment, he released his first official single "Shoye" which was produced by Beatburx on May 1, 2014, along with a music video was directed by MEX.[5] Daniel released his second single "Woju", produced by DJ Coublon on September 1, 2014. The video for Woju was directed by Adasa Cookey, shot in Lagos, Nigeria. The song spent eleven weeks on the MTV Base Official Naija Top Ten, including six weeks at the number one spot.
+          </p>
+
+          <p class="bio">
+            Daniel then recorded and released a remix of "Woju" featuring Tiwa Savage and Davido. "Woju" and its remix peaked at Number 1 and Number 2 respectively on the MTV Base Official Naija Top 10, the first time that an original song and its remix would peak at the first and second positions on the chart. A cover of the song performed by 2face Idibia appeared online.
+            In May 2015, Daniel released a third follow up single "Laye" on his birthday, along with a video two weeks later which was shot in different locations in eastern part of Africa and was directed by AJE FILMS. In September 2015, Daniel won two awards within the space of three weeks.
+          </p>
         </div>
       </div>
       <hr>

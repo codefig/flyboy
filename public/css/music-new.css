@@ -321,3 +321,10 @@
   font-size: 18px;
   font-weight: 100;
 }
+
+.itunes-img{
+  background-color: #fff;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+}

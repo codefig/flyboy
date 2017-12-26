@@ -8,6 +8,7 @@ use App\Event;
 use App\News;
 use App\Music;
 use App\Album;
+use App\Video;
 
 class UserController extends Controller {
 
@@ -56,7 +57,8 @@ class UserController extends Controller {
 	}
 
     public function videos() {
-		return view('videos');
+	    $videos = Video::orderBy('id', 'desc')->get();
+		return view('videos', compact('videos'));
 	}
 
     public function news() {
