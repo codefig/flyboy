@@ -77,118 +77,61 @@
         <div class="row">
           <h2>UPCOMING EVENTS</h2>
         </div>
-        <div class="event">
-          <div class="row">
-            <div class="col-md-3">
-              <div class="image-holder" align="center">
-                <img src="img/event2.jpg" class="img-responsive"/>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <h3>Concert One</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate,</p>
+
+
+        @if(count($events) > 0)
+
+          @foreach($events as $event)
+
+
+            <div class="event">
               <div class="row">
-                <div class="col-md-7">
-                  <p><i class="fa fa-map-marker"></i>Eko Hotel and Suites, Victoria Island, Lagos.</p>
+                <div class="col-md-3">
+                  <div class="image-holder" align="center">
+                    <img src="{{ URL::to($event->image) }}" class="img-responsive"/>
+                  </div>
                 </div>
-                <div class="col-md-5">
-                  <p><i class="fa fa-calendar"></i>Friday 17th, December, 2017.</p>
+                <div class="col-md-6">
+                  <h3>{{$event->title}}</h3>
+                  <p> {{ $event->about }}</p>
+                  <div class="row">
+                    <div class="col-md-7">
+                      <p><i class="fa fa-map-marker"></i>{{$event->location}}</p>
+                    </div>
+                    <div class="col-md-5">
+                      <p><i class="fa fa-calendar"></i>{{$event->date}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <a href="{{ $event->ticket_link }}" class="btn btn-primary btn-lg">GET TICKET</a>
                 </div>
               </div>
             </div>
-            <div class="col-md-3">
-              <a href="#" class="btn btn-primary btn-lg">GET TICKET</a>
+          @endforeach
+        @endif
+
+
+
+
+
+
+        @if(count($events) > 0)
+
+          <div class="page">
+            <div class="row text-center">
+              <ul class="pagination text-center">
+                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="events.html">1</a></li>
+                <li class="page-item"><a class="page-link" href="events2.html">2</a></li>
+                <li class="page-item"><a class="page-link" href="events3.html">3</a></li>
+                <li class="page-item"><a class="page-link" href="events2.html">Next</a></li>
+              </ul>
             </div>
           </div>
-        </div>
+        @endif
 
-        <div class="event">
-         <div class="row">
-           <div class="col-md-3">
-             <div class="image-holder" align="center">
-               <img src="img/event2.jpg" class="img-responsive"/>
-             </div>
-           </div>
-           <div class="col-md-6">
-             <h3>Concert Two</h3>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate,</p>
-             <div class="row">
-               <div class="col-md-7">
-                 <p><i class="fa fa-map-marker"></i>Eko Hotel and Suites, Victoria Island, Lagos.</p>
-               </div>
-               <div class="col-md-5">
-                 <p><i class="fa fa-calendar"></i>Friday 17th, December, 2017.</p>
-               </div>
-             </div>
-           </div>
-           <div class="col-md-3">
-             <a href="#" class="btn btn-primary btn-lg">GET TICKET</a>
-           </div>
-         </div>
-        </div>
-
-        <div class="event">
-          <div class="row">
-            <div class="col-md-3">
-              <div class="image-holder" align="center">
-                <img src="img/event2.jpg" class="img-responsive" />
-              </div>
-            </div>
-            <div class="col-md-6">
-              <h3>Concert Three</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate,</p>
-              <div class="row">
-                <div class="col-md-7">
-                  <p><i class="fa fa-map-marker"></i>Eko Hotel and Suites, Victoria Island, Lagos.</p>
-                </div>
-                <div class="col-md-5">
-                  <p><i class="fa fa-calendar"></i>Friday 17th, December, 2017.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <a href="#" class="btn btn-primary btn-lg">GET TICKET</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="event">
-          <div class="row">
-            <div class="col-md-3">
-              <div class="image-holder" align="center">
-                <img src="img/event2.jpg" class="img-responsive" />
-              </div>
-            </div>
-            <div class="col-md-6">
-              <h3>Concert Four</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate,</p>
-              <div class="row">
-                <div class="col-md-7">
-                  <p><i class="fa fa-map-marker"></i>Eko Hotel and Suites, Victoria Island, Lagos.</p>
-                </div>
-                <div class="col-md-5">
-                  <p><i class="fa fa-calendar"></i>Friday 17th, December, 2017.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <a href="#" class="btn btn-primary btn-lg">GET TICKET</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="page">
-          <div class="row text-center">
-            <ul class="pagination text-center">
-              <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-              <li class="page-item active"><a class="page-link" href="events.html">1</a></li>
-              <li class="page-item"><a class="page-link" href="events2.html">2</a></li>
-              <li class="page-item"><a class="page-link" href="events3.html">3</a></li>
-              <li class="page-item"><a class="page-link" href="events2.html">Next</a></li>
-            </ul>
-          </div>
-        </div>
-
+        {{$events->links()}}
       </div>
     </section>
 

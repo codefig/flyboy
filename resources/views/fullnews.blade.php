@@ -33,42 +33,40 @@
 
   <div class="container">
     <div class="row">
-      <div class="full-story">
-        <div class="col-lg-8">
-          <div class="row">
-            <div class="col-md-8">
-              <h2>News Headline</h2>
-            </div>
-            <div class="col-md-3 col-md-offset-1">
-              <p class="full-story-date"><i class="fa fa-calendar"></i>Friday 13th, April, 2015</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="thumbnail">
-                <a href=""><img class="img-responsive" src="{{ URL::to('img/sliders/slider-3.jpg') }}" alt="news-banner"></a>
+        @if(count($news) > 0)
+        <div class="full-story">
+          <div class="col-lg-8">
+            <div class="row">
+
+                      <div class="col-md-8">
+                          <h2>{{$news->headline}}</h2>
+                      </div>
+                      <div class="col-md-3 col-md-offset-1">
+                          <p class="full-story-date"><i class="fa fa-calendar"></i> {{$news->created_at->formatLocalized('%A, %d %B %Y')}}</p>
+                      </div>
               </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="thumbnail">
+                            <a href=""><img class="img-responsive" src="{{ URL::to($news->image) }}" alt="news-banner"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="news-text">{{$news->body}}</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="author"><i class="fa fa-edit"></i><em>by</em> {{$news->author}}</p>
+                    </div>
+                </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-12">
-              <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non efficitur velit. Duis semper eros id tempor facilisis. Suspendisse molestie nunc at massa iaculis, at iaculis dolor blandit. Pellentesque non pulvinar dolor, vitae convallis urna. Nulla egestas magna vel massa aliquam, quis placerat massa pretium.Duis semper eros id tempor facilisis.</p>
-              <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non efficitur velit. Duis semper eros id tempor facilisis. Suspendisse molestie nunc at massa iaculis, at iaculis dolor blandit. Pellentesque non pulvinar dolor, vitae convallis urna. Nulla egestas magna vel massa aliquam, quis placerat massa pretium.Duis semper eros id tempor facilisis.</p>
-              <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non efficitur velit. Duis semper eros id tempor facilisis. Suspendisse molestie nunc at massa iaculis, at iaculis dolor blandit. Pellentesque non pulvinar dolor, vitae convallis urna. Nulla egestas magna vel massa aliquam, quis placerat massa pretium.Duis semper eros id tempor facilisis.</p>
-              <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non efficitur velit. Duis semper eros id tempor facilisis. Suspendisse molestie nunc at massa iaculis, at iaculis dolor blandit. Pellentesque non pulvinar dolor, vitae convallis urna. Nulla egestas magna vel massa aliquam, quis placerat massa pretium.Duis semper eros id tempor facilisis.</p>
-              <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non efficitur velit. Duis semper eros id tempor facilisis. Suspendisse molestie nunc at massa iaculis, at iaculis dolor blandit. Pellentesque non pulvinar dolor, vitae convallis urna. Nulla egestas magna vel massa aliquam, quis placerat massa pretium.Duis semper eros id tempor facilisis.</p>
-              <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non efficitur velit. Duis semper eros id tempor facilisis. Suspendisse molestie nunc at massa iaculis, at iaculis dolor blandit. Pellentesque non pulvinar dolor, vitae convallis urna. Nulla egestas magna vel massa aliquam, quis placerat massa pretium.Duis semper eros id tempor facilisis.</p>
-              <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non efficitur velit. Duis semper eros id tempor facilisis. Suspendisse molestie nunc at massa iaculis, at iaculis dolor blandit. Pellentesque non pulvinar dolor, vitae convallis urna. Nulla egestas magna vel massa aliquam, quis placerat massa pretium.Duis semper eros id tempor facilisis.</p>
-              <hr>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <p class="author"><i class="fa fa-edit"></i><em>by</em> Renato Sanchez</p>
-            </div>
-          </div>
-        </div>
-      </div>
+        @endif
+
 
       <div class="news-page col-lg-3 col-lg-offset-1">
         <div class="older-news">

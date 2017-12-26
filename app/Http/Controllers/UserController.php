@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
+use App\Event;
+use App\News;
+use App\Music;
+use App\Album;
 
 class UserController extends Controller {
 
-	/**
+    /**
 	 * Controller for Non Authorised Links for the website
 	 */
 
@@ -15,7 +19,7 @@ class UserController extends Controller {
 		$this->middleware('guest');
 	}
 
-	public function index() {
+    public function index() {
 		/**
 		 *   The index route link
 		 */
@@ -23,7 +27,7 @@ class UserController extends Controller {
 		return view('index');
 	}
 
-	public function bio() {
+    public function bio() {
 		/**
 		 *  The bio information link
 		 */
@@ -31,7 +35,7 @@ class UserController extends Controller {
 		return view('bio');
 	}
 
-	public function music() {
+    public function music() {
 		/**
 		 *  The music link
 		 */
@@ -40,49 +44,50 @@ class UserController extends Controller {
 		// return view('music-backup');
 	}
 
-	public function photos() {
+    public function photos() {
 		/**
 		 *  The photos url
 		 */
 		return view('gallery');
 	}
 
-	public function showphotos() {
+    public function showphotos() {
 		return view('album');
 	}
 
-	public function videos() {
+    public function videos() {
 		return view('videos');
 	}
 
-	public function news() {
-		return view('news');
+    public function news() {
+
+        $news = News::orderBy('id', 'desc')->paginate(1);
+		return view('news', compact('news', 'latest_news'));
 	}
 
-	public function fullnews() {
-		return view('fullnews');
+
+    public function events() {
+	    //remains paginaation
+        $latest = Event::first();
+		$events = Event::orderBy('id','desc')->paginate(10);
+		return view('events', compact('events', 'latest'));
 	}
 
-	public function events() {
-		// return "the events page";
-		return view('events');
-	}
-
-	public function contact() {
+    public function contact() {
 		return "this is the contact page";
 	}
 
-	public function playmusic() {
+    public function playmusic() {
 		// return "this is the play music function ";
 		return view('playmusic');
 	}
 
-	public function showAdminLogin(Request $request) {
+    public function showAdminLogin(Request $request) {
 		// return "this is the admin index page";
 		return view('admin.login');
 	}
 
-	public function checkAdminLogin(Request $request) {
+    public function checkAdminLogin(Request $request) {
 		// return $request->all();
 
 		//get the datas
@@ -105,9 +110,11 @@ class UserController extends Controller {
 		}
 	}
 
-	//information links
+    //information links
     public function newsLink($slug){
-	    return $slug;
+       $news = News::where('slug', '=', $slug)->first();
+       return view('fullnews', compact('news'));
+
     }
 
     public function eventsLink($slug){
