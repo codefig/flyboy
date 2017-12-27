@@ -32,6 +32,11 @@ Route::get('/showphotos', 'UserController@showphotos')->name('user.showphotos');
 Route::get('/news/{slug}', 'UserController@newsLink')
     ->name('user.newslink')->where('slug','[\w\d\-\_]+');
 
+Route::get('/photos/{slug}', 'UserController@categoriesLink')
+    ->name('user.categorieslink')->where('slug','[\w\d\-\_]+');
+
+
+
 /**
  *  Route for the administrative links
  */

@@ -10,6 +10,7 @@ use App\Music;
 use App\Album;
 use App\Video;
 use App\Category;
+use App\Photo;
 
 class UserController extends Controller {
 
@@ -122,16 +123,14 @@ class UserController extends Controller {
 
     }
 
-    public function eventsLink($slug){
-        return $slug;
-    }
+    public function categoriesLink($slug){
+        $category = Category::where('slug', $slug)->first();
+        $category_id  = $category->id;
 
-    public function musicLink($slug){
-        return $slug;
-    }
+        //then get the photos
+        $photos = Photo::where('category_id', $category_id)->get();
 
-    public function albumLink($slug){
-        return $slug;
+        return view('album', compact('photos'));
     }
 
 }

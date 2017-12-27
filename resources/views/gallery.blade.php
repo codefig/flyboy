@@ -10,7 +10,7 @@
 @section('pageContent')
 
   <header id="photolery-header">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <h1 class="btn btn-lg animated fadeInDown">GALLERY</h1>
         <p>See photos</p>
@@ -57,8 +57,8 @@
                       <img src="{{URL::to($category->image)}}" class="img-responsive image" >
                       <div class="overlay">
                         <div class="text">
-                          <p>45 photos<br><hr></p>
-                          <a href="{{ route('user.showphotos') }}">
+                          <p>{{$category->photo_count()}}<br><hr></p>
+                          <a href="{{ route('user.categorieslink', $category->slug) }}">
                           <p style="text-transform: uppercase">{{$category->category_name}}</p>
                         </a>
                         </div>

@@ -12,4 +12,9 @@ class Category extends Model
     public function images(){
         return $this->belongsToMany('App\Photo', 'category_id');
     }
+
+    public function photo_count(){
+        $photos = Photo::where('category_id', $this->id)->get();
+        return count($photos);
+    }
 }
