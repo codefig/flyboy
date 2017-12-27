@@ -9,6 +9,7 @@ use App\News;
 use App\Music;
 use App\Album;
 use App\Video;
+use App\Category;
 
 class UserController extends Controller {
 
@@ -49,9 +50,9 @@ class UserController extends Controller {
 		/**
 		 *  The photos url
 		 */
-		$categories = Category::all();
+		$categories = Category::where('is_deleted', 0)->get();
 
-		return view('gallery', compact('category'));
+		return view('gallery', compact('categories'));
 	}
 
     public function showphotos() {

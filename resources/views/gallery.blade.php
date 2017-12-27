@@ -54,12 +54,12 @@
         @foreach($categories as $category)
                <div class="col-md-4">
                   <div class="album">
-                      <img src="img/kiss-5.jpg" class="img-responsive" class="image">
+                      <img src="{{URL::to($category->image)}}" class="img-responsive image" >
                       <div class="overlay">
                         <div class="text">
                           <p>45 photos<br><hr></p>
                           <a href="{{ route('user.showphotos') }}">
-                          <p>PERSONAL PHOTOS</p>
+                          <p style="text-transform: uppercase">{{$category->category_name}}</p>
                         </a>
                         </div>
                       </div>
