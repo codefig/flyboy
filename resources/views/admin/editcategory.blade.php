@@ -447,6 +447,11 @@
                             </div>
 
                             <div class="form-group">
+                                <label>Slug Url</label>
+                                <input type="text" class="form-control" id="slug" name="slug" value="{{$category->slug}}">
+                            </div>
+
+                            <div class="form-group">
                                 <label>Category Image </label>
                                 <input type="file" name="image" class="form-control" id="image" accept="image/*">
                             </div>

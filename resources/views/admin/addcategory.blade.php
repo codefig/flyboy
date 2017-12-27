@@ -443,6 +443,12 @@
                             <label>Category Name</label>
                             <input type="text" class="form-control" id="category_name" name="category_name">
                         </div>
+
+                        <div class="form-group">
+                            <label> Slug URl </label>
+                            <input type="text" class="form-control" id="slug" name="slug">
+                        </div>
+
                         <div class="form-group">
                             <label>Category Image</label>
                             <input type="file" name="image" id="image" class="form-control">

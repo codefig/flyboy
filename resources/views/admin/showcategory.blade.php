@@ -448,7 +448,7 @@
                             <tr>
                                 <th>SN</th>
                                 <th>Category Name</th>
-
+                                <th>SLUG URL</th>
                                 <th>Image</th>
                                 <th>Creation Date</th>
                                 <th>Actions</th>
@@ -462,6 +462,7 @@
                                     <tr>
                                         <td>{{ $serial_number+=1  }}</td>
                                         <td>{{ $category->category_name}}</td>
+                                        <td><a href="{{url($category->slug)}}">{{ $category->slug }}</a></td>
 
                                         <td><a href="{{ URL::to($category->image) }}"><img style="height:200px;width:300px;" src="{{ URL::to($category->image) }}" class="img-responsive img-rounded"></a></td>
                                         <td>{{ $category->created_at->formatLocalized('%A, %d %B %Y.') }}</td>

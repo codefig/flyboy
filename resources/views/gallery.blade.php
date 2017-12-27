@@ -47,78 +47,31 @@
         <div class="album-divider" style="width:50px;height:4px;background-color: #f2c053;"></div>
       </center>
       </div>
+        <!-- start of the first row -->
       <div class="row">
-        <div class="col-md-4">
-          <div class="album">
-              <img src="img/kiss-5.jpg" class="img-responsive" class="image">
-              <div class="overlay">
-                <div class="text">
-                  <p>45 photos<br><hr></p>
-                  <a href="{{ route('user.showphotos') }}">
-                  <p>PERSONAL PHOTOS</p>
-                </a>
+
+    @if(count($categories) > 0)
+        @foreach($categories as $category)
+               <div class="col-md-4">
+                  <div class="album">
+                      <img src="img/kiss-5.jpg" class="img-responsive" class="image">
+                      <div class="overlay">
+                        <div class="text">
+                          <p>45 photos<br><hr></p>
+                          <a href="{{ route('user.showphotos') }}">
+                          <p>PERSONAL PHOTOS</p>
+                        </a>
+                        </div>
+                      </div>
+                  </div>
                 </div>
-              </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="album">
-              <img src="img/album-1.jpg" class="img-responsive" class="image">
-              <div class="overlay">
-                <div class="text">
-                  <p>17 photos<br><hr></p>
-                  <p>FEATURED PHOTOS</p>
-                </div>
-              </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="album">
-              <img src="img/album-2.jpg" class="img-responsive" class="image">
-              <div class="overlay">
-                <div class="text">
-                  <p>33 photos<br><hr></p>
-                  <p>CONCERT PHOTOS</p>
-                </div>
-              </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="album">
-              <img src="img/album-5.jpg" class="img-responsive" class="image">
-              <div class="overlay">
-                <div class="text">
-                  <p>10 photos<br><hr></p>
-                  <p>RIDES</p>
-                </div>
-              </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="album">
-              <img src="img/album-3.jpg" class="img-responsive" class="image">
-              <div class="overlay">
-                <div class="text">
-                  <p>3 photos<br><hr></p>
-                  <p>ALBUM ART</p>
-                </div>
-              </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="album">
-              <img src="img/album-4.jpg" class="img-responsive" class="image">
-              <div class="overlay">
-                <div class="text">
-                  <p>20 photos<br><hr></p>
-                  <p class="album-name">HOME</p>
-                </div>
-              </div>
-          </div>
-        </div>
-      </div>
+          @endforeach
+      @endif
+
+        <!--end of the first row -->
+
+
+
     </div>
   </section>
 @endsection

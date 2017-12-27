@@ -287,7 +287,7 @@ class AdminController extends Controller {
         else{
             $this->validate($request, [
                 'headline' => 'required',
-                'slug' => 'required|unique:news,slug',
+                'slug' => 'required|alpha_dash|min:5|max:255|unique:news,slug',
                 'body' => 'required',
                 'author' => 'nullable',
                 'image' => 'nullable|mimes:jpeg,png',
@@ -345,6 +345,7 @@ class AdminController extends Controller {
         $this->validate($request, [
             'category_name' => 'required',
             'image' => 'required|mimes:jpeg,png',
+            'slug' => 'required|alpha_dash|min:5|max:255|unique:news,slug',
         ]);
 
         $uploaded_image = $request->file('image');
@@ -355,6 +356,7 @@ class AdminController extends Controller {
         $category = Category::create([
             'category_name' => $request->category_name,
             'image' => $category_image,
+            'slug' => $request->slug,
             'is_deleted' => 0,
         ]);
 
@@ -376,10 +378,28 @@ class AdminController extends Controller {
 
     public function updateCategory(Request $request){
         $category  = Category::find($request->category_id);
+        $former_slug = $category->slug;
         $this->validate($request, [
             'category_name' => 'required',
+            'slug' => 'required|alpha_dash|min:5|max:255|unique:categories,slug',
             'image' => 'nullable',
         ]);
+
+
+        if($request->slug == $former_slug){
+            $this->validate($request, [
+                'category_name' => 'required',
+                'image' => 'nullable',
+            ]);
+        }
+        else{
+            $this->validate($request, [
+                'category_name' => 'required',
+                'slug' => 'required|alpha_dash|min:5|max:255|unique:categories,slug',
+                'image' => 'nullable',
+            ]);
+        }
+
 
         if ($request->image) {
 
@@ -390,6 +410,7 @@ class AdminController extends Controller {
 
             $category->update([
                 'category_name' => $request->category_name,
+                'slug' => $request->slug,
                 'image' => $new_image,
             ]);
             Session::flash('success_message', 'Category Updated Successfully !');
@@ -398,6 +419,7 @@ class AdminController extends Controller {
 
             $category->update([
                 'category_name' => $request->category_name,
+                'slug' => $request->slug,
             ]);
             Session::flash('success_message', 'Category Updated Successfully !');
         }

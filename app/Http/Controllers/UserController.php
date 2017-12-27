@@ -49,7 +49,9 @@ class UserController extends Controller {
 		/**
 		 *  The photos url
 		 */
-		return view('gallery');
+		$categories = Category::all();
+
+		return view('gallery', compact('category'));
 	}
 
     public function showphotos() {
