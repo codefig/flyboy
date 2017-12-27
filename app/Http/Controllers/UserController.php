@@ -126,11 +126,11 @@ class UserController extends Controller {
     public function categoriesLink($slug){
         $category = Category::where('slug', $slug)->first();
         $category_id  = $category->id;
-
+        $title = $slug;
         //then get the photos
         $photos = Photo::where('category_id', $category_id)->get();
 
-        return view('album', compact('photos'));
+        return view('album', compact('photos', 'title'));
     }
 
 }

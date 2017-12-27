@@ -16,7 +16,6 @@
         <div class="container-fluid">
           <div class="row">
             <h1 class="btn btn-lg">GALLERY</h1>
-            <p>PERSONAL PHOTOS</p>
             <p><i class="fa fa-angle-double-down"></i></p>
           </div>
         </div>
