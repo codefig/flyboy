@@ -58,7 +58,7 @@
                       <div class="overlay">
                         <div class="text">
                           <p>{{$category->photo_count()}}<br><hr></p>
-                          <a href="{{ route('user.categorieslink', $category->slug) }}">
+                          <a style="color:#000;" href="{{ route('user.categorieslink', $category->slug) }}">
                           <p style="text-transform: uppercase">{{$category->category_name}}</p>
                         </a>
                         </div>

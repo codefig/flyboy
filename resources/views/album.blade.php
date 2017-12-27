@@ -13,9 +13,10 @@
 @section('pageContent')
 
       <header id="album-header">
-        <div class="container-fluid">
+        <div class="container">
           <div class="row">
             <h1 class="btn btn-lg">GALLERY</h1>
+              <p style="text-transform: uppercase">{{$title}}</p>
             <p><i class="fa fa-angle-double-down"></i></p>
           </div>
         </div>
@@ -42,8 +43,8 @@
 
     <section>
       <div class="container photo-container">
-         <div style="margin-top:50px;">
-            <h2> Gallery </h2>
+         <div style="margin-top:50px;margin-bottom:100px;">
+            <h2> {{$title}} </h2>
             <center><div style="background-color:#000;height:2px;width:25px;margin-top: -15px;margin-bottom: 20px;"></div></center>
          </div>
         <div class="row">
