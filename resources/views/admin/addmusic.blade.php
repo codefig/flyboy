@@ -438,6 +438,10 @@
                             <input type="text" class="form-control" id="title" name="title">
                         </div>
 
+                        <div class="form-group">
+                            <label>Text</label>
+                            <textarea type="text" class="form-control" id="text" name="text"></textarea>
+                        </div>
 
                         <div class="form-group">
                             <label>Slug</label>

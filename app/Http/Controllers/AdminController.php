@@ -615,6 +615,7 @@ class AdminController extends Controller {
     public function addMusic(Request $request){
         $this->validate($request, [
             'title' => 'required',
+            'text' => 'required',
             'slug' => 'required|min:5|max:255|unique:musics,slug',
             'album_id' => 'nullable',
             'image' => 'required',
@@ -636,6 +637,7 @@ class AdminController extends Controller {
 
         $music = Music::create([
             'title' => $request->title,
+            'text' => $request->text,
             'slug' => $request->slug,
             'album_id' => $request->album_id,
             'image' => $new_image,
@@ -651,7 +653,7 @@ class AdminController extends Controller {
     }
 
     public function showAllMusic(Request $request){
-        $musics = Music::all();
+        $musics = Music::orderBy('id', 'desc')->get();
         return view('admin.showallmusic', compact('musics'));
     }
 
@@ -667,6 +669,7 @@ class AdminController extends Controller {
         if($request->slug == $former_slug){
             $this->validate($request, [
                 'title' => 'required',
+                'text' => 'required',
                 'image' => 'nullable',
                 'soundcloud_link' => 'nullable',
                 'itunes_link' => 'nullable',
@@ -677,6 +680,7 @@ class AdminController extends Controller {
 
             $this->validate($request, [
                 'title' => 'required',
+                'text' => 'required',
                 'slug' => 'required|min:5|max:255|unique:musics,slug',
                 'image' => 'nullable',
                 'soundcloud_link' => 'nullable',
@@ -694,6 +698,7 @@ class AdminController extends Controller {
 
             $music->update([
                 'title' => $request->title,
+                'text' => $request->text,
                 'slug' => $request->slug,
                 'image' => $new_image,
                 'soundcloud_link' => $request->soundcloud_link,
@@ -705,6 +710,7 @@ class AdminController extends Controller {
         } else {
             $music->update([
                 'title' => $request->title,
+                'text' => $request->text,
                 'slug' => $request->slug,
                 'soundcloud_link' => $request->soundcloud_link,
                 'itunes_link' => $request->itunes_link,

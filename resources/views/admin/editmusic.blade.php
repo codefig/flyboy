@@ -442,12 +442,17 @@
                             </div>
 
                             <div class="form-group">
+                                <label> Text </label>
+                                <textarea type="text" class="form-control" id="text" name="text">{{$music->text}}</textarea>
+                            </div>
+
+                            <div class="form-group">
                                 <label>Slug</label>
                                 <input type="text" class="form-control" id="slug" name="slug" value="{{$music->slug}}">
                             </div>
 
                             <div class="form-group">
-                                <label>Album Image</label>
+                                <label>Album Image (640x640)</label>
                                 <input type="file" name="image" class="form-control" id="image" accept="image/*">
                             </div>
 

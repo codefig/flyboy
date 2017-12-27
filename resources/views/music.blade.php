@@ -17,12 +17,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <div class="rule"></div>
-          <p class="new-realease">NEW RELEASE!!!</p>
-          <div class="rule"></div>
-          <h1>LATEST SONG TITLE</h1>
-          <a href="#" class="btn btn-primary btn-lg"><i class="fa fa-play-circle-o"></i>PLAY NOW</a>
-          <p>Available on iTunes, Cloudshot, <em>OptionTwo</em></p>
+
         </div>
 
       </div>
@@ -55,8 +50,6 @@
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
-          <input type="text" placeholder="Search for song" value="" />
-          <a href="#"<i class="fa fa-search"></i></a>
         </div>
         <div class="col-md-4">
         </div>
@@ -71,51 +64,26 @@
       <div class="row">
         <h2>SINGLES</h2>
       </div>
+
+
       <div class="row">
+
+    @if(count($musics) > 0)
+      @foreach($musics as $music)
         <div class="col-md-3 col-sm-4">
           <div class="song">
-            <img src="img/kiss-5.jpg" class="img-responsive img-circle">
+            <img  src="{{$music->image}}" class="img-responsive img-circle">
             <div class="content">
               <a href="#" class="btn btn-primary"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Play</a>
-              <a href="#" class="btn btn-primary"><img src="img/itunesb.png" width="18px" height="18px;">iTunes</a>
-              <p class="song-title">Song Title</p>
-              <p class="album-name">ALBUM NAME</p>
+              <a href="{{$music->itunes_link}}" class="btn btn-primary"><img src="img/itunesb.png" width="18px" height="18px;">iTunes</a>
+              <p class="song-title">{{$music->title}}</p>
+              
             </div><hr>
           </div>
         </div>
-        <div class="col-md-3 col-sm-4">
-          <div class="song">
-            <img src="img/kiss-5.jpg" class="img-responsive img-circle">
-            <div class="content">
-              <a href="#" class="btn btn-primary"><i class="fa fa-play-circle-o"></i>Play</a>
-              <a href="#" class="btn btn-primary"><img src="img/itunesb.png" width="18px" height="18px;">iTunes</a>
-              <p class="song-title">Song Title</p>
-              <p class="album-name">ALBUM NAME</p>
-            </div><hr>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-4">
-          <div class="song">
-            <img src="img/kiss-5.jpg" class="img-responsive img-circle">
-            <div class="content">
-              <a href="#" class="btn btn-primary"><i class="fa fa-play-circle-o"></i>Play</a>
-              <a href="#" class="btn btn-primary"><img src="img/itunesb.png" width="18px" height="18px;">iTunes</a>
-              <p class="song-title">Song Title</p>
-              <p class="album-name">ALBUM NAME</p>
-            </div><hr>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-4">
-          <div class="song">
-            <img src="img/kiss-5.jpg" class="img-responsive img-circle">
-            <div class="content">
-              <a href="#" class="btn btn-primary"><i class="fa fa-play-circle-o"></i>Play</a>
-              <a href="#" class="btn btn-primary"><img src="img/itunesb.png" width="18px" height="18px;">iTunes</a>
-              <p class="song-title">Song Title</p>
-              <p class="album-name">ALBUM NAME</p>
-            </div><hr>
-          </div>
-        </div>
+       @endforeach
+      @endif
+
       </div>
     </div>
   </section>
