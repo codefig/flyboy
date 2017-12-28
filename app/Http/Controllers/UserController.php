@@ -129,8 +129,12 @@ class UserController extends Controller {
         $title = $slug;
         //then get the photos
         $photos = Photo::where('category_id', $category_id)->get();
-
         return view('album', compact('photos', 'title'));
+    }
+
+    public function musicLink($slug){
+        $music = Music::where('slug', $slug)->first();
+        return view('playmusic', compact('music'));
     }
 
 }

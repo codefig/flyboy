@@ -35,6 +35,9 @@ Route::get('/news/{slug}', 'UserController@newsLink')
 Route::get('/photos/{slug}', 'UserController@categoriesLink')
     ->name('user.categorieslink')->where('slug','[\w\d\-\_]+');
 
+Route::get('/music/{slug}', 'UserController@musicLink')
+    ->name('user.musiclink')->where('slug','[\w\d\-\_]+');
+
 
 
 /**

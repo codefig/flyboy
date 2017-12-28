@@ -4,9 +4,66 @@
    src : url('../fonts/segoeui.ttf');
 }
 
-
 body{
 	font-family: 'Segoe UI';
+}
+#music-player{
+	background: linear-gradient(rgba(0,0,0, .4), rgba(0,0,0, .4)),
+	url('../img/sliders/slider-6.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+	height: 400px;
+}
+
+#music-player .rule{
+	height: 2px;
+	background-color: #fff;
+	width: 70%
+}
+
+#music-player h1{
+	color: #F2C053;
+	font-family: 'Segoe UI';
+	margin-bottom: 20px;
+}
+
+#music-player p{
+	color: #fff;
+	margin-top: 7vw;
+	font-size: 18px;
+	font-family: 'Segoe UI';
+}
+
+@media(max-width: 767px){
+	#music-player p{
+		margin-top: 15vw;
+	}
+}
+
+#music-player a{
+	color: #000000;
+}
+
+#music-player a i{
+	margin-right: 10px;
+}
+
+#music-player .btn{
+	background-color: #F2C053;
+	color: #000000;
+	font-family: 'Segoe UI';
+	border: none;
+	border-radius: 50px;
+}
+
+#music-player .btn:hover{
+	background-color: #000000;
+	color: #ffffff;
 }
 .divider{
 	background-color:#ccc;
@@ -38,7 +95,7 @@ body{
 
 #musicInfoContainer {
 	height:100%; 
-	margin-top:50px;
+	margin-top:80px;
 	padding:10px;
 }
 
@@ -77,4 +134,8 @@ body{
 	height:2px;
 	width:35px;
 	background-color:#f2c053;
+}
+
+.res-nav_click:hover, .res-nav_click:active, .res-nav_click:focus {
+	color: #f2c053; !important;
 }

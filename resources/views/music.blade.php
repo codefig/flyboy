@@ -74,7 +74,7 @@
           <div class="song">
             <img  src="{{$music->image}}" class="img-responsive img-circle">
             <div class="content">
-              <a href="#" class="btn btn-primary"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Play</a>
+              <a href="{{route('user.musiclink', $music->slug)}}" class="btn btn-primary"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Play</a>
               <a href="{{$music->itunes_link}}" class="btn btn-primary"><img src="img/itunesb.png" width="18px" height="18px;">iTunes</a>
               <p class="song-title">{{$music->title}}</p>
               

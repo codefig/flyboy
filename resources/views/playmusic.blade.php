@@ -5,7 +5,7 @@
 @endsection
 
     @section('pagelink')
-        <link href="{{ URL::to('css/music.css') }}" rel="stylesheet" />
+
         <link href="{{ URL::to('css/musicplayer.css') }}" rel="stylesheet" />
         <link href="{{ URL::to('css/playmusic.css') }}" rel="stylesheet">
     @endsection
@@ -28,32 +28,11 @@
 
 
   <section id="music-player" style="font-family: 'Open Sans, Lato , sans-serif'">
-    <div class="container-fluid">
+    <div class="container">
 
       <div class="row">
            <div class="container">
-               <div class="col-md-4" id="song-details-container">
-                     <h3 class="album-category"> Album Category : </h3>
-                    <h2 class="song-title"> This is the head </h2>
-                    <br/>
 
-                    <a href="#" class="btn btn-primary btn-lg"><i class="fa fa-play-circle-o"></i>PLAY NOW</a>
-
-                    <p>
-                      <a href="#" class="music-link"><span class="fa fa-2x fa-soundcloud"></span></a> &nbsp;
-                      <a href="#" class="music-link"><span class="fa fa-2x fa-spotify"></span></a>&nbsp;
-                      <a href="#" class="music-link"><span class="fa fa-2x fa-youtube"></span></a>&nbsp;
-                      <a href="#" class="music-link"><span class="fa fa-2x fa-apple"></span> iTunes</a>&nbsp;
-                    </p>
-               </div>
-               {{-- <div class="col-md-3"></div> --}}
-               <div class="col-md-8" style="background-color:yellow;">
-
-                  something needs to come here
-
-
-
-               </div>
            </div>
       </div>
     </div>
@@ -85,17 +64,16 @@
 
      <div class="container">
         <div class="row">
+            @if(count($music) > 0)
              <div id="musicInfoContainer" style="">
               <div class="col-xs-12 col-md-3">
-
                  <div id="albumArt">
-                     <img class="img-respbumImage" src="{{ URL::to('img/laye.jpg') }}" alt="Music">
+                     <img class="img-respbumImage" src="{{ URL::to($music->image) }}" alt="Album art">
                  </div>
-
               </div>
 
 
-              <div class="col-xs-12 col-md-5">
+              <div class="col-xs-12 col-md-6">
                    <div id="ratingContainer">
                          <div>
                            <span class='fa fa-star checked'></span>
@@ -106,12 +84,10 @@
                            <em>/ </em>
                              Release: 20-02-2020
                            <em> / </em>
-                             Yeba
+                             {{$music->title}}
                          </div>
                          <div class="divider"></div>
-
                                <div id="playerContainer">
-
                                   <div>
                                     <div class="audio green-audio-player">
                                       <div class="loading">
@@ -148,14 +124,15 @@
                                         </div>
                                       </div>
 
-                                      <audio crossorigin src="{{ URL::to('yeba.mp3') }}" preload="auto">
+                                      <audio crossorigin src="{{ URL::to($music->audio) }}">
                                       </audio>
                                     </div>
                                   </div><!-- end of the musicplayer button -->
                            </div>
                    </div>
               </div>
-              <div class="col-xs-12 col-md-4">
+                 @endif
+              <div class="col-xs-12 col-md-3">
                   <div id="socialMedia">
                     <div class="socialContainers" id="instagramContainer">
                       <h3 class="socialHeaders">INSTAGRAM </h3>
@@ -190,7 +167,7 @@
 
 
 
-        <script type="text/javascript" src="js/musicplayer.js"></script>
+        <script type="text/javascript" src="{{URL::to('js/musicplayer.js')}}"></script>
         <script>
           $('.u-floatLeft').hide();
         </script>
