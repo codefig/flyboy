@@ -247,9 +247,9 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
             <div class="video-player">
+              <img src="https://img.youtube.com/vi/hyWK_dLxPUc/0.jpg" style="margin-left:auto;margin-right:auto;display:block;" class="img-responsive">
             </div>
             <p class="pull-left">Title of Video</p>
-            {{--<a href="#" class="like pull-right"><i class="fa fa-thumbs-o-up"></i></a>--}}
             <span class="clearfix"></span><hr>
             <a href="#"><button class="btn btn-primary">See more videos</button></a>
           </div>
