@@ -1,4 +1,16 @@
 /* ================================== MUSIC ================================== */
+
+@font-face{
+  font-family: 'Segoe UI';
+  src : url('../fonts/segoeui.ttf');
+}
+
+body{
+  background-color:#fff !important;
+  font-family: 'Segoe UI';
+}
+
+
 #music-player{
   background: linear-gradient(rgba(0,0,0, .4), rgba(0,0,0, .4)),
                        url('../img/sliders/slider-6.jpg');
@@ -186,6 +198,7 @@
 
 #songs .song-title{
   text-align: center;
+  text-transform: uppercase;
   font-family: 'Segoe UI';
   font-weight: bold;
   font-size: 18px;

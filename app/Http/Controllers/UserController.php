@@ -43,7 +43,8 @@ class UserController extends Controller {
 		 *  The music link
 		 */
 		$musics = Music::orderBy('id', 'desc')->get();
-		return view('music', compact('musics'));
+		$albums = Album::orderBy('id','desc')->get();
+		return view('music', compact('musics', 'albums'));
 	}
 
     public function photos() {

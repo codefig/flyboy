@@ -88,109 +88,39 @@
     </div>
   </section>
 
-
+<!-- start of the album section -->
+  @if(count($albums) > 0)
   <section id="albums" style="background-color:#2D2D2D;">
-    <div class="container">
-      <div class="row">
-        <h2 style="color:#fff;">A L B U M S</h2>
-      </div>
-      <div class="row">
+      <div class="container">
+          <div class="row">
+              <h2 style="color:#fff;">A L B U M S</h2>
+          </div>
+          @foreach($albums as $album)
+          <div class="row">
         <div class="col-md-4">
           <div class="album">
-            <img src="img/album-art.jpg" class="img-fluid">
+            <img src="{{$album->image}}" class="img-fluid">
           </div>
         </div>
-        <div class="col-md-4">
-          <h5>ALBUM TITLE</h5>
-          <p><em>Release Date</em></p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="col-md-8">
+          <h5>{{$album->title}}</h5>
+          <p><em>{{$album->created_at}}</em></p>
+          <p>{{$album->about}}</p>
           <div class="row">
             <p class="col-md-6 col-xs-6" style="font-style: italic; margin-top: 3px; color: #95989a; font-size: 15px;">Get album now on</p>
-            <p class="col-md-2 col-xs-2"><a href="#" title="Spotify"><i class="fa fa-spotify fa-2x"></i></a></p>
-            <p class="col-md-2 col-xs-2"><a href="#" title="SoundCloud"><i class="fa fa-soundcloud fa-2x"></i></a></p>
-            <p class="col-md-2 col-xs-2"><a href="#" title="iTunes"><img class='itunes-img' src="img/itunes.png" alt="itunes" width="28px" height="28px"/></a></p>
+            <p class="col-md-2 col-xs-2"><a href="{{$album->spotify_link}}" title="Spotify"><i class="fa fa-spotify fa-2x"></i></a></p>
+            <p class="col-md-2 col-xs-2"><a href="{{$album->soundcloud_link}}" title="SoundCloud"><i class="fa fa-soundcloud fa-2x"></i></a></p>
+            <p class="col-md-2 col-xs-2"><a href="{{$album->itunes_link}}" title="iTunes"><img class='itunes-img' src="img/itunes.png" alt="itunes" width="28px" height="28px"/></a></p>
           </div>
         </div>
-        <div class="col-md-4 album-songs">
-          <h5>SONGS IN ALBUM</h5>
-          <div class="album-songs-list">
-            <!--A song being listed from the album. -->
-            <div class="song">
-              <div class="row">
-                <div class="col-xs-1">
-                  <p>1</p>
-                </div>
-                <div class="col-xs-6">
-                  <p>Song Title</p>
-                </div>
-                <div class="col-xs-2"></div>
-                <div class="col-xs-2">
-                  <a href="#"><i class="fa fa-play"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="song">
-              <div class="row">
-                <div class="col-xs-1">
-                  <p>2</p>
-                </div>
-                <div class="col-xs-6">
-                  <p>Song Title</p>
-                </div>
-                <div class="col-xs-2"></div>
-                <div class="col-xs-2">
-                  <a href="#"><i class="fa fa-play"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="song">
-              <div class="row">
-                <div class="col-xs-1">
-                  <p>3</p>
-                </div>
-                <div class="col-xs-6">
-                  <p>Song Title</p>
-                </div>
-                <div class="col-xs-2"></div>
-                <div class="col-xs-2">
-                  <a href="#"><i class="fa fa-play"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="song">
-              <div class="row">
-                <div class="col-xs-1">
-                  <p>4</p>
-                </div>
-                <div class="col-xs-6">
-                  <p>Song Title</p>
-                </div>
-                <div class="col-xs-2"></div>
-                <div class="col-xs-2">
-                  <a href="#"><i class="fa fa-play"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="song">
-              <div class="row">
-                <div class="col-xs-1">
-                  <p>5</p>
-                </div>
-                <div class="col-xs-6">
-                  <p>Song Title</p>
-                </div>
-                <div class="col-xs-2"></div>
-                <div class="col-xs-2">
-                  <a href="#"><i class="fa fa-play"></i></a>
-                </div>
-              </div>
-            </div>
+          <!-- *s-->
+          <!--**s -->
           </div>
-        </div>
+              <hr>
+          @endforeach
       </div>
-
-
-    </div>
   </section>
+  @endif
+    <!--end of the album section
 
 @endsection
