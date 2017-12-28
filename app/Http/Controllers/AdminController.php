@@ -379,13 +379,7 @@ class AdminController extends Controller {
     public function updateCategory(Request $request){
         $category  = Category::find($request->category_id);
         $former_slug = $category->slug;
-        $this->validate($request, [
-            'category_name' => 'required',
-            'slug' => 'required|alpha_dash|min:5|max:255|unique:categories,slug',
-            'image' => 'nullable',
-        ]);
-
-
+        
         if($request->slug == $former_slug){
             $this->validate($request, [
                 'category_name' => 'required',

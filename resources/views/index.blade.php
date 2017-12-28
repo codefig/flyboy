@@ -13,7 +13,7 @@
 
     <link href="{{ URL::to('css/home.css') }}" rel="stylesheet" />
 
-    <link href="{{URL::to("css/bootstrap.css")}}" rel="stylesheet" type="text/css">
+  <link href="{{URL::to("css/bootstrap.css")}}" rel="stylesheet" type="text/css">
   <link href="{{URL::to("css/style.css")}}"  rel="stylesheet" type="text/css">
   <link href="{{URL::to("css/font-awesome.css")}}"  rel="stylesheet" type="text/css">
   <link href="{{URL::to("css/responsive.css")}}"  rel="stylesheet" type="text/css">
@@ -217,25 +217,7 @@
     </section>
 
 
-    <!--MUSIC-->
-{{--     <section id="music">
-      <div id="white">
-        <div class="container">
-        <div class="row">
-          <div class="section-title">Music<span class="title-other-words"></span></div>
-          <center><div class="divider-white"></div></center>
-        </div>
-        <!-- Place the music player section in this div-->
-        <div class="row">
-          <p style="color:#fff;">Just place the whole section of the music player from the MUSIC PAGE in this div</p>
-        </div>
-        <!--End-->
-        <div class="row">
-          <a href="#"><button class="btn btn-primary">More music</button></a>
-        </div>
-      </div>
-      </div>
-    </section> --}}
+
 
     <!--VIDEO-->
     <section id="video">
@@ -250,7 +232,7 @@
             <div class="video-player">
             </div>
             <p class="pull-left">Title of Video</p>
-            <a href="#" class="like pull-right"><i class="fa fa-thumbs-o-up"></i>Like</a>
+            {{--<a href="#" class="like pull-right"><i class="fa fa-thumbs-o-up"></i></a>--}}
             <span class="clearfix"></span><hr>
             <a href="#"><button class="btn btn-primary">See more videos</button></a>
           </div>
@@ -363,9 +345,9 @@
             <p class="enquiry"><i class="fa fa-map-marker"></i>Address goes here</p>
             <p style="margin-top: 15px;">Follow us on Facebook, Instagram and Twitter.</p>
             <p class="social-media">
-              <a href="#"><i class="fa fa-facebook"></i></a>
-              <a href="#"><i class="fa fa-instagram"></i></a>
-              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="https://web.facebook.com/iamkissdaniel"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/iamkissdaniel"><i class="fa fa-instagram"></i></a>
+              <a href="https://www.twitter.com/iamkissdaniel"><i class="fa fa-twitter"></i></a>
             </p>
           </div>
         </div>

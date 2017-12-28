@@ -49,7 +49,7 @@
 			<span class="copyright">&copy; 2017 Flyboy Incorporated. All Rights Reserved</span>
 			<div class="credits">
 
-				<a href="https://bootstrapmade.com/bootstrap-agency-templates/" style="color:#f2c053">Flyboy Incorporated</a> by <a href="https://bootstrapmade.com/">GeeksLab</a>
+				<a href="" style="color:#f2c053">Flyboy Incorporated</a>
 			</div>
 		</div>
 	</footer>
