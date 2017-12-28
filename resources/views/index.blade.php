@@ -20,7 +20,7 @@
   <link href="{{URL::to("css/animate.css")}}"  rel="stylesheet" type="text/css">
   <link href="{{URL::to("css/baguetteBox.min.css")}}"  rel="stylesheet" type="text/css">
 
-    <script type="text/javascript" src="{{ URL::to("js/jquery.1.8.3.min.js")}}"></script>
+  <script type="text/javascript" src="{{ URL::to("js/jquery.1.8.3.min.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/bootstrap.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/jquery-scrolltofixed.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/jquery.easing.1.3.js")}}"></script>
@@ -29,6 +29,8 @@
   <script type="text/javascript" src="{{ URL::to("js/classie.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/baguetteBox.min.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/jquery.backstretch.js")}}"></script>
+  <script type="text/javascript" src="{{ URL::to("js/jquery.lettering.js")}}"></script>
+  <script type="text/javascript" src="{{ URL::to("js/jquery.textillate.js")}}"></script>
 </head>
 
 <body>
@@ -85,18 +87,33 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <p class="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
+                  <p class="bio">
+                    Anidugbe Oluwatobiloba Daniel, known as Kiss Daniel, is a Nigerian recording artist, performer and entertainer best known for his chart-topping single "Woju". Formally signed to G-Worldwide Entertainment in 2013, he left the company in November 2017 to create his own record label, Fly Boy Inc.
+                  </p>
                   <br>
-                  <p class="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
+                  <p class="bio">
+                    Kiss Daniel was born Oluwatobiloba Daniel Anidugbe in Ogun State, Nigeria. He hails from Abeokuta North, a local government area in Ogun State. He graduated from the Federal University of Agriculture, Abeokuta (FUNAAB), in 2013, with a degree in Water Resources Management and Agrometeorology (Water Engineering). While at FUNAAB, he decided to pursue music as a career alongside his studies.
+                  </p>
                   <br>
-                  <p class="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
+                  <p class="bio">
+                    Kiss Daniel showed an interest in music from an early age, and was encouraged by his father. He started his music career professionally 2013 after his tertiary education, when he came across G-Worldwide Entertainment CEO, Emperor Geezy. After being signed to G-Worldwide entertainment, he released his first official single "Shoye" which was produced by Beatburx on May 1, 2014, along with a music video was directed by MEX.
+                  </p>
+                  <br/>
+                  <p class="bio">
+                    Daniel released his second single "Woju", produced by DJ Coublon on September 1, 2014. The video for Woju was directed by Adasa Cookey, shot in Lagos, Nigeria. The song spent eleven weeks on the MTV Base Official Naija Top Ten, including six weeks at the number one spot.
+                  </p>
                   <br>
-                  <p class="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
+                  <p class="bio">
+                    Daniel then recorded and released a remix of "Woju" featuring Tiwa Savage and Davido. "Woju" and its remix peaked at Number 1 and Number 2 respectively on the MTV Base Official Naija Top 10, the first time that an original song and its remix would peak at the first and second positions on the chart. A cover of the song performed by 2face Idibia appeared online.
+                  </p>
+                  <br/>
+                  <p class="bio">
+                    In May 2015, Daniel released a third follow up single "Laye" on his birthday, along with a video two weeks later which was shot in different locations in eastern part of Africa and was directed by AJE FILMS. In September 2015, Daniel won two awards within the space of three weeks.
+                  </p>
                   <br>
-                  <p class="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
                 </div>
               </div>
-              <a href="{{ URL::to('bio') }}"><button class="btn btn-primary">Continure reading</button></a>
+              <a href="{{ route('user.bio') }}"><button class="btn btn-primary">Continure reading</button></a>
           </div>
 
           <div class="col-md-5 col-sm-7">
@@ -165,7 +182,7 @@
         </div>
         <div class="row">
           <div class="col-md-2 col-md-offset-5">
-            <a href="gallery.html" class="btn btn-primary btn-md">View More Images</a>
+            <a href="{route('user.photos')}}" class="btn btn-primary btn-md">View More Images</a>
           </div>
         </div>
       </div>
@@ -211,7 +228,7 @@
                 <div class="col-xs-3"><i class="fa fa-apple"></i></div>
               </div>
           </div>
-          <a href="#"><button class="btn btn-primary">More music</button></a>
+          <a href="{{route('user.music') }}"><button class="btn btn-primary">More music</button></a>
         </div>
       </div>
     </section>
@@ -297,7 +314,7 @@
           <center><div class="divider-grey"></div></center>
         </div>
         <div class="row">
-          <div class="col-md-4"><p>2nd January, 2018 - 20th January, 2018.</p></div>
+          <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeInLeftBig" data-in-sequence="true">2nd January, 2018 - 20th January, 2018.</p></div>
           <div class="col-md-4"><p>The New Year Fiesta by Pepsi</p></div>
           <div class="col-md-4"><p>Muson Centre, Lagos.</p></div>
         </div><hr>
@@ -369,6 +386,7 @@
 
 
      <script>
+
     var image1 = "{{ URL::to('img/slider1.jpg')}}";
     var image2 = "{{ URL::to('img/slider2.jpg')}}";
     var image5 = "{{ URL::to('img/slider7.jpg')}}";
@@ -385,8 +403,13 @@
          });
       </script>
 
+    <script>
+      $(function(){
+          $('.p-textillate').textillate();
+      });
+    </script>
 
-</script>
+
 
 
   <script type="text/javascript">

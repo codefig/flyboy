@@ -379,7 +379,7 @@ class AdminController extends Controller {
     public function updateCategory(Request $request){
         $category  = Category::find($request->category_id);
         $former_slug = $category->slug;
-        
+
         if($request->slug == $former_slug){
             $this->validate($request, [
                 'category_name' => 'required',
