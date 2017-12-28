@@ -7,8 +7,6 @@
 
    @section('pagelink')
     <link href="{{ URL::to('css/music-new.css') }}" rel="stylesheet" />
-    <link href='{{ URL::to('css/bootstrap.css') }}' rel="stylesheet" />
-    <link href="{{ URL::to('css/font-awesome.css') }}" rel="stylesheet" />
    @endsection
 
 
@@ -121,6 +119,5 @@
       </div>
   </section>
   @endif
-    <!--end of the album section
-
+    <!--end of the album section -->
 @endsection
