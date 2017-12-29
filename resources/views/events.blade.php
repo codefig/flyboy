@@ -151,7 +151,7 @@
   <script type="text/javascript" src="{{ URL::to("js/jquery.isotope.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/wow.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/classie.js")}}"></script>
-  <script type="text/javascript" src="{{ URL::to("js/baguetteBox.min.js")}}"></script>
+
   <script type="text/javascript" src="{{ URL::to("js/jquery.backstretch.js")}}"></script>
 
 
@@ -176,9 +176,7 @@
         wow.init();
     </script>
 
-    <script>
-        baguetteBox.run('.flyboy-gallery');
-    </script>
+
 
 
     <script type="text/javascript">

@@ -43,9 +43,9 @@
       <figure class="logo animated fadeInDown delay-07s">
         <a href="#"><img src="{{ URL::to("img/flyboy_home_logo.png")}}" alt=""></a>
       </figure>
-      <h1 class="animated fadeInDown delay-07s">Welcome To Flyboy Incorporated. </h1>
+      <h1 id="fly-header" data-out-effect='fadeOutUp' data-out-shuffle='true' class="animated fadeInDown delay-07s">Welcome To Flyboy Incorporated. </h1>
       <ul class="we-create animated fadeInUp delay-1s">
-        <li>Something awesome about flyboy needs to be here </li>
+
       </ul>
       <a class="link animated fadeInUp delay-1s servicelink" href="#bio">Get Started</a>
     </div>
@@ -86,7 +86,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 animated fadeInLeft delay-05s">
                   <p class="bio">
                     Anidugbe Oluwatobiloba Daniel, known as Kiss Daniel, is a Nigerian recording artist, performer and entertainer best known for his chart-topping single "Woju". Formally signed to G-Worldwide Entertainment in 2013, he left the company in November 2017 to create his own record label, Fly Boy Inc.
                   </p>
@@ -117,7 +117,7 @@
           </div>
 
           <div class="col-md-5 col-sm-7">
-            <div class="thumbnail">
+            <div class="thumbnail animated fadeInRight delay-5s">
               <img src="img/bio.jpg" class="new-album-art" alt="The New Album Art" />
             </div>
           </div>
@@ -126,7 +126,7 @@
     </section>
 
     <!--FEATURED GALLERY IMAGES-->
-    <section id="gallery-images">
+    <section id="gallery-images" class="animated fadeInLeft delay-03s">
       <div id="grey">
         <div class="container">
         <div class="row">
@@ -190,7 +190,7 @@
     </section>
 
     <!--ALBUM RELEASE-->
-    <section id="album-release">
+    <section id="album-release" class="animated fadeInLeft delay-03s">
       <div class="container">
         <div class="row">
           <div class="section-title">New <span class="title-other-words">Album</span></div>
@@ -223,9 +223,10 @@
               </div>
               <div class="row get-album">
                 <div class="col-xs-3"><p style="font-family:'Segoe UI';">Album is available on</p></div>
-                <div class="col-xs-3"><i class="fa fa-soundcloud"></i></div>
-                <div class="col-xs-3"><i class="fa fa-spotify"></i></div>
-                <div class="col-xs-3"><i class="fa fa-apple"></i></div>
+                <div class="col-xs-3"><i class="fa fa-2x fa-soundcloud"></i></div>
+                <div class="col-xs-3"><i class="fa fa-2x fa-spotify"></i></div>
+                <div class="col-xs-3"><i class="fa fa-2x fa-apple"></i></div>
+
               </div>
           </div>
           <a href="{{route('user.music') }}"><button class="btn btn-primary">More music</button></a>
@@ -250,6 +251,8 @@
               <img src="https://img.youtube.com/vi/hyWK_dLxPUc/0.jpg" style="margin-left:auto;margin-right:auto;display:block;" class="img-responsive">
             </div>
             <p class="pull-left">Title of Video</p>
+
+
             <span class="clearfix"></span><hr>
             <a href="#"><button class="btn btn-primary">See more videos</button></a>
           </div>
@@ -310,28 +313,28 @@
       <div id="grey">
         <div class="container">
         <div class="row">
-          <div class="section-title">Upcoming <span class="title-other-words">Tours/Events</span></div>
+          <div class="section-title"><span class="title-other-words">Events</span></div>
           <center><div class="divider-grey"></div></center>
         </div>
         <div class="row">
           <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeInLeftBig" data-in-sequence="true">2nd January, 2018 - 20th January, 2018.</p></div>
-          <div class="col-md-4"><p>The New Year Fiesta by Pepsi</p></div>
-          <div class="col-md-4"><p>Muson Centre, Lagos.</p></div>
+          <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">The New Year Fiesta by Pepsi</p></div>
+          <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">Muson Centre, Lagos.</p></div>
         </div><hr>
         <div class="row">
-          <div class="col-md-4"><p>2nd March, 2018 - 20th March, 2018.</p></div>
-          <div class="col-md-4"><p>The Fly World Tour</p></div>
-          <div class="col-md-4"><p>Nigeria, Ghana, UK, Canada</p></div>
+          <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeInLeftBig" data-in-sequence="true">2nd March, 2018 - 20th March, 2018.</p></div>
+          <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">The Fly World Tour</p></div>
+          <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">Nigeria, Ghana, UK, Canada</p></div>
         </div><hr>
         <div class="row">
-          <div class="col-md-4"><p>2nd January, 2018 - 20th January, 2018.</p></div>
-          <div class="col-md-4"><p>The Fly World Tour</p></div>
-          <div class="col-md-4"><p>Nigeria, Ghana, UK, Canada</p></div>
+          <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeInLeftBig" data-in-sequence="true">2nd January, 2018 - 20th January, 2018.</p></div>
+          <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">The Fly World Tour</p></div>
+          <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">Nigeria, Ghana, UK, Canada</p></div>
         </div><hr>
         <div class="row">
-          <div class="col-md-4"><p>2nd January, 2018 - 20th January, 2018.</p></div>
-          <div class="col-md-4"><p>The Fly World Tour</p></div>
-          <div class="col-md-4"><p>Nigeria, Ghana, UK, Canada</p></div>
+          <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeInLeftBig" data-in-sequence="true">2nd January, 2018 - 20th January, 2018.</p></div>
+          <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">The Fly World Tour</p></div>
+          <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">Nigeria, Ghana, UK, Canada</p></div>
         </div><hr>
 
       </div>
@@ -401,13 +404,14 @@
                  duration: 4000
             });
          });
+
+        $('#fly-header').textillate({
+            loop: true,
+        });
+        $('.p-textillate').textillate({loop:true});
       </script>
 
-    <script>
-      $(function(){
-          $('.p-textillate').textillate();
-      });
-    </script>
+
 
 
 
