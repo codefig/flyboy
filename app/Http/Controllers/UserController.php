@@ -67,7 +67,7 @@ class UserController extends Controller {
 
     public function news() {
 
-        $news = News::orderBy('id', 'desc')->paginate(1);
+        $news = News::orderBy('id', 'desc')->paginate(10);
 		return view('news', compact('news', 'latest_news'));
 	}
 
