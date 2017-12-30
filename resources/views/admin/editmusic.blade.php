@@ -457,6 +457,11 @@
                             </div>
 
                             <div class="form-group">
+                                <label>Major Link</label>
+                                <input type="text" class="form-control" id="major_link" name="major_link" value="{{$music->major_link}}">
+                            </div>
+
+                            <div class="form-group">
                                 <label>Spotify Link</label>
                                 <input type="text" class="form-control" id="spotify_link" name="spotify_link" value="{{$music->spotify_link}}">
                             </div>
