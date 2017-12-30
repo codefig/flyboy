@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Album extends Model
 {
-    protected $fillable = ['title', 'slug','about', 'image', 'spotify_link', 'itunes_link', 'soundcloud_link'];
+    protected $fillable = ['title', 'slug','about', 'image', 'major_link','spotify_link', 'itunes_link', 'soundcloud_link'];
 
     public function limit_text($limit) {
         $text = $this->about;

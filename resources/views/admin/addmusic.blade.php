@@ -448,6 +448,8 @@
                             <input type="text" class="form-control" id="slug" name="slug">
                         </div>
 
+
+
                         <div class="form-group">
                             <label> Album </label>
                             <select class="form-control" name="album_id" id="album_id">
@@ -468,6 +470,11 @@
                         <div class="form-group">
                             <label> Music File </label>
                             <input type="file" name="audio" class="form-control" id="audio" accept="audio/*">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Major Link</label>
+                            <input type="text" class="form-control" id="major_link" name="major_link">
                         </div>
 
                         <div class="form-group" >

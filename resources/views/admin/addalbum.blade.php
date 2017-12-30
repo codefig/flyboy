@@ -454,6 +454,11 @@
                             <input type="file" name="image" class="form-control" id="image" accept="image/*">
                         </div>
 
+                        <div class="form-group">
+                            <label>Major Link</label>
+                            <input type="text" class="form-control" id="major_link" name="major_link">
+                        </div>
+
                         <div class="form-group" >
                             <label>Itunes Link</label>
                             <input type="text" class="form-control" id="itunes_link" name="itunes_link">
