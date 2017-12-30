@@ -302,6 +302,13 @@ html{
   color: #F2c053;
 }
 
+.get-album a{
+  color:#f2c053;
+}
+
+.get-album a:hover {
+  color:#444;
+}
 
 
 
