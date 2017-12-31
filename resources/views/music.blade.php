@@ -104,7 +104,8 @@
           <p><em>{{$album->created_at}}</em></p>
           <p>{{$album->about}}</p>
           <div class="row">
-            <p class="col-md-6 col-xs-6" style="font-style: italic; margin-top: 3px; color: #95989a; font-size: 15px;">Get album now on</p>
+            <p class="col-md-4 col-xs-4" style="font-style: italic; margin-top: 3px; color: #95989a; font-size: 15px;">Get album now on</p>
+            <p class="col-md-2 col-xs-2"><a href="{{$album->major_link}}" title="Hyperurl"><i class="fa fa-shopping-cart fa-2x"></i></a></p>
             <p class="col-md-2 col-xs-2"><a href="{{$album->spotify_link}}" title="Spotify"><i class="fa fa-spotify fa-2x"></i></a></p>
             <p class="col-md-2 col-xs-2"><a href="{{$album->soundcloud_link}}" title="SoundCloud"><i class="fa fa-soundcloud fa-2x"></i></a></p>
             <p class="col-md-2 col-xs-2"><a href="{{$album->itunes_link}}" title="iTunes"><img class='itunes-img' src="img/itunes.png" alt="itunes" width="28px" height="28px"/></a></p>
