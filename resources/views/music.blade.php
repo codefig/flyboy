@@ -73,7 +73,7 @@
             <img  src="{{$music->image}}" class="img-responsive img-circle">
             <div class="content">
               <a href="{{route('user.musiclink', $music->slug)}}" class="btn btn-primary"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Play</a>
-              <a href="{{$music->major_link}}" class="btn btn-primary"><span class="fa fa-shopping-cart"></span>Buy</a>
+              <a href="{{$music->major_link}}" class="btn btn-primary"><span class="fa fa-shopping-cart"></span> Buy</a>
               <p class="song-title" style="text-transform: uppercase">{{$music->title}}</p>
             </div><hr>
           </div>

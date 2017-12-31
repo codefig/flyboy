@@ -81,10 +81,8 @@
                            <span class='fa fa-star checked'></span>
                            <span class='fa fa-star checked'></span>
                            <span class='fa fa-star checked'></span>
-                           <em>/ </em>
-                             Release: 20-02-2020
-                           <em> / </em>
-                             {{$music->title}}
+                             <span class="">|</span>
+                           <span style="text-transform: uppercase"> {{$music->title}}</span>
                          </div>
                          <div class="divider"></div>
                                <div id="playerContainer">
@@ -129,21 +127,22 @@
                                     </div>
                                   </div><!-- end of the musicplayer button -->
                            </div>
+
+                           <div id="cart-option">
+                               <button class="btn btn-default playmusic-btn"><span class="fa fa-music"></span> 1 Track</button>
+                               <a href="{{$music->major_link}}" class="btn btn-default playmusic-btn"><span class="fa fa-shopping-cart"></span> Buy</a>
+                           </div>
                    </div>
               </div>
                  @endif
               <div class="col-xs-12 col-md-3">
                   <div id="socialMedia">
-                    <div class="socialContainers" id="instagramContainer">
-                      <h3 class="socialHeaders">INSTAGRAM </h3>
-                        <div class="social-divider"></div>
-                        this
-                       </div>
+                   <h3>FOLLOW US </h3>
                     <div class="socialContainers" id="facebookContainer">
                        <h3 class="socialHeaders">Facebook</h3>
-                       <div class="social-divider"></div>
+                       <div class="social-divider" style="margin-bottom:5px;"></div>
                        <!--facebook timeline -->
-                        <div class="fb-like" data-href="https://web.facebook.com/iamkissdaniel/?ref=br_rs" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                        <div class="fb-like" data-href="http://facebook.com/iamkissdaniel" data-layout="box_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
                        <!--facebook timeline ends -->
                     </div>
 

@@ -110,6 +110,9 @@ body{
 #playerContainer {
 	/*background-color: red;*/
 	margin-top:10px;
+	border:1px solid #ccc;
+	margin-bottom: 20px;
+	border-radius:5px;
 }
 
 #instagramContainer {
@@ -138,4 +141,10 @@ body{
 
 .res-nav_click:hover, .res-nav_click:active, .res-nav_click:focus {
 	color: #f2c053; !important;
+}
+
+.playmusic-btn{
+	background-color:#F2c053;
+	color:#000;
+	margin:0;
 }
