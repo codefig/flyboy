@@ -454,7 +454,7 @@
 
 
                             <div class="form-group">
-                                <label>Cover Image</label>
+                                <label>Cover Image. 640 x 640</label>
                                 <input type="file" name="image" class="form-control" id="image" accept="image/*">
                             </div>
 

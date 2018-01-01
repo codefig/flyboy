@@ -449,7 +449,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Image</label>
+                            <label>Image 640 x 640</label>
                             <input type="file" name="image" class="form-control" id="image" accept="image/*">
                         </div>
 

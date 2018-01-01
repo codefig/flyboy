@@ -199,8 +199,6 @@
 
         @if(count($latest_music) > 0)
             @foreach ($latest_music as $music)
-
-
           <div class="row">
             <div class="col-md-5 wow fadeInLeft delay-05s">
               <img src="{{ URL::to($music->image) }}" class="new-album-art" alt="The New Album Art" />
@@ -275,40 +273,27 @@
           <div class="section-title">Latest <span class="title-other-words">News</span></div>
           <center><div class="divider-grey"></div></center>
         </div>
+
         <div class="row">
+
+          @if(count($latest_news) > 0)
+            @foreach ($latest_news as $news)
+
           <div class="col-sm-4 col-md-4">
             <div class="image">
-              <img class="img-responsive" src="img/image-1.jpg" />
+              <img class="img-responsive" src="{{ URL::to($news->image) }}" />
               <div class="news">
-                <div class="news-headline">NEWS HEADLINE</div>
+                <div class="news-headline">{{ $news->limit_headline(5) }}</div>
                 <div class="news-date"><i class="fa fa-calendar"></i>Fri. 10th, December, 2010.</div>
-                <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <a href="#" class="btn btn-primary">Read more</a>
+                <p class="news-text">{{ $news->limit_text(20) }}</p>
+                <a href="{{ route('user.newslink', $news->slug) }}" class="btn btn-primary">Read more</a>
               </div>
             </div>
           </div>
-          <div class="col-sm-4 col-md-4">
-            <div class="image">
-              <img class="img-responsive" src="img/image-4.jpg" />
-              <div class="news">
-                <div class="news-headline">NEWS HEADLINE</div>
-                <div class="news-date"><i class="fa fa-calendar"></i>Fri. 10th, December, 2010.</div>
-                <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <a href="#" class="btn btn-primary">Read more</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-4">
-            <div class="image">
-              <img class="img-responsive" src="img/image-7.jpg" />
-              <div class="news">
-                <div class="news-headline">NEWS HEADLINE</div>
-                <div class="news-date"><i class="fa fa-calendar"></i>Fri. 10th, December, 2010.</div>
-                <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <a href="#" class="btn btn-primary">Read more</a>
-              </div>
-            </div>
-          </div>
+
+            @endforeach
+          @endif
+
         </div>
       </div>
       </div>
