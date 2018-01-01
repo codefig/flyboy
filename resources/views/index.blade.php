@@ -43,7 +43,7 @@
       <figure class="logo animated fadeInDown delay-07s">
         <a href="#"><img src="{{ URL::to("img/flyboy_home_logo.png")}}" alt=""></a>
       </figure>
-      <h1 id="fly-header" data-out-effect='fadeOutUp' data-out-shuffle='true' class="animated fadeInDown delay-07s">Welcome To Flyboy Incorporated. </h1>
+      <h1 class="wow fadeInDown delay-07s">Welcome To Flyboy Incorporated. </h1>
       <ul class="we-create animated fadeInUp delay-1s">
 
       </ul>
@@ -197,39 +197,45 @@
           <center><div class="divider-white"></div></center>
         </div>
 
-        <div class="row">
-          <div class="col-md-5 wow fadeInLeft delay-05s">
-            <img src="img/album-art.jpg" class="new-album-art" alt="The New Album Art" />
-          </div>
-          <div class="col-md-7 wow fadeInRight delay-05s">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="album-title">
-                    <h3>TITLE OF ALBUM GOES HERE</h3>
+        @if(count($latest_music) > 0)
+            @foreach ($latest_music as $music)
+
+
+          <div class="row">
+            <div class="col-md-5 wow fadeInLeft delay-05s">
+              <img src="{{ URL::to($music->image) }}" class="new-album-art" alt="The New Album Art" />
+            </div>
+            <div class="col-md-7 wow fadeInRight delay-05s">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="album-title">
+                      <h3>{{ $music->title }}</h3>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <p class="album-release-date"><i class="fa fa-calendar"></i>Friday 22nd, December, 2017.</p>
+                <div class="row">
+                  <div class="col-md-12">
+                    <p class="album-release-date"><i class="fa fa-calendar"></i>{{ $music->created_at }}</p>
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <p class="about-album">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
-                  <br>
-                  <p class="about-album">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
-                </div>
-              </div>
-              <div class="row get-album">
-                <div class="col-xs-4"><p style="font-family:'Segoe UI';">Album is available on</p></div>
-                <div class="col-xs-2"><a href=""><i class="fa fa-2x fa-shopping-cart"></i></a></div>
-                <div class="col-xs-2"><a href=""><i class="fa fa-2x fa-soundcloud"></i></a></div>
-                <div class="col-xs-2"><a href=""><i class="fa fa-2x fa-spotify"></i></a></div>
-                <div class="col-xs-2"><a href=""><i class="fa fa-2x fa-apple"></i></a></div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <p class="about-album">{{ $music->text }}.</p>
 
-              </div>
-          </div>
+                  </div>
+                </div>
+                <div class="row get-album">
+                  <div class="col-xs-4"><p style="font-family:'Segoe UI';">Album is available on</p></div>
+                  <div class="col-xs-2"><a href="{{ $music->major_link }}"><i class="fa fa-2x fa-shopping-cart"></i></a></div>
+                  <div class="col-xs-2"><a href="{{ $music->soundcloud_link }}"><i class="fa fa-2x fa-soundcloud"></i></a></div>
+                  <div class="col-xs-2"><a href="{{ $music->spotify_link }}"><i class="fa fa-2x fa-spotify"></i></a></div>
+                  <div class="col-xs-2"><a href="{{ $music->itunes_link }}"><i class="fa fa-2x fa-apple"></i></a></div>
+
+                </div>
+            </div>
+
+            @endforeach
+          @endif
           <a href="{{route('user.music') }}"><button class="btn btn-primary">More music</button></a>
         </div>
       </div>
@@ -251,11 +257,10 @@
             <div class="video-player">
               <img src="https://img.youtube.com/vi/hyWK_dLxPUc/0.jpg" style="margin-left:auto;margin-right:auto;display:block;" class="img-responsive">
             </div>
-            <p class="pull-left">Title of Video</p>
-
+            <p class="pull-left"></p>
 
             <span class="clearfix"></span><hr>
-            <a href="#"><button class="btn btn-primary">See more videos</button></a>
+            <a href="{{ route('user.videos') }}"><button class="btn btn-primary">See more videos</button></a>
           </div>
         </di>
       </div>
@@ -263,10 +268,10 @@
     </section>
 
     <!--NEWS SECTION-->
-    <section id="news" class="wow fadeInLeft delay-05s">
+    <section id="news">
       <div id="white">
         <div class="container">
-        <div class="row">
+        <div class="row wow fadeInLeft delay-05s">
           <div class="section-title">Latest <span class="title-other-words">News</span></div>
           <center><div class="divider-grey"></div></center>
         </div>
@@ -363,7 +368,7 @@
             <p>For bookings and enquiries</p>
             <p class="enquiry"><i class="fa fa-envelope"></i>bookings@flyboyinc.net</p>
             <p class="enquiry"><i class="fa fa-phone"></i>+234 906 0001 078</p>
-            <p class="enquiry"><i class="fa fa-map-marker"></i>Address goes here</p>
+
             <p style="margin-top: 15px;">Follow us on Facebook, Instagram and Twitter.</p>
             <p class="social-media">
               <a href="https://web.facebook.com/iamkissdaniel"><i class="fa fa-facebook"></i></a>

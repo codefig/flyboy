@@ -1,20 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Album;
+use App\Category;
+use App\Event;
+use App\Music;
+use App\News;
+use App\Photo;
+use App\Video;
 use Auth;
 use Illuminate\Http\Request;
-use App\Event;
-use App\News;
-use App\Music;
-use App\Album;
-use App\Video;
-use App\Category;
-use App\Photo;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller {
 
-    /**
+	/**
 	 * Controller for Non Authorised Links for the website
 	 */
 
@@ -22,15 +22,19 @@ class UserController extends Controller {
 		$this->middleware('guest');
 	}
 
-    public function index() {
+	public function index() {
 		/**
 		 *   The index route link
 		 */
-		// return view('dashboard');
-		return view('index');
+		// $top_news = DB::table('news')->raw(' SELECT * FROM news order by id DESC limit 3')->get();
+		$latest_news = DB::select('select * from news order by id DESC limit 3');
+		$latest_music = DB::select('select * from musics order by id desc limit 1');
+		$latest_events = DB::select('select * from events order by id desc limit 4');
+
+		return view('index', compact('latest_news', 'latest_music', 'latest_events'));
 	}
 
-    public function bio() {
+	public function bio() {
 		/**
 		 *  The bio information link
 		 */
@@ -38,16 +42,16 @@ class UserController extends Controller {
 		return view('bio');
 	}
 
-    public function music() {
+	public function music() {
 		/**
 		 *  The music link
 		 */
 		$musics = Music::orderBy('id', 'desc')->get();
-		$albums = Album::orderBy('id','desc')->get();
+		$albums = Album::orderBy('id', 'desc')->get();
 		return view('music', compact('musics', 'albums'));
 	}
 
-    public function photos() {
+	public function photos() {
 		/**
 		 *  The photos url
 		 */
@@ -56,44 +60,43 @@ class UserController extends Controller {
 		return view('gallery', compact('categories'));
 	}
 
-    public function showphotos() {
+	public function showphotos() {
 		return view('album');
 	}
 
-    public function videos() {
-	    $videos = Video::orderBy('id', 'desc')->get();
+	public function videos() {
+		$videos = Video::orderBy('id', 'desc')->get();
 		return view('videos', compact('videos'));
 	}
 
-    public function news() {
+	public function news() {
 
-        $news = News::orderBy('id', 'desc')->paginate(10);
+		$news = News::orderBy('id', 'desc')->paginate(10);
 		return view('news', compact('news', 'latest_news'));
 	}
 
-
-    public function events() {
-	    //remains paginaation
-        $latest = Event::first();
-		$events = Event::orderBy('id','desc')->paginate(10);
+	public function events() {
+		//remains paginaation
+		$latest = Event::first();
+		$events = Event::orderBy('id', 'desc')->paginate(10);
 		return view('events', compact('events', 'latest'));
 	}
 
-    public function contact() {
+	public function contact() {
 		return "this is the contact page";
 	}
 
-    public function playmusic() {
+	public function playmusic() {
 		// return "this is the play music function ";
 		return view('playmusic');
 	}
 
-    public function showAdminLogin(Request $request) {
+	public function showAdminLogin(Request $request) {
 		// return "this is the admin index page";
 		return view('admin.login');
 	}
 
-    public function checkAdminLogin(Request $request) {
+	public function checkAdminLogin(Request $request) {
 		// return $request->all();
 
 		//get the datas
@@ -116,25 +119,25 @@ class UserController extends Controller {
 		}
 	}
 
-    //information links
-    public function newsLink($slug){
-       $news = News::where('slug', '=', $slug)->first();
-       return view('fullnews', compact('news'));
+	//information links
+	public function newsLink($slug) {
+		$news = News::where('slug', '=', $slug)->first();
+		return view('fullnews', compact('news'));
 
-    }
+	}
 
-    public function categoriesLink($slug){
-        $category = Category::where('slug', $slug)->first();
-        $category_id  = $category->id;
-        $title = $slug;
-        //then get the photos
-        $photos = Photo::where('category_id', $category_id)->get();
-        return view('album', compact('photos', 'title'));
-    }
+	public function categoriesLink($slug) {
+		$category = Category::where('slug', $slug)->first();
+		$category_id = $category->id;
+		$title = $slug;
+		//then get the photos
+		$photos = Photo::where('category_id', $category_id)->get();
+		return view('album', compact('photos', 'title'));
+	}
 
-    public function musicLink($slug){
-        $music = Music::where('slug', $slug)->first();
-        return view('playmusic', compact('music'));
-    }
+	public function musicLink($slug) {
+		$music = Music::where('slug', $slug)->first();
+		return view('playmusic', compact('music'));
+	}
 
 }
