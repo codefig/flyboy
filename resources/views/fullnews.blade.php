@@ -44,10 +44,9 @@
   <div class="container">
     <div class="row">
         @if(count($news) > 0)
-        <div class="full-story">
+        <div class="full-story" style='margin-top:25px;'>
           <div class="col-lg-8">
             <div class="row">
-
                       <div class="col-md-8">
                           <h2>{{$news->headline}}</h2>
                       </div>
@@ -87,7 +86,14 @@
                         <div class="older-post">
                             <div class="social-divider"></div>
                             <!--facebook timeline -->
-                            <div class="fb-like" data-href="http://facebook.com/iamkissdaniel" data-layout="box_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+
+
+                              <div class="fb-like-box"
+                                  colorscheme="light" data-height="285"  data-width="190"
+                                  data-href="https://www.facebook.com/iamkissdaniel"
+                                  data-border-color="#fff" data-show-faces="true"  data-show-border="false"
+                                  data-stream="false" data-header="false">
+                              </div>
                             <!--facebook timeline ends -->
                         </div>
                     </div>
@@ -97,7 +103,7 @@
                             <div class='social-divider'></div>
 
                             <!-- twitter widget -->
-                            <a class="twitter-timeline" href="https://twitter.com/iamkissdaniel?ref_src=twsrc%5Etfw">Tweets by iamkissdaniel</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            <a class="twitter-timeline" href="https://twitter.com/iamkissdaniel?ref_src=twsrc%5Etfw" data-tweet-limit='10'>Tweets by iamkissdaniel</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
                             <!--end of twitter widget -->
                         </div>

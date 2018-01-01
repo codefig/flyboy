@@ -17,7 +17,6 @@
         <div class="col-md-6 col-md-offset-3">
 
         </div>
-
       </div>
     </div>
   </section>
@@ -64,7 +63,7 @@
       </div>
 
 
-      <div class="row">
+      <div class="row wow fadeInLeft delay-05s">
 
     @if(count($musics) > 0)
       @foreach($musics as $music)
@@ -93,7 +92,7 @@
               <h2 style="color:#fff;">A L B U M S</h2>
           </div>
           @foreach($albums as $album)
-          <div class="row">
+          <div class="row wow fadeInLeft delay-05s">
         <div class="col-md-4">
           <div class="album">
             <img src="{{$album->image}}" class="img-fluid">
@@ -104,20 +103,19 @@
           <p><em>{{$album->createDate()->formatLocalized('%A, %d %B %Y')}}.</em></p>
           <p>{{$album->about}}</p>
           <div class="row">
-            <p class="col-md-4 col-xs-4" style="font-style: italic; margin-top: 3px; color: #95989a; font-size: 15px;">Get album now on</p>
+            <p class="col-md-4 col-xs-4" style="margin-top: 3px; color: #95989a; font-size: 15px;">Get album now on</p>
             <p class="col-md-2 col-xs-2"><a href="{{$album->major_link}}" title="Hyperurl"><i class="fa fa-shopping-cart fa-2x"></i></a></p>
             <p class="col-md-2 col-xs-2"><a href="{{$album->spotify_link}}" title="Spotify"><i class="fa fa-spotify fa-2x"></i></a></p>
             <p class="col-md-2 col-xs-2"><a href="{{$album->soundcloud_link}}" title="SoundCloud"><i class="fa fa-soundcloud fa-2x"></i></a></p>
             <p class="col-md-2 col-xs-2"><a href="{{$album->itunes_link}}" title="iTunes"><img class='itunes-img' src="img/itunes.png" alt="itunes" width="28px" height="28px"/></a></p>
           </div>
         </div>
-          <!-- *s-->
-          <!--**s -->
+
           </div>
               <hr>
           @endforeach
       </div>
   </section>
   @endif
-    <!--end of the album section -->
+
 @endsection

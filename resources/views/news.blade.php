@@ -8,6 +8,16 @@
     <link href="{{ URL::to('css/news.css') }}" rel="stylesheet" />
     @endsection
 
+    @section('afterbodyContent')
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    @endsection
 
 
 @section('pageContent')
@@ -76,7 +86,12 @@
             <div class="older-post">
                 <div class="social-divider"></div>
                 <!--facebook timeline -->
-                <div class="fb-like" data-href="http://facebook.com/iamkissdaniel" data-layout="box_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+                               <div class="fb-like-box"
+                                  colorscheme="light" data-height="285"  data-width="190"
+                                  data-href="https://www.facebook.com/iamkissdaniel"
+                                  data-border-color="#fff" data-show-faces="true"  data-show-border="false"
+                                  data-stream="false" data-header="false">
+                              </div>
                 <!--facebook timeline ends -->
             </div>
           </div>
@@ -86,7 +101,7 @@
                 <div class='social-divider'></div>
 
                 <!-- twitter widget -->
-                <a class="twitter-timeline" href="https://twitter.com/iamkissdaniel?ref_src=twsrc%5Etfw">Tweets by iamkissdaniel</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a class="twitter-timeline" href="https://twitter.com/iamkissdaniel?ref_src=twsrc%5Etfw" data-tweet-limit='5'>Tweets by iamkissdaniel</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
                 <!--end of twitter widget -->
             </div>
