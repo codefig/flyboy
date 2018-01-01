@@ -101,7 +101,7 @@
         </div>
         <div class="col-md-8">
           <h5>{{$album->title}}</h5>
-          <p><em>{{$album->created_at}}</em></p>
+          <p><em>{{$album->createDate()->formatLocalized('%A, %d %B %Y')}}.</em></p>
           <p>{{$album->about}}</p>
           <div class="row">
             <p class="col-md-4 col-xs-4" style="font-style: italic; margin-top: 3px; color: #95989a; font-size: 15px;">Get album now on</p>

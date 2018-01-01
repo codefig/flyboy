@@ -26,17 +26,10 @@ class UserController extends Controller {
 		 *   The index route link
 		 */
 
-		// $latest_news = DB::select('select * from news order by id DESC limit 3');
-
-		// $latest_music = DB::select('select * from musics order by id desc limit 1');
-		// $latest_video = DB::select('select * from videos order by id desc limit 1');
-		// $latest_events = DB::select('select * from events order by id desc limit 4');
-
 		$latest_news = News::orderBy('id', 'desc')->take(3)->get();
 		$latest_music = Music::orderBy('id', 'desc')->take(1)->get();
 		$latest_video = Video::orderBy('id', 'desc')->take(1)->get();
 		$latest_events = Event::orderBy('id', 'desc')->take(4)->get();
-		// return $latest_news;
 
 		return view('index', compact('latest_news', 'latest_music', 'latest_video', 'latest_events'));
 	}

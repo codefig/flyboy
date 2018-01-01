@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class News extends Model {
@@ -29,6 +30,10 @@ class News extends Model {
 		}
 		return $text;
 
+	}
+
+	public function createDate() {
+		return Carbon::parse($this->created_at);
 	}
 
 }

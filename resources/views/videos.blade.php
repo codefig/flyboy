@@ -64,7 +64,6 @@
                 <a href="#">
                   <img class="img-responsive" src="{{$video->image_link}}" alt="{{$video->song_title}}"></a>
 
-                  {{-- https://www.youtube.com/watch?v=hyWK_dLxPUc --}}
                 <div class="video-details">
                   <h3>{{$video->song_title}}</h3>
                   <p>{{ $video->album_title }}</p>

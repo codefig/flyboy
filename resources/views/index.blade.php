@@ -19,6 +19,7 @@
   <link href="{{URL::to("css/responsive.css")}}"  rel="stylesheet" type="text/css">
   <link href="{{URL::to("css/animate.css")}}"  rel="stylesheet" type="text/css">
   <link href="{{URL::to("css/baguetteBox.min.css")}}"  rel="stylesheet" type="text/css">
+  <link href="{{URL::to("css/simplelightbox.css")}}"  rel="stylesheet" type="text/css">
 
   <script type="text/javascript" src="{{ URL::to("js/jquery.1.8.3.min.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/bootstrap.js")}}"></script>
@@ -29,8 +30,8 @@
   <script type="text/javascript" src="{{ URL::to("js/classie.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/baguetteBox.min.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/jquery.backstretch.js")}}"></script>
-  <script type="text/javascript" src="{{ URL::to("js/jquery.lettering.js")}}"></script>
-  <script type="text/javascript" src="{{ URL::to("js/jquery.textillate.js")}}"></script>
+  <script type="text/javascript" src="{{ URL::to("js/simplelightbox.js")}}"></script>
+
 </head>
 
 <body>
@@ -193,7 +194,7 @@
     <section id="album-release" class="">
       <div class="container">
         <div class="row">
-          <div class="section-title">New <span class="title-other-words">Album</span></div>
+          <div class="section-title">New Album<span class="title-other-words"></span></div>
           <center><div class="divider-white"></div></center>
         </div>
 
@@ -213,7 +214,7 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12">
-                    <p class="album-release-date"><i class="fa fa-calendar"></i>{{ $music->created_at }}</p>
+                    <p class="album-release-date"><i class="fa fa-calendar"></i>{{ $music->createDate()->formatLocalized('%d %b %Y') }}</p>
                   </div>
                 </div>
                 <div class="row">
@@ -252,10 +253,17 @@
         </div>
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
-            <div class="video-player">
-              <img src="https://img.youtube.com/vi/hyWK_dLxPUc/0.jpg" style="margin-left:auto;margin-right:auto;display:block;" class="img-responsive">
-            </div>
-            <p class="pull-left"></p>
+            @if(count($latest_video) > 0)
+              @foreach($latest_video as $video)
+
+              <div class="video-player">
+              <a href="{{ $video->upload_link }}" id="videoLink">
+                <img src="{{ $video->image_link }}" style="margin-left:auto;margin-right:auto;display:block;" class="img-responsive">
+              </a>
+              </div>
+            <p class="pull-left">{{ $video->song_title }}</p>
+              @endforeach
+            @endif
 
             <span class="clearfix"></span><hr>
             <a href="{{ route('user.videos') }}"><button class="btn btn-primary">See more videos</button></a>
@@ -284,7 +292,7 @@
               <img class="img-responsive" src="{{ URL::to($news->image) }}" />
               <div class="news">
                 <div class="news-headline">{{ $news->limit_headline(5) }}</div>
-                <div class="news-date"><i class="fa fa-calendar"></i>Fri. 10th, December, 2010.</div>
+                <div class="news-date"><i class="fa fa-calendar"></i>{{ $news->createDate()->formatLocalized('%A, %d %B %Y') }}.</div>
                 <p class="news-text">{{ $news->limit_text(20) }}</p>
                 <a href="{{ route('user.newslink', $news->slug) }}" class="btn btn-primary">Read more</a>
               </div>
@@ -310,9 +318,11 @@
         @if(count($latest_events) > 0)
            @foreach($latest_events as $event)
             <div class="row">
+              <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">{{ $event->createDate()->formatLocalized('%A, %d %B %Y') }}.</p></div>
+
               <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeInLeftBig" data-in-sequence="true">{{ $event->title }}</p></div>
+
               <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">{{ $event->location }}</p></div>
-              <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">{{ $event->date }}</p></div>
             </div><hr>
 
            @endforeach
@@ -360,7 +370,7 @@
     <footer class="footer">
     <div class="container">
       <div class="footer-logo"><a href="#"><img src="{{ URL::to('img/flyboy_footer.png') }}" alt=""></a></div>
-      <span class="copyright">&copy; 2017 Flyboy Incorporated. All Rights Reserved</span>
+      <span class="copyright">&copy; 2018 Flyboy Incorporated. All Rights Reserved</span>
       <div class="credits">
 
         <a href="" style="color:#f2c053;">Flyboy Incorporated</a> by <a href="">GeeksLab</a>
@@ -386,10 +396,7 @@
                  duration: 4000
             });
          });
-
-        $('#fly-header').textillate({
-            loop: true,
-        });
+        $('#videoLink').simpleLightbox();
 
       </script>
 
