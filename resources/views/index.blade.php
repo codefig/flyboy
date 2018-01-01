@@ -290,7 +290,6 @@
               </div>
             </div>
           </div>
-
             @endforeach
           @endif
 
@@ -307,26 +306,18 @@
           <div class="section-title"><span class="title-other-words">Events</span></div>
           <center><div class="divider-grey"></div></center>
         </div>
-        <div class="row">
-          <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeInLeftBig" data-in-sequence="true">2nd January, 2018 - 20th January, 2018.</p></div>
-          <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">The New Year Fiesta by Pepsi</p></div>
-          <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">Muson Centre, Lagos.</p></div>
-        </div><hr>
-        <div class="row">
-          <div class="col-md-4"><p class="p-textillate" >2nd March, 2018 - 20th March, 2018.</p></div>
-          <div class="col-md-4"><p class="p-textillate" >The Fly World Tour</p></div>
-          <div class="col-md-4"><p class="p-textillate" >Nigeria, Ghana, UK, Canada</p></div>
-        </div><hr>
-        <div class="row">
-          <div class="col-md-4"><p class="p-textillate" >2nd January, 2018 - 20th January, 2018.</p></div>
-          <div class="col-md-4"><p class="p-textillate" >The Fly World Tour</p></div>
-          <div class="col-md-4"><p class="p-textillate" >Nigeria, Ghana, UK, Canada</p></div>
-        </div><hr>
-        <div class="row">
-          <div class="col-md-4"><p class="p-textillate" >2nd January, 2018 - 20th January, 2018.</p></div>
-          <div class="col-md-4"><p class="p-textillate" >The Fly World Tour</p></div>
-          <div class="col-md-4"><p class="p-textillate" >Nigeria, Ghana, UK, Canada</p></div>
-        </div><hr>
+
+        @if(count($latest_events) > 0)
+           @foreach($latest_events as $event)
+            <div class="row">
+              <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeInLeftBig" data-in-sequence="true">{{ $event->title }}</p></div>
+              <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">{{ $event->location }}</p></div>
+              <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">{{ $event->date }}</p></div>
+            </div><hr>
+
+           @endforeach
+        @endif
+
 
       </div>
       </div>
