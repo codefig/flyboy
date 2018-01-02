@@ -58,7 +58,7 @@
                                   <h3>{{$story->headline}}</h3>
                                   <div class="news-text"> {{ $story->limit_text(50) }}</div>
                                   <a href="{{ route('user.newslink', $story->slug) }}" class="btn btn-primary">Full story</a>
-                                  <p class="news-date"><i class="fa fa-calendar"></i>{{$story->updated_at->formatLocalized('%A, %d %B %Y')}}</p>
+                                  <p class="news-date"><i class="fa fa-calendar"></i>{{$story->created_at->formatLocalized('%A, %d %B %Y')}}</p>
                               </div>
                           </div>
                       </div>

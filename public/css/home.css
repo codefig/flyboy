@@ -215,8 +215,8 @@ html{
 }
 
 #video .video-player{
-  /*background-color: #ffffff;*/
-  height: 400px;
+  background-color: #ffffff;
+  height: auto;
   width: 100%;
 }
 

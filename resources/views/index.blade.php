@@ -31,6 +31,13 @@
   <script type="text/javascript" src="{{ URL::to("js/baguetteBox.min.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/jquery.backstretch.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/simplelightbox.js")}}"></script>
+   <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 
 </head>
 
@@ -194,7 +201,7 @@
     <section id="album-release" class="">
       <div class="container">
         <div class="row">
-          <div class="section-title">New Album<span class="title-other-words"></span></div>
+          <div class="section-title">Music<span class="title-other-words"></span></div>
           <center><div class="divider-white"></div></center>
         </div>
 
@@ -256,12 +263,12 @@
             @if(count($latest_video) > 0)
               @foreach($latest_video as $video)
 
-              <div class="video-player">
               <a href="{{ $video->upload_link }}" id="videoLink">
-                <img src="{{ $video->image_link }}" style="margin-left:auto;margin-right:auto;display:block;" class="img-responsive">
-              </a>
+              <div class="video-player">
+                <img src="{{ $video->image_link }}" style="margin-left:auto;margin-right:auto;display:block;width:inherit;" class="img-responsive">
               </div>
-            <p class="pull-left">{{ $video->song_title }}</p>
+              </a>
+
               @endforeach
             @endif
 
@@ -291,7 +298,7 @@
             <div class="image">
               <img class="img-responsive" src="{{ URL::to($news->image) }}" />
               <div class="news">
-                <div class="news-headline">{{ $news->limit_headline(5) }}</div>
+                <div class="news-headline" style="text-transform:uppercase;">{{ $news->limit_headline(5) }}</div>
                 <div class="news-date"><i class="fa fa-calendar"></i>{{ $news->createDate()->formatLocalized('%A, %d %B %Y') }}.</div>
                 <p class="news-text">{{ $news->limit_text(20) }}</p>
                 <a href="{{ route('user.newslink', $news->slug) }}" class="btn btn-primary">Read more</a>
@@ -351,15 +358,23 @@
             <button class="btn btn-primary btn-lg">Send</button>
           </div>
           <div class="col-md-5 col-md-offset-1">
-            <p>For bookings and enquiries</p>
+            <p>Bookings and enquiries</p>
             <p class="enquiry"><i class="fa fa-envelope"></i>bookings@flyboyinc.net</p>
             <p class="enquiry"><i class="fa fa-phone"></i>+234 906 0001 078</p>
 
             <p style="margin-top: 15px;">Follow us on Facebook, Instagram and Twitter.</p>
             <p class="social-media">
-              <a href="https://web.facebook.com/iamkissdaniel"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.youtube.com/KissDanielVEVO"><i class="fa fa-youtube"></i></a>
               <a href="https://www.instagram.com/iamkissdaniel"><i class="fa fa-instagram"></i></a>
               <a href="https://www.twitter.com/iamkissdaniel"><i class="fa fa-twitter"></i></a>
+
+              <div style="margin-top:5px;" class="fb-like-box"
+                                  colorscheme="light" data-height="285"  data-width="190"
+                                  data-href="https://www.facebook.com/iamkissdaniel"
+                                  data-border-color="#fff" data-show-faces="true"  data-show-border="false"
+                                  data-stream="false" data-header="false">
+                              </div>
+
             </p>
           </div>
         </div>

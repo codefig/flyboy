@@ -83,7 +83,7 @@ class UserController extends Controller {
 	}
 
 	public function contact() {
-		return "this is the contact page";
+		return view('contact');
 	}
 
 	public function playmusic() {

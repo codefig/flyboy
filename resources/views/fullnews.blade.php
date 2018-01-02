@@ -56,7 +56,7 @@
               </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="thumbnail">
+                        <div class="thumbnail" style="border:0 !important;">
                             <a href=""><img class="img-responsive" src="{{ URL::to($news->image) }}" alt="news-banner"></a>
                         </div>
                     </div>
@@ -86,8 +86,6 @@
                         <div class="older-post">
                             <div class="social-divider"></div>
                             <!--facebook timeline -->
-
-
                               <div class="fb-like-box"
                                   colorscheme="light" data-height="285"  data-width="190"
                                   data-href="https://www.facebook.com/iamkissdaniel"
@@ -97,6 +95,7 @@
                             <!--facebook timeline ends -->
                         </div>
                     </div>
+
                     <div>
                         <h4>TWITTER</h4>
                         <div class="older-post">

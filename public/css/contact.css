@@ -1,0 +1,60 @@
+
+@font-face{
+    font-family: 'Segoe UI';
+    src : url('../fonts/segoeui.ttf');
+}
+
+body{
+    background-color:#fff !important;
+    font-family: 'Segoe UI';
+}
+
+#contactSection{
+    background-color:#fff;
+    margin-top:50px;
+}
+
+#contactHeader, #bookingHeader{
+    text-align: left !important;
+    color: #002 !important;
+}
+
+#contactSection input[type="text"]{
+    height:40px;
+}
+
+#submit {
+    width:100%;
+    background-color:#F2c053;
+    color:#000;
+    border-radius:50px;
+    border:0;
+}
+
+#contactSection textarea{
+    height:100px;
+}
+.divider {
+    background-color:#F2c053;
+    height:2px;
+    width: 30px;
+    margin-bottom:5px;
+}
+#details{
+    margin-bottom:10px;
+}
+.booking{
+    font-size:15px;
+    letter-spacing: 2px;
+    margin-bottom:10px !important;
+}
+
+#social-media{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+#social-media a {
+    margin-right:5px;
+    color:#888;
+}
