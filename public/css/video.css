@@ -49,6 +49,13 @@ body{
   }
 }
 
+@media(max-width:414px){
+  .video {
+    margin-top:5px !important;
+  }
+
+}
+
 .video{
   margin-bottom: 5%;
   background-color: #fff;
