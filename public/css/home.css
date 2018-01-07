@@ -340,7 +340,12 @@ html{
   .news{
     margin: 2vw 2vw;
   }
+
+  .divider-white, .divider-grey{
+    margin-top:-30px;
+  }
 }
+
 @media(max-width: 990px){
     .news{
       margin: 3vw 2vw;
