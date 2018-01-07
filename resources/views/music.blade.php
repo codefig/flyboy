@@ -64,7 +64,6 @@
 
 
       <div class="row wow fadeInLeft delay-05s">
-
     @if(count($musics) > 0)
       @foreach($musics as $music)
         <div class="col-md-3 col-sm-4">

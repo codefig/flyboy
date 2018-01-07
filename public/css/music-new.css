@@ -240,6 +240,13 @@ body{
     margin: 34vw;
   }
 }
+
+@media(max-width:414px){
+  .song {
+    margin-top:5px !important;
+  }
+
+}
 /* ============================= A L B U M ================================== */
 #albums{
   background-color: #fff;
