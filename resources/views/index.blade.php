@@ -242,7 +242,7 @@
 
             @endforeach
           @endif
-          <a href="{{route('user.music') }}"><button class="btn btn-primary">More music</button></a>
+          <a href="{{route('user.music') }}"><button id="musicbtn" class="btn btn-primary">More music</button></a>
         </div>
       </div>
     </section>
@@ -294,7 +294,7 @@
           @if(count($latest_news) > 0)
             @foreach ($latest_news as $news)
 
-          <div class="col-sm-4 col-md-4">
+          <div class="col-sm-6 col-md-4">
             <div class="image">
               <img class="img-responsive" src="{{ URL::to($news->image) }}" />
               <div class="news">

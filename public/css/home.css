@@ -335,6 +335,12 @@ html{
   margin:7vw 2vw;
 }
 
+
+@media(max-width: 1024px){
+  .news{
+    margin: 2vw 2vw;
+  }
+}
 @media(max-width: 990px){
     .news{
       margin: 3vw 2vw;
@@ -342,17 +348,23 @@ html{
 }
 
 
-@media(max-width: 769px){
-  .news{
-    margin:  30vw 10vw;
-  }
-}
+ @media(max-width:414px){
+   h3{
+     margin-top:10px !important;
+   }
+   #musicbtn {
+     margin-left:10px;
+   }
+   .news{
+     margin: 5vw 10vw;
+   }
 
-@media(max-width: 290px){
-  .news{
-    margin:  20vw 10vw;
-  }
-}
+ }
+/*@media(max-width: 290px){*/
+  /*.news{*/
+    /*margin:  20vw 10vw;*/
+  /*}*/
+/*}*/
 
 .news .news-headline{
   font-size: 24px;
