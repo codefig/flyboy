@@ -12,16 +12,15 @@ body{
 
 
 #music-player{
-  background: linear-gradient(rgba(0,0,0, .4), rgba(0,0,0, .4)),
-                       url('../img/sliders/slider-6.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+
+  background-image:url('../img/sliders/slider-6.jpg');
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  height: 500px;
+  text-align: center;
+  height: 550px;
 }
 
 #music-player .rule{
