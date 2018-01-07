@@ -29,7 +29,16 @@ body{
 
 #bio-readmore .bio{
   font-family: 'Segoe UI';
-  color: #95989a;
-  margin-top: 40px;
+  margin-top: 30px;
   font-size: 16px;
+}
+
+.bio p {
+  line-height: 20px;
+  color: #95989a;
+  margin-top:10px;
+}
+
+.bio b{
+  color:#F2c053;
 }

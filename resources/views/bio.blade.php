@@ -83,7 +83,7 @@
                             He started his music career professionally 2013 after his tertiary education, when he came
                             across G-Worldwide Entertainment CEO, Emperor Geezy. After being signed to G-Worldwide
                             entertainment, he released his first official single "Shoye" which was produced by Beatburx
-                            on May 1, 2014, along with a music video was directed by MEX.[5] Daniel released his second
+                            on May 1, 2014, along with a music video was directed by MEX. Daniel released his second
                             single "Woju", produced by DJ Coublon on September 1, 2014. The video for Woju was directed
                             by Adasa Cookey, shot in Lagos, Nigeria. The song spent eleven weeks on the MTV Base
                             Official Naija Top Ten, including six weeks at the number one spot.
