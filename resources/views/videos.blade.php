@@ -59,7 +59,7 @@
 
         @if(count($videos) > 0)
           @foreach($videos as $video)
-            <div class="grid-item col-md-4">
+            <div class="col-sm-6 col-md-4">
               <div class="video">
                 <a href="#">
                   <img class="img-responsive" src="{{$video->image_link}}" alt="{{$video->song_title}}"></a>

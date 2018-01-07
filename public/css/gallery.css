@@ -128,3 +128,7 @@ body{
 .text hr{
   color: #fff;
 }
+
+.text a:hover{
+  text-decoration: none;
+}
