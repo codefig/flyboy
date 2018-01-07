@@ -76,7 +76,7 @@ body{
 }
 
 #albumArt{
-	/*background-color:green;*/
+
 	height:250px;
 	width:250px;
 	border-radius:5px;
@@ -106,7 +106,7 @@ body{
 	padding: 10px;
 }
 #playerContainer {
-	/*background-color: red;*/
+
 	margin-top:10px;
 	border:1px solid #ccc;
 	margin-bottom: 20px;
@@ -115,14 +115,14 @@ body{
 
 #instagramContainer {
 	height:250px;
-	/*background-color:yellow;*/
+
 	padding:5px;
 	margin-bottom: 3px;
 }
 
 #facebookContainer{
 	height:200px;
-	/*background-color: green;*/
+
 }
 
 .socialHeaders{

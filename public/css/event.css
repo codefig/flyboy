@@ -93,6 +93,11 @@ body{
   }
 }
 
+.p-latest{
+  margin-top:3px !important;
+  line-height:20px !important;
+}
+
 
 /* ================================= LIST OF EVENTS ========================= */
 .upcoming-events{
@@ -106,10 +111,19 @@ body{
   margin: 2vw auto;
 }
 
-@media(max-width: 767px){
+@media(max-width: 768px){
     .upcoming-events h2{
       margin: 5vw auto;
     }
+
+  .event {
+    margin-bottom: 10vw;
+    text-align: center;
+  }
+
+  .ticket-btn{
+    margin-top:5px !important;
+  }
 }
 
 .event {
@@ -119,11 +133,12 @@ body{
   padding: 20px;
 }
 
-@media(max-width:767px){
+
+@media(max-width:414px){
   .event {
-    margin-bottom: 10vw;
-    text-align: center;
+    margin-top:10px !important;
   }
+
 }
 .event .image-holder{
   height: 150px;
@@ -138,6 +153,7 @@ body{
 .event h3{
   font-family: 'Segoe UI';
   color: #F2C053;
+  margin-top:10px;
 }
 .event p{
   font-family: 'Segoe UI';

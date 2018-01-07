@@ -235,7 +235,7 @@ body{
   border-radius: 50%;
 }
 
-@media(max-width: 767px){
+@media(max-width: 768px){
   .song .center-circle{
     margin: 34vw;
   }

@@ -12,6 +12,7 @@ body{
 #contactSection{
     background-color:#fff;
     margin-top:50px;
+    /*height:40vw;*/
 }
 
 #contactHeader, #bookingHeader{
@@ -57,4 +58,10 @@ body{
 #social-media a {
     margin-right:5px;
     color:#888;
+}
+
+@media(min-width:1024px){
+    #contactSection{
+        height:40vw;
+    }
 }
