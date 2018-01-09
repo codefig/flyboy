@@ -43,6 +43,11 @@ html{
     width: 10%;
   }
 }
+ @media(max-width:414px){
+   .divider-grey, .divider-white{
+     margin-top:10px !important;
+   }
+ }
 
 .divider-grey{
   background-color: #fff;
