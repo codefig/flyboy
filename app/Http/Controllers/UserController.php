@@ -98,6 +98,15 @@ class UserController extends Controller
         return view('contact');
     }
 
+    public function contactus(Request $request){
+        if($request->ajax()){
+            return "dont be weird";
+        }else{
+
+            return "welcome to the contacus page";
+        }
+    }
+
     public function playmusic()
     {
         // return "this is the play music function ";

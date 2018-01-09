@@ -352,10 +352,10 @@
         <div class="row">
           <div class="col-md-6">
             <p>Leave a message</p>
-            <input type="text" placeholder="Name" value="" /><br>
-            <input type="text" placeholder="Email" value="" /><br>
-            <textarea placeholder="Your message goes here"></textarea><br>
-            <button class="btn btn-primary btn-lg">Send</button>
+            <input type="text" placeholder="Name" value="" name="name"/><br>
+            <input type="text" placeholder="Email" value="" name="email" /><br>
+            <textarea placeholder="Your message goes here" name="message"></textarea><br>
+            <button class="btn btn-primary btn-lg" id="send-btn">Send</button>
           </div>
           <div class="col-md-5 col-md-offset-1">
             <p>Bookings and enquiries</p>
@@ -412,6 +412,24 @@
             });
          });
         $('#videoLink').simpleLightbox();
+
+        $('#send-btn').click(function(e){
+            var name = $('#name').val();
+            var email = $('#email').val();
+            var message = $('#message').val();
+            var url = "{{ route('user.contactus') }}";
+            var token = "{{Session::token()}}";
+
+            $.post(url, {
+                name : name,
+                email : email,
+                message : message,
+                _token : token,
+            }, function(result){
+                console.log(result);
+              console.log("this is the result");
+            })
+        })
 
       </script>
 
