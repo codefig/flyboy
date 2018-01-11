@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddMajorLinkToAlbums extends Migration
+class AddIpToEmailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AddMajorLinkToAlbums extends Migration
      */
     public function up()
     {
-        Schema::table('albums', function (Blueprint $table) {
-            $table->string('major_link')->after('image');
+        Schema::table('emails', function (Blueprint $table) {
+            //
+            $table->string('ip')->after('message');
         });
     }
 
@@ -25,6 +26,9 @@ class AddMajorLinkToAlbums extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('major_link');
+        Schema::table('emails', function (Blueprint $table) {
+            //
+            $table->dropIfExists('ip');
+        });
     }
 }

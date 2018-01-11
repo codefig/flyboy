@@ -60,8 +60,12 @@
                     </div>
 
                     <div class="form-group">
-                        <input class="btn btn-default btn-lg" type="submit" name="submit" id="submit" value="Send">
+                        <input class="btn btn-default btn-lg" type="submit" name="submit" id="send-btn" value="Send">
                     </div>
+
+                    <div class="alert" id="errors" style="display:none">
+                    </div>
+
                 </div>
                 <div class="col-md-3 col-md-offset-1">
                     <h2 id="bookingHeader">CONTACT</h2>
@@ -86,3 +90,40 @@
         </div>
     </section>
 @endsection
+
+@section('baseScript')
+    <script>
+        $('#send-btn').click(function(e){
+            var name = $('#name').val();
+            var email = $('#email').val();
+            var message = $('#message').val();
+            var url = "{{ route('user.contactus') }}";
+            var token = "{{Session::token()}}";
+
+            $.post(url, {
+                name : name,
+                email : email,
+                message : message,
+                _token : token,
+            }, function(result){
+                $('#errors').html('');
+                var output = "";
+                if(result.errors){
+
+                    for(var i in result.errors){
+                        output += "<li>" + result.errors[i] + "</li>";
+                    }
+                    $('#errors').html(output);
+                    $('#errors').show();
+                }
+                else{
+                    $('#errors').html(result.success);
+                    $('#name').val('');
+                    $('#email').val('');
+                    $('#message').val('');
+                }
+
+            })
+        })
+    </script>
+    @endsection

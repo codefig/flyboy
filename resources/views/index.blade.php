@@ -352,10 +352,12 @@
         <div class="row">
           <div class="col-md-6">
             <p>Leave a message</p>
-            <input type="text" placeholder="Name" value="" name="name"/><br>
-            <input type="text" placeholder="Email" value="" name="email" /><br>
-            <textarea placeholder="Your message goes here" name="message"></textarea><br>
+            <input type="text" placeholder="Name" value="" name="name" id="name"/><br>
+            <input type="text" placeholder="Email" value="" name="email" id="email" /><br>
+            <textarea placeholder="Your message goes here" name="message" id="message"></textarea><br>
             <button class="btn btn-primary btn-lg" id="send-btn">Send</button>
+            <div class="alert" id="errors" style="display:none">
+            </div>
           </div>
           <div class="col-md-5 col-md-offset-1">
             <p>Bookings and enquiries</p>
@@ -426,8 +428,23 @@
                 message : message,
                 _token : token,
             }, function(result){
-                console.log(result);
-              console.log("this is the result");
+                $('#errors').html('');
+                var output = "";
+                if(result.errors){
+
+                    for(var i in result.errors){
+                        output += "<li>" + result.errors[i] + "</li>";
+                    }
+                    $('#errors').html(output);
+                    $('#errors').show();
+                }
+                else{
+                    $('#errors').html(result.success);
+                    $('#name').val('');
+                    $('#email').val('');
+                    $('#message').val('');
+                }
+
             })
         })
 

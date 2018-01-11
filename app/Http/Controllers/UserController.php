@@ -11,6 +11,8 @@ use App\Photo;
 use App\Video;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\Email;
 
 class UserController extends Controller
 {
@@ -100,10 +102,24 @@ class UserController extends Controller
 
     public function contactus(Request $request){
         if($request->ajax()){
-            return "dont be weird";
-        }else{
+            $validator = Validator::make($request->all(), [
+                'name' => 'required',
+                'email' => 'required|email',
+                'message' => 'required',
+            ]);
+            if($validator->fails()){
 
-            return "welcome to the contacus page";
+                return response()->json(['errors' => $validator->errors()->all()]);
+            }
+            $email = new Email();
+            $email->fullname  = $request->name;
+            $email->email  = $request->email;
+            $email->message = $request->message;
+            $email->ip  = $request->ip();
+            $email->save();
+            return response()->json(['success' => 'Email sent successfully. Thank you, your message has been delivered ']);
+        }else{
+                return redirect()->route('error.404');
         }
     }
 
