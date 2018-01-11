@@ -21,11 +21,21 @@
     <link href="{{ URL::to('css/sb-admin-2.css') }}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="{{URL::to("css/font-awesome.css")}}" rel="stylesheet" type="text/css">
+    <link href="{{URL::to("css/font-awesome.css")}}"  rel="stylesheet" type="text/css">
 
     {{-- <link href="{{URL::to("css/font-awesome.css")}}"  rel="stylesheet" type="text/css"> --}}
-    <link href="{{URL::to("css/responsive.css")}}" rel="stylesheet" type="text/css">
-    <link href="{{URL::to("css/animate.css")}}" rel="stylesheet" type="text/css">
+    <link href="{{URL::to("css/responsive.css")}}"  rel="stylesheet" type="text/css">
+    <link href="{{URL::to("css/animate.css")}}"  rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+        .del-btn {
+            margin-top:5px !important;
+        }
+
+        .edit-btn {
+            margin-bottom:10px !important;
+        }
+    </style>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -119,8 +129,7 @@
                                     <span class="pull-right text-muted">40% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                         <span class="sr-only">40% Complete (success)</span>
                                     </div>
                                 </div>
@@ -136,8 +145,7 @@
                                     <span class="pull-right text-muted">20% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
                                         <span class="sr-only">20% Complete</span>
                                     </div>
                                 </div>
@@ -153,8 +161,7 @@
                                     <span class="pull-right text-muted">60% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                         <span class="sr-only">60% Complete (warning)</span>
                                     </div>
                                 </div>
@@ -170,8 +177,7 @@
                                     <span class="pull-right text-muted">80% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                                         <span class="sr-only">80% Complete (danger)</span>
                                     </div>
                                 </div>
@@ -302,49 +308,35 @@
                         <a href="tables.html"><i class="fa  fa-headphones"></i> Music<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{route('admin.musicalbum.add')}}"> Add New Album</a>
+                                <a href="flot.html"> Add New Song</a>
                             </li>
                             <li>
-                                <a href="{{ route('admin.musicalbum.showall') }}"> Show All Albums</a>
-                            </li>
-
-                            <li>
-                                <a href="{{ route('admin.music.add') }}"> Add New Single </a>
-                            </li>
-
-                            <li>
-                                <a href="{{ route('admin.music.showall') }}"> Show All Singles </a>
+                                <a href="morris.html"> View and Edit Songs</a>
                             </li>
                         </ul>
                     </li>
 
                     <li>
-                        <a href="forms.html"><i class="fa fa-file-image-o fa-fw"></i> Gallery <span
-                                    class="fa arrow"></span></a>
+                        <a href="forms.html"><i class="fa fa-file-image-o fa-fw"></i> Gallery <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{route('admin.photocategory.add')}}"> Add Category</a>
+                                <a href="flot.html"> Add Event</a>
                             </li>
                             <li>
-                                <a href="{{ route('admin.photocategory.showall') }}"> View Categories</a>
+                                <a href="morris.html"> View Events</a>
                             </li>
                             <li>
-                                <a href="{{ route('admin.photos.add') }}"> Add Photo</a>
-                            </li>
-
-                            <li>
-                                <a href="{{ route('admin.photos.showall') }}">View All Photos</a>
+                                <a href="morris.html"> Edit Events</a>
                             </li>
                         </ul>
 
                     </li>
 
                     <li>
-                        <a href="forms.html"><i class="fa fa-file-video-o fa-fw"></i> Video <span
-                                    class="fa arrow"></span></a>
+                        <a href="forms.html"><i class="fa fa-file-video-o fa-fw"></i> Video <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{ route('admin.videos.add') }}"> Add Video</a>
+                                <a href="{{route('admin.videos.add')}}"> Add Video</a>
                             </li>
 
                             <li>
@@ -355,29 +347,19 @@
                     </li>
 
                     <li>
-                        <a href="forms.html"><i class="fa fa-book"></i> News <span class="fa arrow"></span> </a>
+                        <a href="forms.html"><i class="fa fa-newspaper-o fa-fw"></i> News <span class="fa arrow"></span> </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{route('admin.news.add')}}"> Add News</a>
+                                <a href="{{ route('admin.news.add') }}"> Add News</a>
                             </li>
                             <li>
-                                <a href="{{route('admin.news.showall')}}"> View all News </a>
+                                <a href="{{ route('admin.news.showall') }}"> View and Edit News </a>
                             </li>
                         </ul>
 
                     </li>
 
 
-                    <li>
-                        <a href="forms.html"><i class="fa fa-book"></i> Emails <span class="fa arrow"></span> </a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{route('admin.showemails')}}"> Show all Emails</a>
-                            </li>
-
-                        </ul>
-
-                    </li>
 
 
                     <li>
@@ -405,8 +387,7 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span
-                                    class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="#">Second Level Item</a>
@@ -459,7 +440,57 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Welcome Admin </h1>
+                    <h1 class="page-header">All News</h1>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                            <tr>
+                                <th>SN</th>
+                                <th>Fullname</th>
+                                <th>Email</th>
+                                <th>Message</th>
+                                <th>IP</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            @if(count($emails) > 0 )
+                                <span style="display:none">{{ $serial_number = 0 }}</span>
+                                @foreach($emails as $email)
+                                    <tr>
+                                        <td>{{ $serial_number+=1  }}</td>
+                                        <td>{{ $email->fullname}}</td>
+                                        <td>{{$email->email}}</td>
+                                        <td>{{$email->message}}</td>
+                                        <td>{{$email->ip}}</td>
+                                        <td>{{ $email->created_at->formatLocalized('%A, %d %B %Y.') }}</td>
+
+                                    </tr>
+
+                                @endforeach
+                            @endif
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    @if(count($errors) > 0)
+                        <div class="alert alert-danger">
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </div>
+                    @endif
+
+                    @if(Session::has('success_message'))
+
+                        <div class="alert alert-success">
+                            <strong>{{ Session::get('success_message') }}</strong>
+                        </div>
+                    @endif
+                    {{ $emails->links() }}
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -483,6 +514,28 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="{{ URL::to('js/sb-admin-2.js') }}"></script>
+
+<!-- Custom alert javascipt -->
+<script src="{{ URL::to('js/bootbox.min.js') }}"></script>
+
+<script>
+    $('document').ready(function(e){
+//        alert("page is ready");
+        $('.delete-link').click(function(event){
+            event.preventDefault();
+            var route = this.href;
+            bootbox.confirm("Are you sure you want to delete this Video ?", function(result){
+                if(result == false)
+                    event.preventDefault();
+                else{
+                    window.location = route;
+
+                }
+            })
+        })
+    });
+
+</script>
 
 </body>
 

@@ -12,6 +12,7 @@ use App\News;
 use App\Photo;
 use App\Album;
 use App\Music;
+use App\Email;
 
 class AdminController extends Controller {
 
@@ -735,5 +736,11 @@ class AdminController extends Controller {
         $music->delete();
         Session::flash('success_message', 'Music deleted Successfully !');
         return redirect()->back();
+    }
+
+    public function showEmails(Request $request){
+
+        $emails = Email::orderBy('id', 'desc')->paginate(20);
+        return view('admin.showallemails', compact('emails'));
     }
 }

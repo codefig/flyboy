@@ -43,8 +43,8 @@ Route::get('/music/{slug}', 'UserController@musicLink')
  */
 
 //
-Route::get('admin', 'UserController@showAdminLogin')->name('admin.login');
-Route::prefix('/admin')->group(function () {
+Route::get('rx865', 'UserController@showAdminLogin')->name('admin.login');
+Route::prefix('/rx865')->group(function () {
 	Route::post('/login', 'UserController@checkAdminLogin')->name('admin.login.post');
 	Route::get('/home', 'AdminController@showHome')->name('admin.home');
 	Route::get('/logout', 'AdminController@logout')->name('admin.logout');
@@ -89,6 +89,7 @@ Route::prefix('/admin')->group(function () {
 	Route::get('/photos/showall', 'AdminController@showAllPhotos')->name('admin.photos.showall');
 	Route::get('/photos/{id}/delete', 'AdminController@deletePhotos')->name('admin.photos.delete');
 
+	//music album routes
 	Route::get('/music/addalbum', 'AdminController@showAddAlbum')->name('admin.musicalbum.add');
 	Route::get('/music/showallalbum', 'AdminController@showAllAlbum')->name('admin.musicalbum.showall');
 	Route::post('/music/submitalbum', 'AdminController@addAlbum')->name('admin.musicalbum.submit');
@@ -103,4 +104,7 @@ Route::prefix('/admin')->group(function () {
 	Route::post('/song/update', 'AdminController@updateMusic')->name('admin.music.update');
 	Route::get('/song/showall', 'AdminController@showAllMusic')->name('admin.music.showall');
 	Route::get('/song/{id}/delete', 'AdminController@deleteMusic')->name('admin.music.delete');
+
+	//contact us messages route
+    Route::get('/email/showall', 'AdminController@showEmails')->name('admin.showemails');
 });
