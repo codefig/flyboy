@@ -315,6 +315,7 @@
 
     <!--TOURS AND EVENTS -->
     <section id="events" class="">
+      @if(count($latest_events) > 0)
       <div id="grey">
         <div class="container wow fadeInRight delay-04s">
         <div class="row">
@@ -322,7 +323,6 @@
           <center><div class="divider-grey"></div></center>
         </div>
 
-        @if(count($latest_events) > 0)
            @foreach($latest_events as $event)
             <div class="row">
               <div class="col-md-4"><p class="p-textillate" data-in-effect="fadeIn">{{ $event->createDate()->formatLocalized('%A, %d %B %Y') }}.</p></div>
@@ -366,6 +366,7 @@
 
             <p style="margin-top: 15px;">Follow us on Facebook, Instagram and Twitter.</p>
             <p class="social-media">
+              <a href="https://www.facebook.com/iamkissdaniel"><i class="fa fa-facebook"></i></a>
               <a href="https://www.youtube.com/KissDanielVEVO"><i class="fa fa-youtube"></i></a>
               <a href="https://www.instagram.com/iamkissdaniel"><i class="fa fa-instagram"></i></a>
               <a href="https://www.twitter.com/iamkissdaniel"><i class="fa fa-twitter"></i></a>
