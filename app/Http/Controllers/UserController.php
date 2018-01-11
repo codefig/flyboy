@@ -89,7 +89,7 @@ class UserController extends Controller
 
     public function events()
     {
-        //remains paginaation
+        //remains pagination
         $latest = Event::first();
         $events = Event::orderBy('id', 'desc')->paginate(10);
         return view('events', compact('events', 'latest'));
@@ -131,14 +131,12 @@ class UserController extends Controller
 
     public function showAdminLogin(Request $request)
     {
-        // return "this is the admin index page";
+
         return view('admin.login');
     }
 
     public function checkAdminLogin(Request $request)
     {
-        // return $request->all();
-
         //get the datas
         // Auth::attempt($request->all)
         $email = $request->email;
@@ -163,7 +161,12 @@ class UserController extends Controller
     public function newsLink($slug)
     {
         $news = News::where('slug', '=', $slug)->first();
-        return view('fullnews', compact('news'));
+        if(count($news)){
+            return view('fullnews', compact('news'));
+        }
+        else{
+            return view('errors.404');
+        }
 
     }
 
@@ -175,12 +178,17 @@ class UserController extends Controller
         //then get the photos
         $photos = Photo::where('category_id', $category_id)->get();
         return view('album', compact('photos', 'title'));
+
     }
 
     public function musicLink($slug)
     {
         $music = Music::where('slug', $slug)->first();
-        return view('playmusic', compact('music'));
+        if(count($music)){
+
+            return view('playmusic', compact('music'));
+        }
+        return view('errors.404');
     }
 
 }

@@ -375,8 +375,7 @@
                                   data-href="https://www.facebook.com/iamkissdaniel"
                                   data-border-color="#fff" data-show-faces="true"  data-show-border="false"
                                   data-stream="false" data-header="false">
-                              </div>
-
+            </div>
             </p>
           </div>
         </div>
