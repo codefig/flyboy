@@ -11,15 +11,16 @@
 
 
 @section('pageContent')
-  <section id="music-player">
+
+
+  <header id="photolery-header">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-
-        </div>
+        <h1 class="btn btn-lg animated fadeInDown">MUSIC</h1>
+       
       </div>
     </div>
-  </section>
+  </header>
 
   <nav class="main-nav-outer" id="test">
     <!--main-nav-start-->

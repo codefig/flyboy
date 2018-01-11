@@ -10,6 +10,51 @@ body{
   font-family: 'Segoe UI';
 }
 
+/*=============================================== */
+#photolery-header{
+  background: linear-gradient(rgba(0,0,0, .4), rgba(0,0,0, .4)),
+  url('../img/sliders/slider-6.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  height: 620px;
+}
+
+#test{
+  position: relative;
+}
+#photolery-header h1{
+  color: #F2C053;
+  font-family: 'Segoe UI';
+  margin-top: 40vh;
+  margin-bottom: 5vw;
+  letter-spacing: 5px;
+  border: 2px solid #F2C053;
+  font-size: 48px;
+  padding: 15px;
+}
+
+#photolery-header .btn{
+  cursor: default;
+}
+
+#photolery-header p{
+  color: #F2C053;
+  font-family: 'Segoe UI';
+  font-size: 20px;
+}
+
+#photolery-header i{
+  font-size: 35px;
+}
+
+
+
 
 #music-player{
 
