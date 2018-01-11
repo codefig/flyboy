@@ -53,7 +53,21 @@ body{
   font-size: 35px;
 }
 
-
+@media(max-width: 1024px){
+  #photolery-header h1{
+    margin-top: 20vh !important;
+  }
+}
+@media(max-width: 767px){
+  #photolery-header h1{
+    margin-top: auto;
+  }
+}
+@media(max-width:414px){
+  #photolery-header h1{
+    margin-top:30vh !important;
+  }
+}
 
 
 #music-player{

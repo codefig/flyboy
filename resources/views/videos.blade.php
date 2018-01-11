@@ -17,14 +17,14 @@
   @section('pageContent')
 
 
-
-      <section id="video-player">
+      <header id="photolery-header">
           <div class="container">
               <div class="row">
+                  <h1 class="btn btn-lg animated fadeInDown">VIDEOS</h1>
 
               </div>
           </div>
-      </section>
+      </header>
 
 
       <nav class="main-nav-outer" id="test">
