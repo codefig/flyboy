@@ -55,12 +55,12 @@
             <div class="row wow fadeInUp delay-05s">
                 <div class="col-md-12">
                     <div class="bio">
-                        <b class="bold">Bio</b>
+                        <b class="bold">Bio: </b>
                         <p>
                             Anidugbe Oluwatobiloba Daniel, known as Kiss Daniel, is a Nigerian recording artist,
                             performer and entertainer best known for his chart-topping single "Woju". Formally signed to
                             G-Worldwide Entertainment in 2013, he left the company in November 2017 to create his own
-                            record label, Fly Boy Inc.
+                            record label, FlyBoy Inc.
                         </p>
                     </div>
 

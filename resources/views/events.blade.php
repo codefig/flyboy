@@ -1,7 +1,7 @@
 @extends('includes.header')
 
 @section('title')
-    <title>Flyboy Inc :: News </title>
+    <title>Flyboy Inc :: Events</title>
 @endsection
 
 @section('pagelink')
@@ -24,7 +24,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            @if(count($latest) > 0)
+            @if(count($latest) > 0)ss
 
               <h1 class="concert-title" style="text-transform: uppercase">{{$latest->title}}</h1>
               <p class="concert-info">{{$latest->limit_text(30)}}

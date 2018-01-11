@@ -46,7 +46,7 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="footer-logo"><a href="#"><img src="{{ 'img/flyboy_footer.png' }}" alt=""></a></div>
-			<span class="copyright">&copy; 2017 Flyboy Incorporated. All Rights Reserved</span>
+			<span class="copyright">&copy; 2018 Flyboy Incorporated. All Rights Reserved</span>
 			<div class="credits">
 
 				<a href="" style="color:#f2c053">Flyboy Incorporated</a>
