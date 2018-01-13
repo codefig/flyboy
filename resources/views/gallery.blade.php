@@ -65,7 +65,7 @@
                                         <hr>
                                         </p>
                                         <a style="color:#000;"
-                                           href="{{ (count($category->photo_count() == 0)) ? "#": route('user.categorieslink', $category->slug) }}">
+                                           href="{{ (count($category->photo_count()) == 0) ? "#": route('user.categorieslink', $category->slug) }}">
                                             <p style="text-transform: uppercase">{{$category->category_name}}</p>
                                         </a>
                                     </div>
