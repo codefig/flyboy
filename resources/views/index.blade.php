@@ -51,7 +51,7 @@
       <figure class="logo animated fadeInDown delay-07s">
         <a href="#"><img src="{{ URL::to("img/flyboy_home_logo.png")}}" alt=""></a>
       </figure>
-      <h1 class="wow fadeInDown delay-07s">Welcome To Flyboy Incorporated. </h1>
+      <h1 class="wow fadeInDown delay-07s">Welcome To Flyboy Inc. </h1>
       <ul class="we-create animated fadeInUp delay-1s">
 
       </ul>
@@ -387,10 +387,10 @@
     <footer class="footer">
     <div class="container">
       <div class="footer-logo"><a href="#"><img src="{{ URL::to('img/flyboy_footer.png') }}" alt=""></a></div>
-      <span class="copyright">&copy; 2018 Flyboy Incorporated. All Rights Reserved</span>
+      <span class="copyright">&copy; 2018 Flyboy Inc. All Rights Reserved</span>
       <div class="credits">
 
-        <a href="" style="color:#f2c053;">Flyboy Incorporated</a> by <a href="">GeeksLab</a>
+        <a href="" style="color:#f2c053;">Flyboy Inc</a>
       </div>
     </div>
   </footer>
