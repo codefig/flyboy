@@ -21,7 +21,7 @@
   <link href="{{URL::to("css/baguetteBox.min.css")}}"  rel="stylesheet" type="text/css">
   <link href="{{URL::to("css/simplelightbox.css")}}"  rel="stylesheet" type="text/css">
 
-  <script type="text/javascript" src="{{ URL::to("js/jquery.1.8.3.min.js")}}"></script>
+  <script type="text/javascript" src="{{ URL::to("js/jquery-3.2.1.min.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/bootstrap.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/jquery-scrolltofixed.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/jquery.easing.1.3.js")}}"></script>
@@ -390,7 +390,7 @@
       <span class="copyright">&copy; 2018 Flyboy Inc. All Rights Reserved</span>
       <div class="credits">
 
-        <a href="" style="color:#f2c053;">Flyboy Inc</a>
+        <a href="" style="color:#f2c053;">Flyboy Inc.</a>
       </div>
     </div>
   </footer>
