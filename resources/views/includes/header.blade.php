@@ -83,7 +83,7 @@
 
 
 	<script type="text/javascript">
-		$(window).load(function() {
+		$(window).on('load',function() {
 
 			$('.main-nav li a, .servicelink').bind('click', function(event) {
 				var $anchor = $(this);
@@ -101,7 +101,7 @@
 	</script>
 
 	<script type="text/javascript">
-		$(window).load(function() {
+		$(window).on('load',function() {
 
 
 			var $container = $('.portfolioContainer'),

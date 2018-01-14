@@ -200,12 +200,12 @@
     <!--ALBUM RELEASE-->
     <section id="album-release" class="">
       <div class="container">
+        @if(count($latest_music) > 0)
         <div class="row">
           <div class="section-title">Music<span class="title-other-words"></span></div>
           <center><div class="divider-white"></div></center>
         </div>
 
-        @if(count($latest_music) > 0)
             @foreach ($latest_music as $music)
           <div class="row">
             <div class="col-md-5 wow fadeInLeft delay-05s">
@@ -241,10 +241,10 @@
             </div>
 
             @endforeach
-          @endif
           <a href="{{route('user.music') }}"><button id="musicbtn" class="btn btn-primary">More music</button></a>
-        </div>
+          </div>
       </div>
+      @endif
     </section>
 
 
@@ -282,16 +282,16 @@
 
     <!--NEWS SECTION-->
     <section id="news">
+      @if(count($latest_news) > 0)
       <div id="white">
         <div class="container">
-        <div class="row wow fadeInLeft delay-05s">
+          <div class="row wow fadeInLeft delay-05s">
           <div class="section-title">Latest <span class="title-other-words">News</span></div>
           <center><div class="divider-grey"></div></center>
         </div>
 
-        <div class="row">
+          <div class="row">
 
-          @if(count($latest_news) > 0)
             @foreach ($latest_news as $news)
 
           <div class="col-sm-6 col-md-4">
@@ -306,11 +306,11 @@
             </div>
           </div>
             @endforeach
-          @endif
 
+          </div>
         </div>
       </div>
-      </div>
+      @endif
     </section>
 
     <!--TOURS AND EVENTS -->
@@ -481,7 +481,7 @@
 
 
   <script type="text/javascript">
-    $(window).load(function() {
+    $(window).on('load',function() {
 
       $('.main-nav li a, .servicelink').bind('click', function(event) {
         var $anchor = $(this);
@@ -504,8 +504,7 @@
   </script>
 
   <script type="text/javascript">
-    $(window).load(function() {
-
+    $(window).on('load',function() {
 
       var $container = $('.portfolioContainer'),
         $body = $('body'),
