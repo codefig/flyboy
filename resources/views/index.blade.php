@@ -3,17 +3,21 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta http-equiv="content-type" content="text/html" charset="utf-8">
+  <meta name="viewport" content="width=device-width, maximum-scale=1">
+  <meta property="og:locale" content="en_US" />
+  <meta name="description" content="Flyboy Inc. Kiss Daniel">
+  <meta property="og:title" content="Flyboy Inc. Kiss Daniel" />
+  <meta property="og:description" content="Flyboy Inc. Kiss Daniel" />
+  <meta property="og:url" content="{{ URL::current() }}" />
+  <meta property="og:site_name" content="Flyboy Inc." />
 
-    <title>Flyboy Inc :: Homepage</title>
 
-    <link href="{{ URL::to('css/home.css') }}" rel="stylesheet" />
+  <title>Flyboy Inc :: Homepage</title>
 
-  <link href="{{URL::to("css/bootstrap.css")}}" rel="stylesheet" type="text/css">
+  <link href="{{ URL::to('css/home.css') }}" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link href="{{URL::to("css/style.css")}}"  rel="stylesheet" type="text/css">
   <link href="{{URL::to("css/font-awesome.css")}}"  rel="stylesheet" type="text/css">
   <link href="{{URL::to("css/responsive.css")}}"  rel="stylesheet" type="text/css">
@@ -22,7 +26,7 @@
   <link href="{{URL::to("css/simplelightbox.css")}}"  rel="stylesheet" type="text/css">
 
   <script type="text/javascript" src="{{ URL::to("js/jquery-3.2.1.min.js")}}"></script>
-  <script type="text/javascript" src="{{ URL::to("js/bootstrap.js")}}"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script type="text/javascript" src="{{ URL::to("js/jquery-scrolltofixed.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/jquery.easing.1.3.js")}}"></script>
   <script type="text/javascript" src="{{ URL::to("js/jquery.isotope.js")}}"></script>
