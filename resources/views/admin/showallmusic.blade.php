@@ -495,7 +495,7 @@
                                         <td>{{ $serial_number+=1  }}</td>
                                         <td>{{ $music->title}}</td>
                                         <td>{{$music->limit_text(20)}}</td>
-                                        <td><a href="{{$music->slug}}">{{ $music->slug }}</a></td>
+                                        <td><a href="{{url('music',$music->slug)}}">{{ $music->slug }}</a></td>
                                         <td><a href="{{ URL::to($music->image) }}"><img style="height:200px;width:300px;" src="{{ URL::to($music->image) }}" class="img-responsive img-rounded"></a></td>
                                         <td>{{$music->checkAlbum()}}</td>
                                         <td>{{ $music->audio }}</td>
