@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="cartoon">
-            <img id="flyimage" src="img/flyer.png" class="img-responsive animated fadeInDown" />
+            <img id="flyimage" src="{{ URL::to('img/flyer.png') }}" class="img-responsive animated fadeInDown" />
           </div>
         </div>
         <div class="col-md-6">
